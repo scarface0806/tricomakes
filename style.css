@@ -310,6 +310,68 @@ body.popup-open {
     }
 }
 
+/* Testimonials Section Styling */
+.testimonials-area {
+    padding: 80px 0;
+}
+
+.testimonial-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.testimonial-content {
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.testimonial-content p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+    font-style: italic;
+}
+
+.testimonial-author {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.testimonial-author h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    margin: 0 0 5px 0;
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: #FF6A3D;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .testimonials-area {
+        padding: 60px 0;
+    }
+    
+    .testimonial-item {
+        padding: 30px 20px;
+    }
+}
+
 @media (max-width: 576px) {
     .service-style-one-item > img[src*=".svg"] {
         height: 48px;
@@ -359,5 +421,134 @@ body.popup-open {
 
     .trico-popup__text {
         font-size: 16px;
+    }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-floating-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    text-decoration: none;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.whatsapp-floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-floating-btn svg {
+    width: 28px;
+    height: 28px;
+    animation: pulse-glow 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 4px rgba(37, 211, 102, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.7));
+    }
+}
+
+/* Pulse Ring Animation */
+.whatsapp-pulse-ring {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #25D366;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: pulse-ring 2s infinite;
+    opacity: 0;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Tooltip Styling */
+.whatsapp-tooltip {
+    position: fixed;
+    bottom: 40px;
+    right: 90px;
+    background-color: white;
+    color: #222;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.whatsapp-floating-btn:hover ~ .whatsapp-tooltip {
+    opacity: 1;
+}
+
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid white;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .whatsapp-floating-btn {
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-pulse-ring {
+        bottom: 16px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-floating-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Hide tooltip on mobile/touch devices */
+    .whatsapp-tooltip {
+        display: none;
     }
 }
