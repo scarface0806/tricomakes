@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Blog Placeholder</title>
+  <desc id="desc">Branded placeholder image for blog visuals.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#120f12"/>
+      <stop offset="100%" stop-color="#33262d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ffae00"/>
+      <stop offset="100%" stop-color="#f54200"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <rect x="110" y="90" width="980" height="580" rx="32" fill="#ffffff" opacity="0.06"/>
+  <rect x="180" y="160" width="420" height="320" rx="28" fill="url(#accent)"/>
+  <rect x="650" y="184" width="290" height="22" rx="11" fill="#ffffff" opacity="0.8"/>
+  <rect x="650" y="228" width="220" height="18" rx="9" fill="#ffffff" opacity="0.36"/>
+  <rect x="650" y="310" width="360" height="18" rx="9" fill="#ffffff" opacity="0.65"/>
+  <rect x="650" y="350" width="320" height="18" rx="9" fill="#ffffff" opacity="0.3"/>
+  <rect x="650" y="444" width="180" height="56" rx="28" fill="#ffffff" opacity="0.16"/>
+  <text x="182" y="582" fill="#ffffff" font-family="Barlow, Arial, sans-serif" font-size="46" font-weight="700">ARTICLE PREVIEW</text>
+  <text x="182" y="626" fill="#ffae00" font-family="Barlow, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="5">TRICO MAKES BLOG</text>
+</svg>
