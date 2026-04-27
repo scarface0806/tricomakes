@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Transparent pricing for web design, branding, digital marketing, and design services. No hidden charges. Starting from ₹4,500 to ₹50,000+ for complete solutions.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pricing - Trico Makes">
+    <meta property="og:description" content="Simple, honest pricing for website design, branding, and digital marketing services.">
+    <meta property="og:url" content="https://trico-makes.vercel.app/pricing.html">
+    <meta property="og:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pricing - Trico Makes">
+    <meta name="twitter:description" content="Transparent pricing for web design, branding, and digital marketing.">
+    <meta name="twitter:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
+
+    <!-- ========== Page Title ========== -->
+    <title>Pricing - Trico Makes</title>
+    
+    <!-- ========== SEO Tags ========== -->
+    <link rel="canonical" href="https://trico-makes.vercel.app/pricing.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Trico Makes">
+    
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    
+    <!-- ========== Resource Hints ========== -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/img/logo.png">
+    <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
+    
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/validnavs.css" rel="stylesheet">
+    <link href="assets/css/helper.css" rel="stylesheet">
+    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+    
+    <!-- Pricing Page Specific Styles -->
+    <style>
+        /* Pricing Card Styles */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 40px 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.most-popular {
+            border: 2px solid #ff6b35;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.most-popular:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+
+        .pricing-badge.starter {
+            background: #667eea;
+        }
+
+        .pricing-badge.popular {
+            background: #ff6b35;
+        }
+
+        .pricing-badge.premium {
+            background: #00d084;
+        }
+
+        .pricing-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .pricing-card-price {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card-price-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .pricing-card-timeline {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-card-description {
+            font-size: 14px;
+            color: #666;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .pricing-card-features {
+            list-style: none;
+            padding: 20px 0;
+            flex-grow: 1;
+        }
+
+        .pricing-card-features li {
+            padding: 10px 0;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card-features li:before {
+            content: "✓";
+            color: #ff6b35;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        .pricing-card-cta {
+            margin-top: auto;
+            padding-top: 20px;
+        }
+
+        .pricing-card-cta .btn-style-regular {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Pricing Table Styles */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-table thead {
+            background: #f8f8f8;
+        }
+
+        .pricing-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .pricing-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .pricing-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+
+        .pricing-table tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            font-weight: 600;
+            font-size: 16px;
+            color: #222;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f8f8;
+        }
+
+        .faq-question.active {
+            background: #f0f0f0;
+        }
+
+        .faq-toggle {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            color: #ff6b35;
+        }
+
+        .faq-question.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-answer.show {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* CTA Banner */
+        .pricing-cta-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            color: white;
+            margin: 60px 0;
+        }
+
+        .pricing-cta-banner h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .pricing-cta-banner p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-cta-banner .btn-style-regular {
+            background: white;
+            color: #667eea;
+        }
+
+        .pricing-cta-banner .btn-style-regular:hover {
+            background: #f0f0f0;
+        }
+
+        .pricing-response-time {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 20px;
+        }
+
+        /* Section Heading */
+        .pricing-section-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .pricing-section-heading h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .pricing-section-heading p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Hero Section */
+        .pricing-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .pricing-hero-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 32px;
+            }
+
+            .pricing-card.most-popular {
+                transform: scale(1);
+            }
+
+            .pricing-card.most-popular:hover {
+                transform: translateY(-5px);
+            }
+
+            .pricing-cards {
+                gap: 20px;
+            }
+
+            .pricing-table {
+                font-size: 12px;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 12px 10px;
+            }
+
+            .pricing-cta-banner {
+                padding: 40px 20px;
+            }
+
+            .pricing-cta-banner h2 {
+                font-size: 24px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+                padding: 16px;
+            }
+
+            .faq-answer {
+                padding: 16px;
+            }
+
+            .pricing-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+
+    <!-- Pricing Page Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trico-makes.vercel.app/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pricing",
+          "item": "https://trico-makes.vercel.app/pricing.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="preloader-heading">
+            <div class="load-text">
+                <span>W</span> <span>E</span> <span>L</span> <span>C</span> <span>O</span> <span>M</span> <span>E</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar mobile-sidenav navbar-box navbar-default validnavs navbar-sticky">
+            <div class="container nav-box d-flex justify-content-between align-items-center">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <img src="assets/img/logo.png" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="projects.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li style="background: rgba(255, 107, 53, 0.1); padding: 5px 12px; border-radius: 4px;"> <a href="free-audit.html" style="color: #ff6b35; font-weight: 600;">✦ Free Audit</a> </li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <div class="attr-right">
+                        <div class="attr-nav attr-box">
+                            <ul>
+                                <li class="button">
+                                    <a class="smooth-menu" target="_blank" href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">
+                                        Start a Project <i class="fas fa-comment-alt"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-screen"></div>
+        </nav>
+    </header>
+
+    <!-- Pricing Hero Section -->
+    <div class="pricing-hero">
+        <div class="container">
+            <div class="pricing-hero-label">Transparent Pricing</div>
+            <h1>Simple, Honest Pricing</h1>
+            <p>No hidden charges. No surprises. Just clear pricing for every stage of your business growth.</p>
+        </div>
+    </div>
+
+    <!-- Website Design & Development Packages -->
+    <div class="default-padding">
+        <div class="container">
+            <div class="pricing-section-heading">
+                <h2>Website Design & Development</h2>
+            </div>
+            <div class="pricing-cards">
+                <!-- Basic Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge starter">Starter</div>
+                    <h3 class="pricing-card-title">Basic</h3>
+                    <div class="pricing-card-price">Starting from ₹12,000</div>
+                    <div class="pricing-card-timeline">⏱️ 7–10 working days</div>
+                    <div class="pricing-card-description">Best for: Freelancers & early-stage startups</div>
+                    <ul class="pricing-card-features">
+                        <li>Up to 5 pages</li>
+                        <li>Mobile responsive design</li>
+                        <li>Contact form with WhatsApp integration</li>
+                        <li>Basic SEO setup</li>
+                        <li>1 round of revisions</li>
+                        <li>Delivered in WordPress or HTML</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Basic%20website%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Standard Card (Most Popular) -->
+                <div class="pricing-card most-popular">
+                    <div class="pricing-badge popular">Most Popular</div>
+                    <h3 class="pricing-card-title">Standard</h3>
+                    <div class="pricing-card-price">Starting from ₹25,000</div>
+                    <div class="pricing-card-timeline">⏱️ 14–18 working days</div>
+                    <div class="pricing-card-description">Best for: Growing businesses & service providers</div>
+                    <ul class="pricing-card-features">
+                        <li>Up to 10 pages</li>
+                        <li>Custom UI design in Figma</li>
+                        <li>Mobile + tablet responsive</li>
+                        <li>Lead capture forms</li>
+                        <li>Google Analytics integration</li>
+                        <li>Basic on-page SEO</li>
+                        <li>2 rounds of revisions</li>
+                        <li>30 days post-launch support</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Standard%20website%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Premium Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge premium">Full Service</div>
+                    <h3 class="pricing-card-title">Premium</h3>
+                    <div class="pricing-card-price">Starting from ₹50,000</div>
+                    <div class="pricing-card-timeline">⏱️ 25–35 working days</div>
+                    <div class="pricing-card-description">Best for: Established brands & scaling companies</div>
+                    <ul class="pricing-card-features">
+                        <li>Unlimited pages</li>
+                        <li>Custom design system</li>
+                        <li>CMS integration</li>
+                        <li>Blog / resources section</li>
+                        <li>Advanced SEO setup</li>
+                        <li>Speed optimization</li>
+                        <li>3 rounds of revisions</li>
+                        <li>60 days post-launch support</li>
+                        <li>Monthly maintenance option</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Premium%20website%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Branding Packages -->
+    <div class="default-padding bg-gray">
+        <div class="container">
+            <div class="pricing-section-heading">
+                <h2>Logo & Branding</h2>
+            </div>
+            <div class="pricing-cards">
+                <!-- Logo Only Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge starter">Basic</div>
+                    <h3 class="pricing-card-title">Logo Only</h3>
+                    <div class="pricing-card-price">Starting from ₹4,500</div>
+                    <ul class="pricing-card-features">
+                        <li>3 logo concepts</li>
+                        <li>2 revisions</li>
+                        <li>Final files in AI, PNG, SVG formats</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Logo%20Only%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Brand Starter Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge popular">Popular</div>
+                    <h3 class="pricing-card-title">Brand Starter</h3>
+                    <div class="pricing-card-price">Starting from ₹12,000</div>
+                    <ul class="pricing-card-features">
+                        <li>Logo design</li>
+                        <li>Brand color palette</li>
+                        <li>Typography system</li>
+                        <li>Business card design</li>
+                        <li>Brand usage guidelines</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Brand%20Starter%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Full Brand Identity Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge premium">Complete</div>
+                    <h3 class="pricing-card-title">Full Brand Identity</h3>
+                    <div class="pricing-card-price">Starting from ₹28,000</div>
+                    <ul class="pricing-card-features">
+                        <li>Everything in Brand Starter</li>
+                        <li>Letterhead design</li>
+                        <li>Social media kit</li>
+                        <li>Brand style guide (PDF)</li>
+                        <li>Email signature design</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Full%20Brand%20Identity%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Digital Marketing & SEO Packages -->
+    <div class="default-padding">
+        <div class="container">
+            <div class="pricing-section-heading">
+                <h2>Digital Marketing & SEO</h2>
+            </div>
+            <div class="pricing-cards">
+                <!-- SEO Starter Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge starter">Starter</div>
+                    <h3 class="pricing-card-title">SEO Starter</h3>
+                    <div class="pricing-card-price">₹8,000 / month</div>
+                    <div class="pricing-card-description">Best for: Businesses starting SEO</div>
+                    <ul class="pricing-card-features">
+                        <li>10 target keywords</li>
+                        <li>On-page SEO</li>
+                        <li>Monthly report</li>
+                        <li>Google Search Console setup</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20SEO%20Starter%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SEO Growth Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge popular">Growth</div>
+                    <h3 class="pricing-card-title">SEO Growth</h3>
+                    <div class="pricing-card-price">₹15,000 / month</div>
+                    <div class="pricing-card-description">Best for: Businesses wanting consistent traffic</div>
+                    <ul class="pricing-card-features">
+                        <li>25 keywords</li>
+                        <li>On-page + off-page SEO</li>
+                        <li>2 blog articles/month</li>
+                        <li>Backlink building</li>
+                        <li>Bi-weekly reports</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20SEO%20Growth%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Social Media Management Card -->
+                <div class="pricing-card">
+                    <div class="pricing-badge premium">Social</div>
+                    <h3 class="pricing-card-title">Social Media Management</h3>
+                    <div class="pricing-card-price">₹10,000 / month</div>
+                    <div class="pricing-card-description">Best for: Businesses wanting active social presence</div>
+                    <ul class="pricing-card-features">
+                        <li>12 posts/month</li>
+                        <li>Caption writing</li>
+                        <li>Story designs</li>
+                        <li>Basic engagement management</li>
+                        <li>Monthly content calendar</li>
+                    </ul>
+                    <div class="pricing-card-cta">
+                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27m%20interested%20in%20the%20Social%20Media%20Management%20package" class="btn-style-regular" target="_blank">
+                            <span>Get Started</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design Services Table -->
+    <div class="default-padding bg-gray">
+        <div class="container">
+            <div class="pricing-section-heading">
+                <h2>Standalone Design Services</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Starting Price</th>
+                            <th>Delivery</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Poster / Banner Design</strong></td>
+                            <td>₹500 per post</td>
+                            <td>1–2 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Social Media Pack</strong></td>
+                            <td>₹3,500/month</td>
+                            <td>Weekly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile App UI Design</strong></td>
+                            <td>₹18,000</td>
+                            <td>15–20 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>UI/UX Design (Web)</strong></td>
+                            <td>₹15,000</td>
+                            <td>12–18 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reels / Video Edit</strong></td>
+                            <td>₹800 per reel</td>
+                            <td>2–3 days</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Business Card</strong></td>
+                            <td>₹2,500</td>
+                            <td>2–3 days</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="default-padding">
+        <div class="container">
+            <div class="pricing-section-heading">
+                <h2>Pricing Questions Answered</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are these prices fixed or negotiable?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        These are starting prices. Final cost depends on scope, complexity, and timeline. Contact us for a custom quote — we always find something that works for your budget.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you offer EMI or installment payment?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. For projects above ₹15,000 we offer a simple 50% advance and 50% on delivery structure. For larger projects, milestone-based payments can be arranged.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We accept UPI, bank transfer, and all major payment apps. We provide a proper invoice for every project.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is there a refund policy?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We do not offer refunds after work has begun, but we offer revision rounds on every project to make sure you are fully satisfied with the output.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I start with a small package and upgrade later?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. Many clients start with a Basic website or Logo Only package and expand to full branding or marketing retainers as their business grows.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="pricing-cta-banner">
+        <div class="container">
+            <h2>Not Sure Which Plan Is Right for You?</h2>
+            <p>Tell us about your business and budget. We will recommend the right starting point — no pressure, no commitment.</p>
+            <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27d%20like%20to%20discuss%20pricing%20options%20for%20my%20project" class="btn-style-regular" target="_blank">
+                <span>Chat With Us Free</span> <i class="fas fa-arrow-right"></i>
+            </a>
+            <p class="pricing-response-time">Typical response time: under 2 hours on weekdays</p>
+        </div>
+    </div>
+
+    <!-- WhatsApp Catalog Banner -->
+    <section style="background: linear-gradient(135deg, #25D366 0%, #1eaa4f 100%); padding: 40px 20px; text-align: center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h3 style="color: white; font-size: 28px; font-weight: 700; margin-bottom: 16px;">Browse All Services on WhatsApp</h3>
+                    <p style="color: white; font-size: 16px; margin-bottom: 24px;">Get instant details, pricing, and samples for all our design and marketing services directly on WhatsApp.</p>
+                    <a href="whatsapp-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background-color: white; color: #25D366; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 600; transition: 0.3s ease;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.781 1.158l-.338-.534a9.9 9.9 0 015.12-1.624m0-2.08C6.522 4.865 2 8.954 2 13.9c0 1.858.397 3.635 1.144 5.179l-.713 2.262 2.362-.706A9.863 9.863 0 0013.051 22c5.447 0 9.876-4.414 9.876-9.865 0-5.45-4.429-9.884-9.876-9.884"/></svg>
+                        View Service Catalog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="default-padding bg-cover" style="background-image: url(assets/img/shape/1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer-items text-center">
+                        <a href="#" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes"></a>
+                        <h4>Trico Makes</h4>
+                        <ul class="foter-menu">
+                            <li><a href="service-website-design-development.html">Website Design</a></li>
+                            <li><a href="service-branding-rebranding.html">Branding</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="service-seo.html">SEO</a></li>
+                            <li><a href="service-social-media-marketing.html">Social Media</a></li>
+                            <li><a href="whatsapp-catalog.html">📋 Service Catalog</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <p>Trico Makes is a full-service digital agency offering design, development, and marketing solutions for growing businesses.</p>
+                        <div class="footer-contact">
+                            <p>
+                                <a href="mailto:tricomakes@gmail.com"><i class="fas fa-envelope"></i> tricomakes@gmail.com</a> | 
+                                <a href="tel:+917871361025"><i class="fas fa-phone"></i> +91 7871361025</a>
+                            </p>
+                            <div class="footer-social">
+                                <a href="https://www.instagram.com/tricomakes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/tricomakes/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-pulse-ring"></div>
+    <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="whatsapp-floating-btn" target="_blank" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.857L.057 23.943l6.235-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.214-3.7.97.988-3.61-.235-.371A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+        </svg>
+    </a>
+    <div class="whatsapp-tooltip">Chat with us</div>
+
+    <!-- jQuery Frameworks -->
+    <script src="assets/js/jquery-3.6.0.min.js" defer></script>
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/jquery.appear.js" defer></script>
+    <script src="assets/js/jquery.easing.min.js" defer></script>
+    <script src="assets/js/jquery.waypoints.js" defer></script>
+    <script src="assets/js/jquery.circleType.js" defer></script>
+    <script src="assets/js/jquery.lettering.min.js" defer></script>
+    <script src="assets/js/count-to.js" defer></script>
+    <script src="assets/js/isotope.pkgd.min.js" defer></script>
+    <script src="assets/js/magnific-popup.min.js" defer></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/js/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/gsap.js" defer></script>
+    <script src="assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/SplitText.min.js" defer></script>
+    <script src="assets/js/progress-bar.min.js" defer></script>
+    <script src="assets/js/wow.min.js" defer></script>
+    <script src="assets/js/validnavs.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/YTPlayer.min.js" defer></script>
+    <script src="assets/js/typed.js" defer></script>
+
+    <!-- Pricing Page Scripts -->
+    <script>
+        function toggleFAQ(element) {
+            const question = element;
+            const answer = element.nextElementSibling;
+            const isActive = question.classList.contains('active');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.classList.remove('show');
+            });
+
+            // Open clicked FAQ if it wasn't active
+            if (!isActive) {
+                question.classList.add('active');
+                answer.classList.add('show');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get a free website audit from Trico Makes. We will review your website and tell you exactly what is holding back your growth. 100% free, no credit card needed, delivered within 48 hours.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Website Audit - Trico Makes">
+    <meta property="og:description" content="Get your free personal website audit from the Trico Makes team. 100% free. No credit card needed. Delivered within 48 hours.">
+    <meta property="og:url" content="https://trico-makes.vercel.app/free-audit.html">
+    <meta property="og:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Website Audit - Trico Makes">
+    <meta name="twitter:description" content="Get your free personal website audit from the Trico Makes team.">
+    <meta name="twitter:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
+
+    <!-- ========== Page Title ========== -->
+    <title>Free Website Audit - Trico Makes</title>
+    
+    <!-- ========== SEO Tags ========== -->
+    <link rel="canonical" href="https://trico-makes.vercel.app/free-audit.html">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Trico Makes">
+    
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    
+    <!-- ========== Resource Hints ========== -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/img/logo.png">
+    <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
+    
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/validnavs.css" rel="stylesheet">
+    <link href="assets/css/helper.css" rel="stylesheet">
+    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+    
+    <!-- Free Audit Page Styles -->
+    <style>
+        /* Hero Section */
+        .audit-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .audit-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .audit-hero-label {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .audit-hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+
+        .trust-badge:before {
+            content: "✓";
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* What You Get Section */
+        .audit-features-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .audit-features-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .audit-features-heading h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .audit-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .audit-feature-item {
+            text-align: center;
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .audit-feature-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .audit-feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .audit-feature-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 12px;
+        }
+
+        .audit-feature-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Form Section */
+        .audit-form-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .audit-form-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .audit-form-heading h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .audit-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .audit-form-group {
+            margin-bottom: 25px;
+        }
+
+        .audit-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .audit-form-group input,
+        .audit-form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .audit-form-group input:focus,
+        .audit-form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .audit-form-group input::placeholder {
+            color: #999;
+        }
+
+        .audit-form-required:after {
+            content: " *";
+            color: #ff6b35;
+        }
+
+        .audit-form-btn {
+            width: 100%;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .audit-form-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .audit-form-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .audit-form-note {
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+
+        .audit-form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 30px;
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .audit-form-success.show {
+            display: block;
+            animation: slideIn 0.4s ease;
+        }
+
+        .audit-form-success h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .audit-form-success p {
+            font-size: 14px;
+            color: #059669;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Social Proof Section */
+        .audit-testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .audit-testimonials-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .audit-testimonials-heading h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .audit-testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .audit-testimonial-card {
+            padding: 30px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .audit-testimonial-quote {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .audit-testimonial-author {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .audit-hero h1 {
+                font-size: 32px;
+            }
+
+            .audit-hero p {
+                font-size: 16px;
+            }
+
+            .trust-badges {
+                gap: 20px;
+            }
+
+            .trust-badge {
+                font-size: 12px;
+            }
+
+            .audit-features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .audit-form-container {
+                padding: 30px;
+            }
+
+            .audit-form-group {
+                margin-bottom: 18px;
+            }
+
+            .audit-form-btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+
+        .audit-form-group.required-indicator:after {
+            content: none;
+        }
+    </style>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://trico-makes.vercel.app/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free Website Audit",
+          "item": "https://trico-makes.vercel.app/free-audit.html"
+        }
+      ]
+    }
+    </script>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+        <div class="preloader-heading">
+            <div class="load-text">
+                <span>W</span> <span>E</span> <span>L</span> <span>C</span> <span>O</span> <span>M</span> <span>E</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar mobile-sidenav navbar-box navbar-default validnavs navbar-sticky">
+            <div class="container nav-box d-flex justify-content-between align-items-center">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <img src="assets/img/logo.png" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li><a href="index.html">Home</a></li>
+                        <li> <a class="smooth-menu" href="service.html">Services</a> </li>
+                        <li> <a class="smooth-menu" href="pricing.html">Pricing</a> </li>
+                        <li> <a class="smooth-menu" href="projects.html">Portfolio</a> </li>
+                        <li> <a href="blog.html">Blog</a> </li>
+                        <li style="background: rgba(255, 107, 53, 0.1); padding: 5px 12px; border-radius: 4px;"> 
+                            <a href="free-audit.html" style="color: #ff6b35; font-weight: 600;">✦ Free Audit</a> 
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <div class="attr-right">
+                        <div class="attr-nav attr-box">
+                            <ul>
+                                <li class="button">
+                                    <a class="smooth-menu" target="_blank" href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">Start a Project <i class="fas fa-comment-alt"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-screen"></div>
+        </nav>
+    </header>
+
+    <!-- Audit Hero Section -->
+    <div class="audit-hero">
+        <div class="container">
+            <div class="audit-hero-label">Free — No Obligation</div>
+            <h1>Get Your Free Website Audit</h1>
+            <p>We will personally review your website and tell you exactly what is holding back your growth — for free. No automated tools. Real human review by the Trico Makes team.</p>
+            <div class="trust-badges">
+                <div class="trust-badge">100% Free — No credit card needed</div>
+                <div class="trust-badge">Delivered within 48 hours</div>
+                <div class="trust-badge">Real review — not an automated report</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What You Get Section -->
+    <div class="audit-features-section">
+        <div class="container">
+            <div class="audit-features-heading">
+                <h2>What Your Free Audit Covers</h2>
+            </div>
+            <div class="audit-features-grid">
+                <!-- Feature 1 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">🚀</div>
+                    <h3>Page Speed Score</h3>
+                    <p>We check your loading time on mobile and desktop and tell you what is slowing it down.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">📱</div>
+                    <h3>Mobile Responsiveness</h3>
+                    <p>We test how your site looks and works across different screen sizes and devices.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">🔍</div>
+                    <h3>SEO Health Check</h3>
+                    <p>We check your meta tags, headings, keyword usage, and basic on-page SEO signals.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">🎯</div>
+                    <h3>Conversion Review</h3>
+                    <p>We identify if your calls to action, contact forms, and lead capture are working the way they should.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">🎨</div>
+                    <h3>Design & UX Feedback</h3>
+                    <p>We look at your visual hierarchy, readability, and whether your design builds trust with visitors.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="audit-feature-item">
+                    <div class="audit-feature-icon">🔗</div>
+                    <h3>Broken Links & Errors</h3>
+                    <p>We check for broken pages, missing images, 404 errors, and other technical issues hurting your site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audit Request Form Section -->
+    <div class="audit-form-section">
+        <div class="container">
+            <div class="audit-form-heading">
+                <h2>Request Your Free Audit</h2>
+            </div>
+            <div class="audit-form-container">
+                <div class="audit-form-success" id="successMessage">
+                    <h3>✅ Your audit request has been sent!</h3>
+                    <p>We will review your website and get back to you within 48 hours.</p>
+                </div>
+
+                <form id="auditForm" onsubmit="handleAuditFormSubmit(event)">
+                    <!-- Name Field -->
+                    <div class="audit-form-group">
+                        <label for="name" class="audit-form-required">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required minlength="2" maxlength="60">
+                    </div>
+
+                    <!-- Business Name Field -->
+                    <div class="audit-form-group">
+                        <label for="business" class="audit-form-required">Business Name</label>
+                        <input type="text" id="business" name="business" placeholder="Your Company" required minlength="2" maxlength="60">
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="audit-form-group">
+                        <label for="email" class="audit-form-required">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="audit-form-group">
+                        <label for="phone">Phone Number (optional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" inputmode="tel">
+                    </div>
+
+                    <!-- Website URL Field -->
+                    <div class="audit-form-group">
+                        <label for="website" class="audit-form-required">Your Website URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourwebsite.com" required>
+                    </div>
+
+                    <!-- Challenge Dropdown -->
+                    <div class="audit-form-group">
+                        <label for="challenge" class="audit-form-required">Biggest challenge with your website?</label>
+                        <select id="challenge" name="challenge" required>
+                            <option value="" selected disabled>Select a challenge...</option>
+                            <option value="Not getting enough visitors">Not getting enough visitors</option>
+                            <option value="Visitors not converting to leads">Visitors not converting to leads</option>
+                            <option value="Website looks outdated">Website looks outdated</option>
+                            <option value="Slow loading speed">Slow loading speed</option>
+                            <option value="Poor mobile experience">Poor mobile experience</option>
+                            <option value="Not ranking on Google">Not ranking on Google</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="audit-form-btn">
+                        <span>Send My Website for Audit</span> <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Note Below Button -->
+                    <p class="audit-form-note">
+                        We review every submission personally. You will receive your audit report via email within 48 working hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Proof Section -->
+    <div class="audit-testimonials-section">
+        <div class="container">
+            <div class="audit-testimonials-heading">
+                <h2>What Clients Say About Our Audits</h2>
+            </div>
+            <div class="audit-testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="audit-testimonial-card">
+                    <p class="audit-testimonial-quote">
+                        "The free audit showed us 3 things we had no idea were hurting our rankings. Very detailed."
+                    </p>
+                    <p class="audit-testimonial-author">— Karthik R., E-commerce store owner</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="audit-testimonial-card">
+                    <p class="audit-testimonial-quote">
+                        "I expected a generic checklist. Instead I got a real page-by-page review with specific fixes."
+                    </p>
+                    <p class="audit-testimonial-author">— Ananya S., Coaching business</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="audit-testimonial-card">
+                    <p class="audit-testimonial-quote">
+                        "Within one week of fixing what Trico Makes flagged, our enquiries doubled."
+                    </p>
+                    <p class="audit-testimonial-author">— Suresh M., Real estate agency</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="default-padding bg-cover" style="background-image: url(assets/img/shape/1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer-items text-center">
+                        <a href="#" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes"></a>
+                        <h4>Trico Makes</h4>
+                        <ul class="foter-menu">
+                            <li><a href="service-website-design-development.html">Website Design</a></li>
+                            <li><a href="service-branding-rebranding.html">Branding</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="service-seo.html">SEO</a></li>
+                            <li><a href="service-social-media-marketing.html">Social Media</a></li>
+                            <li><a href="free-audit.html">Free Audit</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <p>Trico Makes is a full-service digital agency offering design, development, and marketing solutions for growing businesses.</p>
+                        <div class="footer-contact">
+                            <p> <a href="mailto:tricomakes@gmail.com"><i class="fas fa-envelope"></i> tricomakes@gmail.com</a> | <a href="tel:+917871361025"><i class="fas fa-phone"></i> +91 7871361025</a> </p>
+                            <div class="footer-social">
+                                <a href="https://www.instagram.com/tricomakes/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/tricomakes/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-pulse-ring"></div>
+    <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="whatsapp-floating-btn" target="_blank" title="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.857L.057 23.943l6.235-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.214-3.7.97.988-3.61-.235-.371A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
+        </svg>
+    </a>
+    <div class="whatsapp-tooltip">Chat with us</div>
+
+    <!-- jQuery Frameworks -->
+    <script src="assets/js/jquery-3.6.0.min.js" defer></script>
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/jquery.appear.js" defer></script>
+    <script src="assets/js/jquery.easing.min.js" defer></script>
+    <script src="assets/js/jquery.waypoints.js" defer></script>
+    <script src="assets/js/jquery.circleType.js" defer></script>
+    <script src="assets/js/jquery.lettering.min.js" defer></script>
+    <script src="assets/js/count-to.js" defer></script>
+    <script src="assets/js/isotope.pkgd.min.js" defer></script>
+    <script src="assets/js/magnific-popup.min.js" defer></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/js/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/gsap.js" defer></script>
+    <script src="assets/js/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/SplitText.min.js" defer></script>
+    <script src="assets/js/progress-bar.min.js" defer></script>
+    <script src="assets/js/wow.min.js" defer></script>
+    <script src="assets/js/validnavs.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/YTPlayer.min.js" defer></script>
+    <script src="assets/js/typed.js" defer></script>
+
+    <!-- Audit Form Handler -->
+    <script>
+        function handleAuditFormSubmit(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const business = document.getElementById('business').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const website = document.getElementById('website').value.trim();
+            const challenge = document.getElementById('challenge').value.trim();
+
+            // Validate required fields
+            if (!name || !business || !email || !website || !challenge) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Create WhatsApp message
+            const message = `Hi Trico Makes Team,
+
+I would like to request a Free Website Audit.
+
+Name: ${name}
+Business: ${business}
+Email: ${email}
+Phone: ${phone || 'Not provided'}
+Website: ${website}
+Challenge: ${challenge}
+
+Please review my website and send the audit report.`;
+
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('auditForm');
+            successMessage.classList.add('show');
+            form.style.display = 'none';
+
+            // Redirect to WhatsApp after a short delay
+            setTimeout(() => {
+                window.open(
+                    `https://wa.me/917871361025?text=${encodeURIComponent(message)}`,
+                    '_blank'
+                );
+            }, 1500);
+        }
+    </script>
+
+</body>
+
+</html>
