@@ -36,6 +36,16 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Trico Makes">
     
+    <!-- Google Search Console Verification -->
+    <!-- Get this code from search.google.com/search-console
+         Property type: URL prefix
+         URL: https://trico-makes.vercel.app -->
+    <meta name="google-site-verification" 
+      content="SEARCH_CONSOLE_VERIFICATION_CODE">
+    
+    <!-- Sitemap Link -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     
@@ -228,6 +238,203 @@
     }
     </script>
 
+    <!-- GA4: Replace GA_MEASUREMENT_ID with your 
+         actual Measurement ID from Google Analytics -->
+
+    <!-- Google Analytics 4 -->
+    <script async 
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: document.title,
+        page_location: window.location.href,
+        send_page_view: true
+      });
+    </script>
+
+    <!-- GA4 Event Tracking for index.html -->
+    <script>
+    // Track WhatsApp CTA clicks
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Track all WhatsApp button clicks
+      document.querySelectorAll('a[href*="wa.me"]')
+        .forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            gtag('event', 'whatsapp_click', {
+              event_category: 'CTA',
+              event_label: this.innerText.trim() 
+                || 'WhatsApp Button',
+              page_location: window.location.href
+            });
+          });
+        });
+
+      // Track "Get Started" button clicks
+      document.querySelectorAll(
+        'a[href*="contact"], a[href="#contact"]'
+      ).forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          gtag('event', 'get_started_click', {
+            event_category: 'CTA',
+            event_label: this.innerText.trim(),
+            page_location: window.location.href
+          });
+        });
+      });
+
+      // Track service card clicks
+      document.querySelectorAll(
+        'a[href*="service-"]'
+      ).forEach(function(link) {
+        link.addEventListener('click', function() {
+          gtag('event', 'service_click', {
+            event_category: 'Services',
+            event_label: this.href,
+            page_location: window.location.href
+          });
+        });
+      });
+
+      // Track portfolio clicks
+      document.querySelectorAll(
+        'a[href*="project"]'
+      ).forEach(function(link) {
+        link.addEventListener('click', function() {
+          gtag('event', 'portfolio_click', {
+            event_category: 'Portfolio',
+            event_label: this.href
+          });
+        });
+      });
+
+      // Track scroll depth
+      let scrolled25 = false;
+      let scrolled50 = false;
+      let scrolled75 = false;
+      let scrolled90 = false;
+
+      window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round(
+          (window.scrollY / 
+          (document.body.scrollHeight - window.innerHeight)) 
+          * 100
+        );
+        if (!scrolled25 && scrollPercent >= 25) {
+          scrolled25 = true;
+          gtag('event', 'scroll_depth', 
+            {event_category: 'Engagement', 
+             event_label: '25%'});
+        }
+        if (!scrolled50 && scrollPercent >= 50) {
+          scrolled50 = true;
+          gtag('event', 'scroll_depth', 
+            {event_category: 'Engagement', 
+             event_label: '50%'});
+        }
+        if (!scrolled75 && scrollPercent >= 75) {
+          scrolled75 = true;
+          gtag('event', 'scroll_depth', 
+            {event_category: 'Engagement', 
+             event_label: '75%'});
+        }
+        if (!scrolled90 && scrollPercent >= 90) {
+          scrolled90 = true;
+          gtag('event', 'scroll_depth', 
+            {event_category: 'Engagement', 
+             event_label: '90%'});
+        }
+      });
+
+      // Track time on page (30s, 60s, 120s)
+      setTimeout(function() {
+        gtag('event', 'time_on_page', 
+          {event_category: 'Engagement', 
+           event_label: '30 seconds'});
+      }, 30000);
+
+      setTimeout(function() {
+        gtag('event', 'time_on_page', 
+          {event_category: 'Engagement', 
+           event_label: '60 seconds'});
+      }, 60000);
+
+      setTimeout(function() {
+        gtag('event', 'time_on_page', 
+          {event_category: 'Engagement', 
+           event_label: '120 seconds'});
+      }, 120000);
+
+    });
+    </script>
+
+    <!-- Meta Pixel -->
+    <!-- Get Pixel ID from business.facebook.com
+         Events Manager → Connect Data Sources → Web -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel -->
+
+    <!-- Meta Pixel Custom Events for index.html -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Track WhatsApp button clicks as Lead event
+      document.querySelectorAll('a[href*="wa.me"]')
+        .forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            fbq('track', 'Lead', {
+              content_name: 'WhatsApp CTA',
+              content_category: 'Contact',
+              value: 1,
+              currency: 'INR'
+            });
+          });
+        });
+
+      // Track service page visits as ViewContent
+      document.querySelectorAll('a[href*="service-"]')
+        .forEach(function(link) {
+          link.addEventListener('click', function() {
+            fbq('track', 'ViewContent', {
+              content_name: this.href,
+              content_category: 'Service'
+            });
+          });
+        });
+
+      // Track pricing page as high intent
+      if (window.location.href.includes('pricing')) {
+        fbq('track', 'ViewContent', {
+          content_name: 'Pricing Page',
+          content_category: 'High Intent',
+          value: 5,
+          currency: 'INR'
+        });
+      }
+
+    });
+    </script>
+    <!-- End Meta Pixel Custom Events -->
+
 </head>
 
 <body> <!-- Header     ============================================= -->
@@ -255,21 +462,15 @@
                         <li><a href="index.html">Home</a></li>
                         <li> <a class="smooth-menu" href="#services">Services</a> </li>
                         <li> <a class="smooth-menu" href="pricing.html">Pricing</a> </li>
-                        <li> <a class="smooth-menu" href="#portfolio">Portfolio</a> </li>
                         <li> <a href="blog.html">Blog</a> </li>
-                        <li> <a class="smooth-menu" href="#testimonials">Testimonials</a> </li>
-                        <li> <a class="smooth-menu" href="#process">Process</a> </li>
                         <li> <a class="smooth-menu" href="#contact">Contact</a> </li>
-                        <li style="background: rgba(255, 107, 53, 0.1); padding: 5px 12px; border-radius: 4px;"> <a href="free-audit.html" style="color: #ff6b35; font-weight: 600;">✦ Free Audit</a> </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
                 <div class="nav-right">
                     <div class="attr-right"> <!-- Start Atribute Navigation -->
                         <div class="attr-nav attr-box">
                             <ul>
-                                <li class="button"> <a class="smooth-menu" target="_blank "
-                                        href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">Start a Project
-                                        <i class="fas fa-comment-alt"></i></a> </li>
+                                <li class="button"> <a href="free-audit.html" style="display: inline-flex; align-items: center; gap: 8px; background: #ff6b35; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Get Free Audit <i class="fas fa-check-circle"></i></a> </li>
                             </ul>
                         </div> <!-- End Atribute Navigation -->
                     </div>
@@ -1354,36 +1555,348 @@
 </a>
 <div class="whatsapp-tooltip">Chat with us</div>
 
-<!-- Exit Intent Popup -->
-<div id="exitIntentPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 9999; justify-content: center; align-items: center;">
-    <div style="background: white; border-radius: 12px; padding: 40px; max-width: 500px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); text-align: center; position: relative; animation: popupSlideIn 0.4s ease;">
-        <button onclick="closeExitPopup()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; cursor: pointer; color: #999;">×</button>
-        
-        <h2 style="font-size: 28px; font-weight: 700; color: #222; margin-bottom: 15px;">Wait — Before You Go!</h2>
-        <p style="font-size: 16px; color: #666; margin-bottom: 30px; line-height: 1.6;">Get a free review of your website. We will tell you what is holding back your growth.</p>
-        
-        <div style="margin-bottom: 20px;">
-            <a href="free-audit.html" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 14px 30px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Yes, Audit My Website →</a>
+<!-- Exit Intent Popup — Redesigned -->
+<div id="exitIntentPopup" class="popup-overlay">
+    <div class="popup-card">
+        <!-- Gradient Banner Section -->
+        <div class="popup-banner">
+            <!-- Decorative Circles -->
+            <div class="popup-circle popup-circle-1"></div>
+            <div class="popup-circle popup-circle-2"></div>
+            <div class="popup-circle popup-circle-3"></div>
+            
+            <!-- Icon -->
+            <div class="popup-icon">🔍</div>
+            
+            <!-- Close Button -->
+            <button class="popup-close" onclick="closeExitPopup()" aria-label="Close popup">×</button>
         </div>
         
-        <p><a onclick="closeExitPopup()" style="font-size: 13px; color: #999; text-decoration: none; cursor: pointer; transition: color 0.3s ease;">No thanks, I'll pass</a></p>
+        <!-- Content Section -->
+        <div class="popup-content">
+            <!-- Label -->
+            <div class="popup-label">FREE OFFER</div>
+            
+            <!-- Heading -->
+            <h2 class="popup-heading">Wait — Before You Go!</h2>
+            
+            <!-- Subtext -->
+            <p class="popup-subtext">Get a free personal review of your website. We will tell you exactly what is holding back your growth — at no cost.</p>
+            
+            <!-- Trust Row -->
+            <div class="popup-trust-row">
+                <div class="trust-item">✓ 100% Free</div>
+                <div class="trust-item">✓ 48hr turnaround</div>
+                <div class="trust-item">✓ No obligation</div>
+            </div>
+            
+            <!-- Primary CTA Button -->
+            <a href="free-audit.html" class="popup-btn-primary">Yes, Audit My Website →</a>
+            
+            <!-- Decline Link -->
+            <a onclick="closeExitPopup()" class="popup-btn-secondary">No thanks, I'll pass</a>
+        </div>
     </div>
 </div>
 
 <style>
-    @keyframes popupSlideIn {
+    /* =============================
+       EXIT INTENT POPUP — REDESIGN
+       ============================= */
+    
+    .popup-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        z-index: 99999;
+        justify-content: center;
+        align-items: center;
+        animation: popupOverlayFadeIn 0.35s ease;
+    }
+    
+    .popup-card {
+        max-width: 480px;
+        width: 90vw;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+        background: white;
+        animation: popupCardBounce 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        transform: scale(1);
+    }
+    
+    /* Banner Section — Gradient Header */
+    .popup-banner {
+        position: relative;
+        height: 140px;
+        background: linear-gradient(135deg, #f15c2b 0%, #ff8a4d 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    /* Decorative Circles */
+    .popup-circle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+    
+    .popup-circle-1 {
+        width: 120px;
+        height: 120px;
+        top: -40px;
+        left: -30px;
+        opacity: 0.08;
+    }
+    
+    .popup-circle-2 {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: -20px;
+        opacity: 0.1;
+    }
+    
+    .popup-circle-3 {
+        width: 60px;
+        height: 60px;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.12;
+    }
+    
+    /* Icon with Glow */
+    .popup-icon {
+        font-size: 48px;
+        position: relative;
+        z-index: 10;
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+        animation: popupIconFloat 2.5s ease-in-out infinite;
+    }
+    
+    @keyframes popupIconFloat {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+    
+    /* Close Button */
+    .popup-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 16px;
+        font-weight: 300;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 20;
+        padding: 0;
+        line-height: 1;
+    }
+    
+    .popup-close:hover {
+        background: rgba(255, 255, 255, 0.35);
+        transform: scale(1.1);
+    }
+    
+    .popup-close:active {
+        transform: scale(0.95);
+    }
+    
+    /* Content Section */
+    .popup-content {
+        padding: 32px 36px 36px;
+        text-align: center;
+    }
+    
+    /* Free Offer Label */
+    .popup-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #f15c2b;
+        font-weight: 700;
+        margin-bottom: 8px;
+        display: block;
+    }
+    
+    /* Main Heading */
+    .popup-heading {
+        font-size: 24px;
+        font-weight: 800;
+        color: #222;
+        line-height: 1.2;
+        margin-bottom: 12px;
+        margin-top: 0;
+    }
+    
+    /* Subtext */
+    .popup-subtext {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.55);
+        line-height: 1.7;
+        margin-bottom: 8px;
+        margin-top: 0;
+    }
+    
+    /* Trust Row */
+    .popup-trust-row {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+    }
+    
+    .trust-item {
+        font-size: 12px;
+        color: #22c55e;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    /* Primary CTA Button */
+    .popup-btn-primary {
+        display: block;
+        width: 100%;
+        padding: 16px 24px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f15c2b 0%, #ff8a4d 100%);
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 8px 24px rgba(241, 92, 43, 0.35);
+        transition: all 0.2s ease;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+    
+    .popup-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(241, 92, 43, 0.45);
+    }
+    
+    .popup-btn-primary:active {
+        transform: translateY(0px);
+    }
+    
+    /* Secondary Decline Link */
+    .popup-btn-secondary {
+        display: block;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.35);
+        text-decoration: none;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .popup-btn-secondary:hover {
+        color: rgba(0, 0, 0, 0.6);
+        text-decoration: underline;
+    }
+    
+    /* Animation — Overlay Fade In */
+    @keyframes popupOverlayFadeIn {
         from {
             opacity: 0;
-            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    /* Animation — Card Bounce/Spring */
+    @keyframes popupCardBounce {
+        from {
+            opacity: 0;
+            transform: scale(0.85);
         }
         to {
             opacity: 1;
             transform: scale(1);
         }
     }
-
+    
+    /* Animation — Close/Destroy */
+    @keyframes popupCardCollapse {
+        from {
+            opacity: 1;
+            transform: scale(1);
+        }
+        to {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+    }
+    
+    /* Show State */
     #exitIntentPopup.show {
         display: flex !important;
+    }
+    
+    /* Close State Animation */
+    #exitIntentPopup.closing .popup-card {
+        animation: popupCardCollapse 0.2s ease-in forwards;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .popup-card {
+            max-width: 90vw;
+            width: 100%;
+        }
+        
+        .popup-content {
+            padding: 24px 24px 28px;
+        }
+        
+        .popup-heading {
+            font-size: 22px;
+        }
+        
+        .popup-subtext {
+            font-size: 14px;
+        }
+        
+        .popup-trust-row {
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .popup-banner {
+            height: 120px;
+        }
+        
+        .popup-icon {
+            font-size: 40px;
+        }
     }
 </style>
 
@@ -1404,10 +1917,44 @@
             return;
         }
 
-        // Trigger popup when mouse moves towards top of page
+        // Track page time and scroll for engagement trigger
+        let pageLoadTime = Date.now();
+        let hasScrolledDeep = false;
+        let mouseMoveTriggerSet = false;
+
+        // Trigger 1: Mouse moves towards top of page (exit intent)
         document.addEventListener('mousemove', function(event) {
             if (event.clientY < 50 && !sessionStorage.getItem('auditPopupShown')) {
                 showExitPopup();
+                mouseMoveTriggerSet = true;
+            }
+        });
+
+        // Trigger 2: Engagement trigger (scrolled 60% + 45 seconds on page)
+        window.addEventListener('scroll', function() {
+            if (mouseMoveTriggerSet || sessionStorage.getItem('auditPopupShown')) {
+                return; // Popup already triggered or shown
+            }
+
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+
+            if (scrolled > 60 && !hasScrolledDeep) {
+                hasScrolledDeep = true;
+
+                // Check if user has been on page for 45+ seconds
+                const timeOnPage = Date.now() - pageLoadTime;
+                if (timeOnPage >= 45000) {
+                    showExitPopup();
+                } else {
+                    // Schedule popup to show after reaching 45 seconds
+                    const remainingTime = 45000 - timeOnPage;
+                    setTimeout(() => {
+                        if (!sessionStorage.getItem('auditPopupShown')) {
+                            showExitPopup();
+                        }
+                    }, remainingTime);
+                }
             }
         });
     }
@@ -1420,7 +1967,13 @@
 
     function closeExitPopup() {
         const popup = document.getElementById('exitIntentPopup');
-        popup.classList.remove('show');
+        popup.classList.add('closing');
+        
+        // Wait for animation to finish before removing show class
+        setTimeout(() => {
+            popup.classList.remove('show');
+            popup.classList.remove('closing');
+        }, 200);
     }
 
     // Initialize exit intent on page load

@@ -9,6 +9,8 @@
     <link rel="canonical" href="https://trico-makes.vercel.app/service-vector-art-design.html">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Trico Makes">
+    <!-- Sitemap Link -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <!-- Resource Hints -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -57,6 +59,46 @@
       ]
     }
     </script>
+
+    <!-- GA4: Replace GA_MEASUREMENT_ID with your 
+         actual Measurement ID from Google Analytics -->
+
+    <!-- Google Analytics 4 -->
+    <script async 
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: document.title,
+        page_location: window.location.href,
+        send_page_view: true
+      });
+    </script>
+
+    <!-- Meta Pixel -->
+    <!-- Get Pixel ID from business.facebook.com
+         Events Manager → Connect Data Sources → Web -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel -->
+
 </head>
 <body>
     <header>
@@ -79,8 +121,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="service.html">Services</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="projects.html">Portfolio</a></li>
-                        <li><a href="resume.html">Process</a></li><li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

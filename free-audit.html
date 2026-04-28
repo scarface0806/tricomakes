@@ -29,6 +29,9 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Trico Makes">
     
+    <!-- Sitemap Link -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
     <!-- ========== Favicon Icon ========== -->
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     
@@ -416,6 +419,83 @@
     }
     </script>
 
+    <!-- GA4: Replace GA_MEASUREMENT_ID with your 
+         actual Measurement ID from Google Analytics -->
+
+    <!-- Google Analytics 4 -->
+    <script async 
+      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID">
+    </script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: document.title,
+        page_location: window.location.href,
+        send_page_view: true
+      });
+    </script>
+
+    <!-- GA4 Form Tracking for free-audit.html -->
+    <script>
+    document.addEventListener('DOMContentLoaded', 
+      function() {
+        const form = document.querySelector('form') 
+          || document.getElementById('audit-form');
+        if (form) {
+          form.addEventListener('submit', function() {
+            gtag('event', 'audit_form_submit', {
+              event_category: 'Lead',
+              event_label: 'Free Audit Request',
+              value: 1
+            });
+          });
+        }
+      }
+    );
+    </script>
+
+    <!-- Meta Pixel -->
+    <!-- Get Pixel ID from business.facebook.com
+         Events Manager → Connect Data Sources → Web -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel -->
+
+    <!-- Meta Pixel Form Tracking for free-audit.html -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form') 
+        || document.getElementById('audit-form');
+      if (form) {
+        form.addEventListener('submit', function() {
+          fbq('track', 'Lead', {
+            content_name: 'Free Website Audit',
+            content_category: 'Lead Magnet',
+            value: 10,
+            currency: 'INR'
+          });
+        });
+      }
+    });
+    </script>
+    <!-- End Meta Pixel Form Tracking -->
+
 </head>
 
 <body>
@@ -455,11 +535,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li> <a class="smooth-menu" href="service.html">Services</a> </li>
                         <li> <a class="smooth-menu" href="pricing.html">Pricing</a> </li>
-                        <li> <a class="smooth-menu" href="projects.html">Portfolio</a> </li>
                         <li> <a href="blog.html">Blog</a> </li>
-                        <li style="background: rgba(255, 107, 53, 0.1); padding: 5px 12px; border-radius: 4px;"> 
-                            <a href="free-audit.html" style="color: #ff6b35; font-weight: 600;">✦ Free Audit</a> 
-                        </li>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -467,7 +543,7 @@
                         <div class="attr-nav attr-box">
                             <ul>
                                 <li class="button">
-                                    <a class="smooth-menu" target="_blank" href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">Start a Project <i class="fas fa-comment-alt"></i></a>
+                                    <a href="free-audit.html" style="display: inline-flex; align-items: center; gap: 8px; background: #ff6b35; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Get Free Audit <i class="fas fa-check-circle"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -1,23 +1,11 @@
-# Trico Makes - SEO Configuration
-# Allow search engines to crawl all pages
-
 User-agent: *
 Allow: /
-Disallow: /assets/
-Disallow: /*.bak
 
-# Sitemap location
 Sitemap: https://trico-makes.vercel.app/sitemap.xml
 
-# Crawl delay (be respectful to server)
-Crawl-delay: 1
-
-# Specific rules for major search engines
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
+# Block unnecessary files from indexing
+Disallow: /assets/
+Disallow: /*.md$
 Allow: /
 Crawl-delay: 1
 
