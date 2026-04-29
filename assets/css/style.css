@@ -3096,9 +3096,13 @@ xclip
 	position: relative;
 	z-index: 1;
 	text-align: center;
-	overflow: hidden;
+	overflow: visible;
 	padding: 0 30px;
 	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 500px;
 }
 
 .banner-style-one-items .thumb img:nth-child(2) {
@@ -3627,6 +3631,275 @@ a.btn-style-one::after {
 
 .bg-dark .about-style-one-bottom-info::after {
     opacity: 0.2;
+}
+
+/* ============================================================== 
+     # Service - Modern Card Design
+=================================================================== */
+
+/* Services Grid Container */
+.services-modern-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
+	width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.services-modern-grid.show-all {
+	max-height: 100%;
+}
+
+/* Service Card */
+.service-card-modern {
+	background: #ffffff;
+	border-radius: 14px;
+	padding: 24px;
+	border: 1px solid #f0f0f0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	transition: all 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	animation: fadeInCard 0.5s ease forwards;
+}
+
+.service-card-modern.hidden {
+	display: none;
+}
+
+.service-card-modern.visible {
+	display: flex;
+	animation: fadeInCard 0.5s ease forwards;
+}
+
+@keyframes fadeInCard {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.service-card-modern:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+	border-color: #e8e8e8;
+}
+
+/* Icon Container */
+.service-card-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 12px;
+	background: var(--color-primary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 18px;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.service-card-modern:hover .service-card-icon {
+	background: var(--color-secondary);
+	transform: scale(1.12) rotateY(360deg);
+	box-shadow: 0 8px 16px rgba(241, 92, 43, 0.3);
+	animation: iconBounce 0.6s ease;
+}
+
+.service-card-icon img {
+	height: 32px;
+	width: 32px;
+	object-fit: contain;
+	transition: transform 0.3s ease;
+}
+
+.service-card-icon i {
+	font-size: 28px;
+	color: #ffffff;
+	transition: transform 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.service-card-modern:hover .service-card-icon i {
+	animation: iconRotate 0.6s ease;
+}
+
+/* Icon Animations */
+@keyframes iconBounce {
+	0% {
+		transform: scale(1.12) translateY(0);
+	}
+	50% {
+		transform: scale(1.12) translateY(-8px);
+	}
+	100% {
+		transform: scale(1.12) translateY(0);
+	}
+}
+
+@keyframes iconRotate {
+	0% {
+		transform: rotateY(0deg) rotateZ(0deg);
+	}
+	50% {
+		transform: rotateY(180deg) rotateZ(10deg);
+	}
+	100% {
+		transform: rotateY(360deg) rotateZ(0deg);
+	}
+}
+
+/* Card Title */
+.service-card-title {
+	font-size: 17px;
+	font-weight: 650;
+	color: #0a0e27;
+	margin: 0 0 12px 0;
+	line-height: 1.4;
+	transition: color 0.3s ease;
+}
+
+.service-card-modern:hover .service-card-title {
+	color: #2563eb;
+}
+
+/* Card Description */
+.service-card-description {
+	font-size: 13.5px;
+	color: #767676;
+	line-height: 1.6;
+	margin: 0 0 16px 0;
+	flex-grow: 1;
+}
+
+/* CTA Link */
+.service-card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: #2563eb;
+	font-weight: 500;
+	font-size: 13.5px;
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+	width: fit-content;
+}
+
+.service-card-link:hover {
+	color: #1e40af;
+	transform: translateX(4px);
+}
+
+.service-card-link::after {
+	content: "→";
+	transition: transform 0.3s ease;
+	margin-left: 2px;
+}
+
+.service-card-link:hover::after {
+	transform: translateX(2px);
+}
+
+/* View All Button */
+.services-view-all-wrapper {
+	display: flex;
+	justify-content: center;
+	margin-top: 48px;
+	animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.services-view-all-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 32px;
+	background: var(--color-primary);
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 12px rgba(241, 92, 43, 0.2);
+}
+
+.services-view-all-btn:hover {
+	background: var(--color-secondary);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 20px rgba(241, 92, 43, 0.3);
+}
+
+.services-view-all-btn:active {
+	transform: translateY(0);
+}
+
+.services-view-all-btn i {
+	transition: transform 0.3s ease;
+	font-size: 13px;
+}
+
+.services-view-all-btn.expanded i {
+	transform: rotate(180deg);
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+	.services-modern-grid {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 24px;
+	}
+}
+
+@media (max-width: 768px) {
+	.services-modern-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.service-card-modern {
+		padding: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.service-card-modern {
+		padding: 18px;
+		border-radius: 12px;
+	}
+
+	.services-view-all-btn {
+		padding: 10px 24px;
+		font-size: 14px;
+	}
+}
+
+/* Service Card Lottie Animation */
+.service-card-icon .card-lottie {
+	width: 100%;
+	height: 100%;
 }
 
 /* ============================================================== 

@@ -155,68 +155,6 @@
     <priority>0.7</priority>
   </url>
 
-  <url>
-    <loc>https://trico-makes.vercel.app/blog.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-website-conversion.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-seo-guide.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-branding-guide.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-social-media-planning.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-uiux-explained.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-marketing-types.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-single-with-sidebar.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-with-sidebar.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
   <url>
     <loc>https://trico-makes.vercel.app/free-audit.html</loc>
@@ -239,12 +177,6 @@
     <priority>0.6</priority>
   </url>
 
-  <url>
-    <loc>https://trico-makes.vercel.app/whatsapp-catalog.html</loc>
-    <lastmod>2025-01-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
   <url>
     <loc>https://trico-makes.vercel.app/404.html</loc>
@@ -395,19 +327,6 @@
     <priority>0.75</priority>
   </url>
 
-  <!-- Blog Pages -->
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-with-sidebar.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/blog-single-with-sidebar.html</loc>
-    <lastmod>2026-04-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
 
   <!-- Utility Pages -->
   <url>

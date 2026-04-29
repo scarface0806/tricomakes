@@ -468,6 +468,35 @@
 
 	}); // end document ready function
 
+	/* ==================================================
+	    Services View All Toggle
+	================================================== */
+	window.toggleServices = function() {
+		const grid = document.getElementById('servicesGrid');
+		const btn = document.getElementById('viewAllBtn');
+		const cards = grid.querySelectorAll('[data-service-index]');
+		
+		if (btn.classList.contains('expanded')) {
+			// Show Less
+			btn.classList.remove('expanded');
+			btn.innerHTML = '<span>View All Services</span><i class="fas fa-chevron-down"></i>';
+			
+			cards.forEach((card, index) => {
+				if (index >= 6) {
+					card.style.display = 'none';
+				}
+			});
+		} else {
+			// View All
+			btn.classList.add('expanded');
+			btn.innerHTML = '<span>Show Less</span><i class="fas fa-chevron-up"></i>';
+			
+			cards.forEach((card) => {
+				card.style.display = 'flex';
+			});
+		}
+	};
+
 
 	$(window).scroll(function() {
 		/* ==================================================
