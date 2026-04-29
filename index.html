@@ -72,7 +72,7 @@
     <!-- Lottie Animation Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js" defer></script>
     
-    <!-- Lottie Banner Animation Styles -->
+    <!-- Lottie Animation Styles -->
     <style>
     #lottie-banner {
         width: 100%;
@@ -81,9 +81,23 @@
         margin: 0 auto;
     }
     
+    .card-lottie {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     @media (max-width: 768px) {
         #lottie-banner {
             max-width: 100%;
+        }
+        
+        .card-lottie {
+            width: 50px;
+            height: 50px;
         }
     }
     </style>
@@ -540,7 +554,7 @@
                             </div>
                         </div>
                         <div class="thumb">
-                            <div id="lottie-banner"></div>
+                            <div id="lottie-banner">  </div>
                             <img src="assets/img/shape/1.png" alt="Image Not Found" loading="lazy"> <img src="assets/img/shape/17.png" loading="lazy"
                                 alt="Image Not Found" loading="lazy">
                         </div>
@@ -605,8 +619,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp">
-                    <div class="service-style-one-item"> <img src="assets/img/icon/1.svg" loading="lazy"
-                            alt="Trico Makes service icon" loading="lazy">
+                    <div class="service-style-one-item">
+                        <div class="card-lottie" id="lottie-service-website-design"></div>
                         <h4><a href="service-website-design-development.html">Website Design &amp; Development</a></h4>
                         <p>Fast, professional websites that convert visitors into customers and leads.</p> <a
                             href="service-website-design-development.html" class="btn-style-four">
@@ -615,8 +629,8 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-30 active wow fadeInUp" data-wow-delay="100ms">
-                    <div class="service-style-one-item active"> <img src="assets/img/icon/2.svg" loading="lazy"
-                            alt="Trico Makes service icon" loading="lazy">
+                    <div class="service-style-one-item active">
+                        <div class="card-lottie" id="lottie-uiux"></div>
                         <h4><a href="service-ui-ux-design.html">UI/UX Design</a></h4>
                         <p>Intuitive interfaces designed for user satisfaction and engagement.</p> <a
                             href="service-ui-ux-design.html" class="btn-style-four">
@@ -635,8 +649,8 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="300ms">
-                    <div class="service-style-one-item"> <img src="assets/img/icon/4.svg" loading="lazy"
-                            alt="Trico Makes service icon" loading="lazy">
+                    <div class="service-style-one-item">
+                        <div class="card-lottie" id="lottie-logo"></div>
                         <h4><a href="service-logo-design.html">Logo Design</a></h4>
                         <p>Memorable logos and brand marks that stand out in your market.</p> <a
                             href="service-logo-design.html" class="btn-style-four">
@@ -685,8 +699,8 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="800ms">
-                    <div class="service-style-one-item"> <img src="assets/img/icon/1.svg" loading="lazy"
-                            alt="Trico Makes service icon" loading="lazy">
+                    <div class="service-style-one-item">
+                        <div class="card-lottie" id="lottie-dm"></div>
                         <h4><a href="service-digital-marketing.html">Digital Marketing</a></h4>
                         <p>Strategic campaigns designed to attract the right audience and drive measurable results.</p> <a
                             href="service-digital-marketing.html" class="btn-style-four">
@@ -695,8 +709,8 @@
                     </div>
                 </div>
                 <div class="col-xl-3 col-md-6 mb-30 wow fadeInUp" data-wow-delay="900ms">
-                    <div class="service-style-one-item"> <img src="assets/img/icon/2.svg" loading="lazy"
-                            alt="Trico Makes service icon" loading="lazy">
+                    <div class="service-style-one-item">
+                        <div class="card-lottie" id="lottie-seo"></div>
                         <h4><a href="service-seo.html">SEO (Search Engine Optimization)</a></h4>
                         <p>Boost your Google rankings and attract qualified visitors searching for your services.</p> <a
                             href="service-seo.html" class="btn-style-four">
@@ -1315,9 +1329,10 @@
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/faq-accordion.js" defer></script>
 
-    <!-- Lottie Banner Animation Initialization -->
+    <!-- Lottie Animation Initialization -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Banner Animation
         if (document.getElementById('lottie-banner')) {
             lottie.loadAnimation({
                 container: document.getElementById('lottie-banner'),
@@ -1325,6 +1340,61 @@
                 loop: true,
                 autoplay: true,
                 path: 'assets/animation/home dashboard.json'
+            });
+        }
+        
+        // Service Card Animation - Website Design & Development
+        if (document.getElementById('lottie-service-website-design')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-service-website-design'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/Website-Design-Development.json'
+            });
+        }
+        
+        // Service Card Animation - UI/UX Design
+        if (document.getElementById('lottie-uiux')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-uiux'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/ui-ux-design.json'
+            });
+        }
+        
+        // Service Card Animation - Logo Design
+        if (document.getElementById('lottie-logo')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-logo'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/logo-design.json'
+            });
+        }
+        
+        // Service Card Animation - Digital Marketing
+        if (document.getElementById('lottie-dm')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-dm'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/digital-marketing.json'
+            });
+        }
+        
+        // Service Card Animation - SEO
+        if (document.getElementById('lottie-seo')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-seo'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/seo.json'
             });
         }
     });
