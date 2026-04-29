@@ -26,7 +26,7 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link href="assets/css/unit-test.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
     
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
@@ -111,7 +111,17 @@
                 <div class="nav-right">
                     <div class="attr-right"> <div class="attr-nav attr-box">
                             <ul>
-                                <li class="button"> <a class="smooth-menu" target="_blank" href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">Start a Project <i class="fas fa-comment-alt"></i></a> </li>
+                                <li class="button">
+                                    <a href="free-audit.html" class="cssbuttons-io-button">
+                                        Get Free Audit
+                                        <div class="icon">
+                                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -120,25 +130,62 @@
         </nav>
     </header>
 
-    <div class="blog-post-hero default-padding bg-gray">
-        <div class="container">
+    <!-- Blog Hero Section with Featured Image -->
+    <div class="blog-hero-premium" style="background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%); padding: 100px 0; position: relative; overflow: hidden;">
+        <div class="hero-shape" style="position: absolute; top: -50px; right: -100px; width: 400px; height: 400px; background: rgba(255,255,255,0.1); border-radius: 50%; z-index: 0;"></div>
+        <div class="hero-shape" style="position: absolute; bottom: -80px; left: -150px; width: 500px; height: 500px; background: rgba(255,255,255,0.08); border-radius: 50%; z-index: 0;"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="blog-post-header">
-                        <div class="blog-category" style="background: #06b6d4; display: inline-block; margin-bottom: 15px;">Digital Marketing</div>
-                        <h1>The Difference Between SEO, SMM, and Paid Ads — Explained Simply</h1>
-                        <p class="blog-meta">5 min read</p>
+                    <div class="blog-hero-content text-center" style="color: white;">
+                        <div class="blog-category-premium" style="display: inline-block; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); color: white; padding: 8px 16px; border-radius: 30px; font-size: 14px; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.3);">Digital Marketing</div>
+                        <h1 style="font-size: 56px; font-weight: 800; margin: 25px 0; line-height: 1.2; color: white;">The Difference Between SEO, SMM, and Paid Ads — Explained Simply</h1>
+                        <p style="font-size: 18px; color: rgba(255,255,255,0.95); margin: 20px 0; line-height: 1.6;">Discover the key differences between SEO, social media marketing, and paid ads to choose the right strategy for your business goals</p>
+                        
+                        <!-- Blog Meta -->
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-top: 30px; color: rgba(255,255,255,0.9); flex-wrap: wrap;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-clock"></i>
+                                <span>5 min read</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-calendar"></i>
+                                <span>April 29, 2026</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-user"></i>
+                                <span>Trico Makes</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="blog-content-area default-padding">
+    <!-- Blog Content -->
+    <div class="blog-content-premium default-padding" style="background: #fafbfc;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="blog-post-content">
+                    <!-- Reading Progress Bar -->
+                    <div style="height: 4px; background: #e9ecef; border-radius: 2px; margin-bottom: 40px; overflow: hidden;">
+                        <div id="readingProgress" style="height: 100%; background: linear-gradient(90deg, #f15c2b, #f69323); width: 0%; transition: width 0.3s ease;"></div>
+                    </div>
+
+                    <!-- Social Share Top -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #e9ecef;">
+                        <span style="font-weight: 600; color: #666;">Share this article</span>
+                        <div style="display: flex; gap: 12px;">
+                            <a href="https://twitter.com/intent/tweet?url=https://trico-makes.vercel.app/blog-marketing-types.html&text=SEO%20SMM%20Paid%20Ads%20Explained" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #f0f2f5; color: #f15c2b; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#f15c2b';this.style.color='white';" onmouseout="this.style.background='#f0f2f5';this.style.color='#f15c2b';"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://trico-makes.vercel.app/blog-marketing-types.html" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #f0f2f5; color: #f15c2b; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#f15c2b';this.style.color='white';" onmouseout="this.style.background='#f0f2f5';this.style.color='#f15c2b';"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://wa.me/?text=Digital%20Marketing%20Types%20Explained%20https://trico-makes.vercel.app/blog-marketing-types.html" target="_blank" style="width: 40px; height: 40px; border-radius: 50%; background: #f0f2f5; color: #f15c2b; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" onmouseover="this.style.background='#f15c2b';this.style.color='white';" onmouseout="this.style.background='#f0f2f5';this.style.color='#f15c2b';"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post Content with Enhanced Styling -->
+                    <article class="blog-post-content-premium" style="background: white; padding: 50px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
                         <p>Business owners often ask us: "Should I invest in SEO, social media marketing, or paid ads?" The truth is, it's not an either-or question. These are three different digital marketing strategies with different costs, timelines, and benefits. Understanding each helps you choose the right mix for your business goals. Let's break them down.</p>
 
                         <h3>SEO (Search Engine Optimization)</h3>
@@ -176,30 +223,22 @@
                         <p><strong>For best results:</strong> Don't choose just one. A balanced approach using all three creates sustainable, multi-channel growth. Each strategy feeds the others: SEO improves content quality (helps social sharing), social media builds authority (helps SEO), and paid ads validate what works (informs content strategy).</p>
 
                         <p><strong>The Bottom Line:</strong> SEO is a long-term investment, SMM builds relationships, and Paid Ads deliver immediate results. The best strategy combines all three for maximum impact.</p>
+                    </article>
+
+                    <!-- Author Card -->
+                    <div style="background: white; padding: 30px; border-radius: 12px; margin-top: 40px; border: 1px solid #e9ecef; display: flex; align-items: center; gap: 25px;">
+                        <div style="width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, #f15c2b, #f69323); display: flex; align-items: center; justify-content: center; color: white; font-size: 36px; font-weight: 700; flex-shrink: 0;">T</div>
+                        <div>
+                            <h4 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #1a1a1a;">Trico Makes</h4>
+                            <p style="margin: 0 0 12px 0; color: #f15c2b; font-weight: 600;">Digital Design & Marketing Studio</p>
+                            <p style="margin: 0; color: #666; font-size: 14px; line-height: 1.6;">We help businesses build stronger brands, better websites, and generate more leads through strategic design and digital marketing.</p>
+                        </div>
                     </div>
 
-                    <div class="blog-cta-box" style="background: #f3f4f6; padding: 40px; border-radius: 12px; margin-top: 50px; text-align: center;">
-                        <h3>Need Help With This For Your Business?</h3>
-                        <p style="font-size: 16px; color: #555; margin: 15px 0 25px;">Trico Makes handles design, SEO, and marketing so you can focus on running your business.</p>
-                        <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="btn-style-regular" target="_blank"><span>Talk to Us</span> <i class="fas fa-arrow-right"></i></a>
-                    </div>
-
-                    <div style="margin-top: 40px; text-align: center;">
-                        <a href="blog.html" style="color: #FF6A3D; font-weight: 500;">← Back to All Articles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="promot-box-area default-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-8 offset-xl-2">
-                    <div class="promo-box-items text-center">
-                        <h2>Ready to build a stronger brand online?</h2>
-                        <h4>For a quick response: <a href="https://wa.me/917871361025"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a></h4>
-                        <div class="button mt-40"> <a class="btn-style-regular" href="index.html#contact"><span>Get Started</span> <i class="fas fa-arrow-right"></i></a> </div>
+                    <!-- Navigation -->
+                    <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid #e9ecef; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+                        <a href="blog.html" style="color: #f15c2b; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';"><i class="fas fa-arrow-left"></i> Back to All Articles</a>
+                        <a href="blog.html" style="color: #f15c2b; font-weight: 600; text-decoration: none; transition: all 0.3s ease;" onmouseover="this.style.opacity='0.7';" onmouseout="this.style.opacity='1';">View More Articles <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
                     </div>
                 </div>
             </div>
@@ -268,8 +307,22 @@
         </svg>
     </a>
     <div class="whatsapp-tooltip">Chat with us</div>
+
+    <!-- Reading Progress Bar Script -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressBar = document.getElementById('readingProgress');
+            if (progressBar) {
+                progressBar.style.width = scrolled + '%';
+            }
+        });
+    </script>
 </body>
 </html>
+
 
 
 

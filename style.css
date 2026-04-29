@@ -232,6 +232,275 @@ Sidebar heading:  22px 'Barlow', sans-serif
     margin-bottom: 16px;
 }
 
+/* ========== FAQ Section (Modern Premium Design) ========== */
+
+.faq-section {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.faq-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.faq-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+}
+
+.faq-header p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FAQ Container */
+.faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FAQ Item Card */
+.faq-item {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-color: #e0e0e0;
+}
+
+/* Active/Open State - Modern Dark Style */
+.faq-item.active {
+    background: #0f0f0f;
+    border-color: #ff7a00;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.faq-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #ff7a00;
+}
+
+/* FAQ Question Button */
+.faq-question {
+    width: 100%;
+    padding: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: left;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+}
+
+.faq-question:hover {
+    color: #ff7a00;
+    background: rgba(255, 122, 0, 0.02);
+}
+
+.faq-question:focus-visible {
+    outline: 2px solid #ff7a00;
+    outline-offset: -2px;
+}
+
+/* Active Question Styling */
+.faq-item.active .faq-question {
+    background: transparent;
+    color: #ffffff;
+}
+
+.faq-item.active .faq-question:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+/* Question Text Container */
+.faq-question span:first-child {
+    flex: 1;
+    line-height: 1.5;
+}
+
+/* FAQ Icon (Chevron) */
+.faq-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    color: #ff7a00;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 16px;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+}
+
+/* Rotate Icon on Active */
+.faq-item.active .faq-icon {
+    color: #ff7a00;
+    transform: rotate(180deg);
+}
+
+/* FAQ Answer Container */
+.faq-answer {
+    padding: 0 24px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+/* Show/Open Answer */
+.faq-item.active .faq-answer {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0 24px 24px 24px;
+}
+
+/* Answer Text */
+.faq-answer p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+    color: #666;
+}
+
+.faq-item.active .faq-answer p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 60px 0;
+    }
+
+    .faq-header {
+        margin-bottom: 40px;
+    }
+
+    .faq-header h2 {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .faq-header p {
+        font-size: 15px;
+    }
+
+    .faq-items {
+        gap: 12px;
+    }
+
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 15px;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+    }
+
+    .faq-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 16px;
+        margin-left: 12px;
+    }
+}
+    }
+
+    .faq-question {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+    }
+
+    .faq-answer.show {
+        padding: 0 20px 16px 20px;
+    }
+
+    .faq-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 18px;
+    }
+}
+
+.whatsapp-catalog-card:hover {
+    border-color: #25D366;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.15);
+    transform: translateY(-4px);
+}
+
+.whatsapp-catalog-card img {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    display: block;
+}
+
+.whatsapp-catalog-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #212529;
+}
+
+.whatsapp-catalog-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.whatsapp-catalog-card .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 16px;
+}
+
 /* WhatsApp Banner */
 .whatsapp-banner {
     background: linear-gradient(135deg, #25D366 0%, #1eaa4f 100%);
@@ -638,6 +907,12 @@ body.popup-open {
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.blog-category-premium {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .blog-card h3 {

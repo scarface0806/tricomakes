@@ -38,7 +38,289 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link href="assets/css/unit-test.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
+
+    <!-- Blog Page Styles -->
+    <style>
+        /* Navbar Enhancement for Dark Hero */
+        header .navbar {
+            background: transparent;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 100;
+        }
+
+        /* Dark Hero Section */
+        .blog-hero-section {
+            background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 120px 20px 80px !important;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        /* Decorative Background Elements */
+        .blog-hero-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(241, 92, 43, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .blog-hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(26, 200, 226, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Hero Content Container */
+        .blog-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero Label/Badge */
+        .blog-hero-label {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 20px;
+            opacity: 0.85;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Hero Title */
+        .blog-hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        /* Hero Subtitle */
+        .blog-hero-subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Search Bar Container */
+        .blog-search-container {
+            margin: 50px 0 30px 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Search Bar */
+        .blog-search-bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: #1f1f1f;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            padding: 0 24px;
+            height: 56px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-search-bar:hover {
+            border-color: rgba(241, 92, 43, 0.3);
+            box-shadow: 0 20px 60px rgba(241, 92, 43, 0.1);
+        }
+
+        .blog-search-bar:focus-within {
+            border-color: rgba(241, 92, 43, 0.5);
+            box-shadow: 0 20px 60px rgba(241, 92, 43, 0.15);
+            background: #252525;
+        }
+
+        /* Search Icon */
+        .blog-search-icon {
+            color: #f15c2b;
+            font-size: 18px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+
+        /* Search Input */
+        .blog-search-input {
+            flex: 1;
+            border: none;
+            padding: 0;
+            font-size: 16px;
+            background: transparent;
+            outline: none;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .blog-search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Filter Pills Container */
+        .blog-filters-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Individual Filter Pill */
+        .blog-filter-btn {
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Active Filter Pill */
+        .blog-filter-btn.active,
+        .blog-filter-btn[data-filter="all"] {
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
+            color: white;
+            border-color: #f15c2b;
+            box-shadow: 0 10px 30px rgba(241, 92, 43, 0.3);
+        }
+
+        /* Inactive Filter Pill */
+        .blog-filter-btn:not(.active) {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Filter Pill Hover */
+        .blog-filter-btn:not(.active):hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.05);
+        }
+
+        .blog-filter-btn.active:hover {
+            transform: scale(1.08);
+            box-shadow: 0 15px 40px rgba(241, 92, 43, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .blog-hero-section {
+                padding: 80px 20px 50px !important;
+            }
+
+            .blog-hero-title {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+
+            .blog-hero-label {
+                font-size: 11px;
+                margin-bottom: 16px;
+            }
+
+            .blog-hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 0;
+            }
+
+            .blog-search-container {
+                margin: 40px 0 24px 0;
+            }
+
+            .blog-search-bar {
+                height: 48px;
+                padding: 0 18px;
+            }
+
+            .blog-search-input {
+                font-size: 14px;
+            }
+
+            .blog-search-icon {
+                font-size: 16px;
+                margin-right: 10px;
+            }
+
+            .blog-filters-container {
+                gap: 10px;
+                overflow-x: auto;
+                padding: 0 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .blog-filter-btn {
+                padding: 8px 16px;
+                font-size: 12px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero-section {
+                padding: 60px 16px 40px !important;
+            }
+
+            .blog-hero-title {
+                font-size: 28px;
+            }
+
+            .blog-hero-subtitle {
+                font-size: 14px;
+            }
+
+            .blog-search-bar {
+                height: 44px;
+                padding: 0 14px;
+            }
+
+            .blog-search-icon {
+                font-size: 14px;
+            }
+        }
+    </style>
 
     <!-- GA4: Replace GA_MEASUREMENT_ID with your 
          actual Measurement ID from Google Analytics -->
@@ -111,7 +393,17 @@
                 <div class="nav-right">
                     <div class="attr-right"> <div class="attr-nav attr-box">
                             <ul>
-                                <li class="button"> <a class="smooth-menu" target="_blank" href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team">Start a Project <i class="fas fa-comment-alt"></i></a> </li>
+                                <li class="button">
+                                    <a href="free-audit.html" class="cssbuttons-io-button">
+                                        Get Free Audit
+                                        <div class="icon">
+                                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -121,39 +413,12 @@
     </header>
 
     <!-- Blog Hero Section with Search & Filters -->
-    <div class="blog-hero-section" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 80px 0 60px; color: white;">
+    <div class="blog-hero-section">
         <div class="container">
-            <div class="row align-items-center mb-50">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="blog-hero-content">
-                        <span style="display: inline-block; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 15px; opacity: 0.8;">Blog & Resources</span>
-                        <h1 style="font-size: 48px; font-weight: 700; margin-bottom: 15px;">Insights for Growing Businesses</h1>
-                        <p style="font-size: 16px; opacity: 0.9; line-height: 1.6; margin-bottom: 0;">Practical tips on design, marketing, and digital growth — written by the Trico Makes team.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div style="position: relative; margin-bottom: 30px;">
-                        <div style="position: relative; display: flex; align-items: center; background: white; border-radius: 50px; padding: 0 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                            <i style="color: #f15c2b; font-size: 18px; margin-right: 10px;" class="fas fa-search"></i>
-                            <input type="text" id="blog-search" placeholder="Search articles..." style="width: 100%; border: none; padding: 16px 10px; font-size: 15px; background: transparent; outline: none;">
-                        </div>
-                    </div>
-
-                    <!-- Filter Pills -->
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-                        <button class="blog-filter-btn" data-filter="all" style="background: #f15c2b; color: white; border: none; padding: 10px 20px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">All</button>
-                        <button class="blog-filter-btn" data-filter="website-design" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Website Design</button>
-                        <button class="blog-filter-btn" data-filter="seo" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">SEO</button>
-                        <button class="blog-filter-btn" data-filter="branding" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Branding</button>
-                        <button class="blog-filter-btn" data-filter="social-media" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Social Media</button>
-                        <button class="blog-filter-btn" data-filter="uiux-design" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">UI/UX</button>
-                        <button class="blog-filter-btn" data-filter="digital-marketing" style="background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); padding: 8px 18px; border-radius: 25px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;">Digital Marketing</button>
-                    </div>
-                </div>
+            <div class="blog-hero-content text-center mb-5">
+                <span class="blog-hero-label">Blog & Resources</span>
+                <h1 class="blog-hero-title">Insights for Growing Businesses</h1>
+                <p class="blog-hero-subtitle">Practical tips on design, marketing, and digital growth — written by the Trico Makes team.</p>
             </div>
         </div>
     </div>
@@ -622,6 +887,7 @@
 </body>
 
 </html>
+
 
 
 

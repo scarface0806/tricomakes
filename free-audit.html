@@ -53,42 +53,77 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link href="assets/css/unit-test.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
     <!-- ========== End Stylesheet ========== -->
     
     <!-- Free Audit Page Styles -->
     <style>
         /* Hero Section */
         .audit-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
             color: white;
-            padding: 100px 0;
+            padding: 150px 20px 80px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .audit-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .audit-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50%;
+        }
+
+        .audit-hero > .container {
+            position: relative;
+            z-index: 1;
         }
 
         .audit-hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
         .audit-hero-label {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 10px 24px;
             border-radius: 50px;
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 24px;
+            color: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .audit-hero p {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.95);
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 48px;
             line-height: 1.6;
         }
 
@@ -96,7 +131,7 @@
         .trust-badges {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 32px;
             flex-wrap: wrap;
             margin-top: 40px;
         }
@@ -104,21 +139,22 @@
         .trust-badge {
             display: flex;
             align-items: center;
-            font-size: 14px;
+            font-size: 15px;
             color: rgba(255, 255, 255, 0.95);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .trust-badge:before {
             content: "✓";
-            margin-right: 10px;
-            font-size: 18px;
+            margin-right: 12px;
+            font-size: 20px;
             font-weight: 700;
+            display: inline-block;
         }
 
         /* What You Get Section */
         .audit-features-section {
-            padding: 80px 0;
+            padding: 80px 20px;
             background: white;
         }
 
@@ -128,96 +164,129 @@
         }
 
         .audit-features-heading h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 15px;
+            font-size: 42px;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 12px;
+        }
+
+        .audit-features-heading p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .audit-features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .audit-feature-item {
             text-align: center;
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+            padding: 40px 32px;
+            background: #fafbfc;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e9ecef;
+            position: relative;
+        }
+
+        .audit-feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f15c2b 0%, #f69323 100%);
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .audit-feature-item:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(241, 92, 43, 0.12);
+            transform: translateY(-8px);
+            border-color: #f15c2b;
+        }
+
+        .audit-feature-item:hover::before {
+            opacity: 1;
         }
 
         .audit-feature-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
+            font-size: 52px;
+            margin-bottom: 24px;
+            display: inline-block;
         }
 
         .audit-feature-item h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            color: #222;
+            color: #212529;
             margin-bottom: 12px;
         }
 
         .audit-feature-item p {
-            font-size: 14px;
+            font-size: 15px;
             color: #666;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Form Section */
         .audit-form-section {
-            padding: 80px 0;
-            background: #f8f8f8;
+            padding: 80px 20px;
+            background: #fafbfc;
         }
 
         .audit-form-heading {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .audit-form-heading h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #222;
-            margin-bottom: 15px;
+            font-size: 42px;
+            font-weight: 800;
+            color: #212529;
+            margin-bottom: 12px;
+        }
+
+        .audit-form-heading p {
+            font-size: 18px;
+            color: #666;
         }
 
         .audit-form-container {
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto;
             background: white;
-            padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            padding: 60px 48px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e9ecef;
         }
 
         .audit-form-group {
-            margin-bottom: 25px;
+            margin-bottom: 28px;
         }
 
         .audit-form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            font-size: 14px;
-            color: #333;
+            font-size: 15px;
+            color: #212529;
         }
 
         .audit-form-group input,
         .audit-form-group select {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
             font-family: inherit;
             transition: all 0.3s ease;
         }
@@ -225,8 +294,8 @@
         .audit-form-group input:focus,
         .audit-form-group select:focus {
             outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #f15c2b;
+            box-shadow: 0 0 0 4px rgba(241, 92, 43, 0.1);
         }
 
         .audit-form-group input::placeholder {
@@ -235,29 +304,29 @@
 
         .audit-form-required:after {
             content: " *";
-            color: #ff6b35;
+            color: #f15c2b;
         }
 
         .audit-form-btn {
             width: 100%;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .audit-form-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(241, 92, 43, 0.3);
         }
 
         .audit-form-btn:disabled {
@@ -267,20 +336,20 @@
 
         .audit-form-note {
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
             color: #999;
-            margin-top: 20px;
-            line-height: 1.6;
+            margin-top: 24px;
+            line-height: 1.7;
         }
 
         .audit-form-success {
             display: none;
             text-align: center;
-            padding: 40px 30px;
-            background: #f0fdf4;
-            border: 2px solid #10b981;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            padding: 48px 40px;
+            background: linear-gradient(135deg, rgba(241, 92, 43, 0.05) 0%, rgba(246, 147, 35, 0.03) 100%);
+            border: 2px solid #f15c2b;
+            border-radius: 16px;
+            margin-bottom: 32px;
         }
 
         .audit-form-success.show {
@@ -289,15 +358,15 @@
         }
 
         .audit-form-success h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            color: #10b981;
-            margin-bottom: 10px;
+            color: #f15c2b;
+            margin-bottom: 12px;
         }
 
         .audit-form-success p {
-            font-size: 14px;
-            color: #059669;
+            font-size: 15px;
+            color: #666;
         }
 
         @keyframes slideIn {
@@ -313,82 +382,123 @@
 
         /* Social Proof Section */
         .audit-testimonials-section {
-            padding: 80px 0;
+            padding: 80px 20px;
             background: white;
         }
 
         .audit-testimonials-heading {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .audit-testimonials-heading h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #222;
+            font-size: 42px;
+            font-weight: 800;
+            color: #212529;
         }
 
         .audit-testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
         }
 
         .audit-testimonial-card {
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 12px;
-            border-left: 4px solid #ff6b35;
+            padding: 40px 36px;
+            background: #fafbfc;
+            border-radius: 16px;
+            border-left: 5px solid #f15c2b;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .audit-testimonial-card:hover {
+            box-shadow: 0 8px 24px rgba(241, 92, 43, 0.1);
+            transform: translateY(-4px);
         }
 
         .audit-testimonial-quote {
-            font-size: 15px;
+            font-size: 16px;
             color: #555;
             line-height: 1.8;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-style: italic;
         }
 
         .audit-testimonial-author {
-            font-weight: 600;
-            color: #333;
-            font-size: 14px;
+            font-weight: 700;
+            color: #212529;
+            font-size: 15px;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            .audit-hero {
+                padding: 80px 20px 40px;
+            }
+
             .audit-hero h1 {
+                font-size: 36px;
+            }
+
+            .audit-hero p {
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+
+            .trust-badges {
+                gap: 24px;
+            }
+
+            .trust-badge {
+                font-size: 14px;
+            }
+
+            .audit-features-heading h2,
+            .audit-form-heading h2,
+            .audit-testimonials-heading h2 {
                 font-size: 32px;
+            }
+
+            .audit-features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .audit-feature-item {
+                padding: 32px 24px;
+            }
+
+            .audit-form-container {
+                padding: 40px 28px;
+            }
+
+            .audit-form-group {
+                margin-bottom: 20px;
+            }
+
+            .audit-form-btn {
+                padding: 14px 24px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .audit-hero h1 {
+                font-size: 28px;
             }
 
             .audit-hero p {
                 font-size: 16px;
             }
 
-            .trust-badges {
-                gap: 20px;
-            }
-
-            .trust-badge {
-                font-size: 12px;
-            }
-
-            .audit-features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .audit-features-heading h2,
+            .audit-form-heading h2,
+            .audit-testimonials-heading h2 {
+                font-size: 28px;
             }
 
             .audit-form-container {
-                padding: 30px;
-            }
-
-            .audit-form-group {
-                margin-bottom: 18px;
-            }
-
-            .audit-form-btn {
-                padding: 12px 20px;
-                font-size: 14px;
+                padding: 32px 20px;
             }
         }
 
@@ -543,7 +653,15 @@
                         <div class="attr-nav attr-box">
                             <ul>
                                 <li class="button">
-                                    <a href="free-audit.html" style="display: inline-flex; align-items: center; gap: 8px; background: #ff6b35; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Get Free Audit <i class="fas fa-check-circle"></i></a>
+                                    <a href="free-audit.html" class="cssbuttons-io-button">
+                                        Get Free Audit
+                                        <div class="icon">
+                                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -573,6 +691,7 @@
         <div class="container">
             <div class="audit-features-heading">
                 <h2>What Your Free Audit Covers</h2>
+                <p>A comprehensive review of your website's performance, design, and conversion potential</p>
             </div>
             <div class="audit-features-grid">
                 <!-- Feature 1 -->
@@ -625,6 +744,7 @@
         <div class="container">
             <div class="audit-form-heading">
                 <h2>Request Your Free Audit</h2>
+                <p>Fill out the form below and we'll personally review your website within 48 hours</p>
             </div>
             <div class="audit-form-container">
                 <div class="audit-form-success" id="successMessage">
@@ -844,3 +964,4 @@ Please review my website and send the audit report.`;
 </body>
 
 </html>
+

@@ -53,136 +53,225 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link href="assets/css/unit-test.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
     <!-- ========== End Stylesheet ========== -->
     
     <!-- Pricing Page Specific Styles -->
     <style>
-        /* Pricing Card Styles */
+        body {
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Premium Pricing Section Heading */
+        .pricing-section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-section-heading h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .pricing-section-heading p {
+            font-size: 18px;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Premium Pricing Card Styles */
         .pricing-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
         }
 
         .pricing-card {
             background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 40px 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            padding: 48px 36px;
             position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
             display: flex;
             flex-direction: column;
         }
 
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f15c2b 0%, #f69323 100%);
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .pricing-card:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-            transform: translateY(-5px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+            transform: translateY(-12px);
+            border-color: #f15c2b;
+        }
+
+        .pricing-card:hover::before {
+            opacity: 1;
         }
 
         .pricing-card.most-popular {
-            border: 2px solid #ff6b35;
-            transform: scale(1.05);
+            border: 2px solid #f15c2b;
+            transform: scale(1.02);
+            background: linear-gradient(135deg, rgba(241, 92, 43, 0.02) 0%, rgba(246, 147, 35, 0.01) 100%);
+        }
+
+        .pricing-card.most-popular::before {
+            opacity: 1;
+            height: 6px;
         }
 
         .pricing-card.most-popular:hover {
-            transform: scale(1.05) translateY(-5px);
+            transform: scale(1.02) translateY(-12px);
         }
 
         .pricing-badge {
             display: inline-block;
-            background: #ff6b35;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 8px 16px;
+            padding: 8px 20px;
             border-radius: 50px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             width: fit-content;
+            letter-spacing: 1px;
         }
 
         .pricing-badge.starter {
-            background: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
 
         .pricing-badge.popular {
-            background: #ff6b35;
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
+            box-shadow: 0 8px 20px rgba(241, 92, 43, 0.3);
         }
 
         .pricing-badge.premium {
-            background: #00d084;
+            background: linear-gradient(135deg, #00d084 0%, #1eaa4f 100%);
         }
 
         .pricing-card-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #222;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #1a1a1a;
         }
 
         .pricing-card-price {
-            font-size: 36px;
-            font-weight: 700;
-            color: #ff6b35;
-            margin-bottom: 10px;
+            font-size: 48px;
+            font-weight: 800;
+            color: #f15c2b;
+            margin-bottom: 8px;
+            line-height: 1;
         }
 
         .pricing-card-price-label {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            font-weight: 400;
+            font-size: 15px;
+            color: #999;
+            margin-bottom: 24px;
+            font-weight: 500;
         }
 
         .pricing-card-timeline {
-            font-size: 14px;
-            color: #999;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
             border-bottom: 1px solid #f0f0f0;
+            font-weight: 500;
         }
 
         .pricing-card-description {
-            font-size: 14px;
+            font-size: 15px;
             color: #666;
-            margin: 15px 0;
+            margin: 20px 0;
             font-weight: 500;
         }
 
         .pricing-card-features {
             list-style: none;
-            padding: 20px 0;
+            padding: 28px 0;
             flex-grow: 1;
         }
 
         .pricing-card-features li {
-            padding: 10px 0;
-            font-size: 14px;
+            padding: 12px 0;
+            font-size: 15px;
             color: #555;
             display: flex;
             align-items: center;
+            line-height: 1.6;
         }
 
         .pricing-card-features li:before {
             content: "✓";
-            color: #ff6b35;
-            font-weight: 700;
-            margin-right: 12px;
-            font-size: 16px;
+            color: #f15c2b;
+            font-weight: 800;
+            margin-right: 16px;
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
         .pricing-card-cta {
             margin-top: auto;
-            padding-top: 20px;
+            padding-top: 28px;
+            border-top: 1px solid #f0f0f0;
         }
 
         .pricing-card-cta .btn-style-regular {
             width: 100%;
             text-align: center;
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
+            padding: 16px 32px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .pricing-card-cta .btn-style-regular:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(241, 92, 43, 0.3);
+            text-decoration: none;
+            color: white;
         }
 
         /* Pricing Table Styles */
@@ -190,136 +279,108 @@
             width: 100%;
             border-collapse: collapse;
             background: white;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            margin-bottom: 80px;
         }
 
         .pricing-table thead {
-            background: #f8f8f8;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
         }
 
         .pricing-table th {
-            padding: 20px;
+            padding: 24px;
             text-align: left;
             font-weight: 700;
-            color: #333;
-            font-size: 14px;
+            color: white;
+            font-size: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 2px solid #e0e0e0;
         }
 
         .pricing-table td {
-            padding: 18px 20px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 14px;
+            padding: 20px 24px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 15px;
             color: #555;
         }
 
         .pricing-table tbody tr:nth-child(even) {
-            background: #fafafa;
+            background: #f8f9fa;
         }
 
         .pricing-table tbody tr:hover {
-            background: #f5f5f5;
+            background: #f0f1f3;
         }
 
         .pricing-table tbody tr:last-child td {
             border-bottom: none;
         }
 
-        /* FAQ Styles */
-        .faq-item {
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            font-weight: 600;
-            font-size: 16px;
-            color: #222;
-            transition: all 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: #f8f8f8;
-        }
-
-        .faq-question.active {
-            background: #f0f0f0;
-        }
-
-        .faq-toggle {
-            font-size: 20px;
-            transition: transform 0.3s ease;
-            color: #ff6b35;
-        }
-
-        .faq-question.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            font-size: 14px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .faq-answer.show {
-            padding: 20px;
-            max-height: 500px;
-        }
-
-        /* CTA Banner */
+        /* Premium CTA Banner */
         .pricing-cta-banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            padding: 60px 40px;
+            background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%);
+            border-radius: 16px;
+            padding: 80px 60px;
             text-align: center;
             color: white;
-            margin: 60px 0;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(241, 92, 43, 0.2);
+        }
+
+        .pricing-cta-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+        .pricing-cta-banner > div {
+            position: relative;
+            z-index: 1;
         }
 
         .pricing-cta-banner h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 16px;
             color: white;
         }
 
         .pricing-cta-banner p {
-            font-size: 16px;
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            margin-bottom: 32px;
+            color: rgba(255, 255, 255, 0.95);
         }
 
         .pricing-cta-banner .btn-style-regular {
             background: white;
-            color: #667eea;
+            color: #f15c2b;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 700;
         }
 
         .pricing-cta-banner .btn-style-regular:hover {
             background: #f0f0f0;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: #f15c2b;
         }
 
         .pricing-response-time {
-            font-size: 13px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 24px;
+            font-weight: 500;
         }
 
         /* Section Heading */
@@ -347,6 +408,7 @@
             padding: 100px 0;
             text-align: center;
             margin-bottom: 60px;
+            margin-top: 80px;
         }
 
         .pricing-hero h1 {
@@ -374,10 +436,20 @@
             margin: 0 auto;
         }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .pricing-hero h1 {
-                font-size: 32px;
+            .pricing-hero {
+                margin-top: 60px;
+                padding: 80px 20px;
+            }
+
+            .pricing-cards {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .pricing-card {
+                padding: 36px 24px;
             }
 
             .pricing-card.most-popular {
@@ -385,21 +457,68 @@
             }
 
             .pricing-card.most-popular:hover {
-                transform: translateY(-5px);
+                transform: translateY(-12px);
             }
 
-            .pricing-cards {
-                gap: 20px;
+            .pricing-card-price {
+                font-size: 36px;
+            }
+
+            .pricing-card-title {
+                font-size: 24px;
             }
 
             .pricing-table {
-                font-size: 12px;
+                font-size: 13px;
             }
 
             .pricing-table th,
             .pricing-table td {
-                padding: 12px 10px;
+                padding: 16px 12px;
             }
+
+            .pricing-cta-banner {
+                padding: 48px 24px;
+            }
+
+            .pricing-cta-banner h2 {
+                font-size: 32px;
+            }
+
+            .pricing-cta-banner p {
+                font-size: 16px;
+            }
+
+            .pricing-section-heading h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-section-heading h2 {
+                font-size: 28px;
+            }
+
+            .pricing-card-price {
+                font-size: 32px;
+            }
+
+            .pricing-card-title {
+                font-size: 20px;
+            }
+
+            .pricing-card {
+                padding: 28px 16px;
+            }
+
+            .pricing-cta-banner {
+                padding: 40px 16px;
+            }
+
+            .pricing-cta-banner h2 {
+                font-size: 26px;
+            }
+        }
 
             .pricing-cta-banner {
                 padding: 40px 20px;
@@ -542,8 +661,14 @@
                         <div class="attr-nav attr-box">
                             <ul>
                                 <li class="button">
-                                    <a href="free-audit.html" style="display: inline-flex; align-items: center; gap: 8px; background: #ff6b35; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                                        Get Free Audit <i class="fas fa-check-circle"></i>
+                                    <a href="free-audit.html" class="cssbuttons-io-button">
+                                        Get Free Audit
+                                        <div class="icon">
+                                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
                                     </a>
                                 </li>
                             </ul>
@@ -556,19 +681,28 @@
     </header>
 
     <!-- Pricing Hero Section -->
-    <div class="pricing-hero">
-        <div class="container">
-            <div class="pricing-hero-label">Transparent Pricing</div>
-            <h1>Simple, Honest Pricing</h1>
-            <p>No hidden charges. No surprises. Just clear pricing for every stage of your business growth.</p>
+    <div class="pricing-hero" style="background: linear-gradient(135deg, #f15c2b 0%, #f69323 100%); color: white; padding: 120px 20px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -50px; right: -50px; width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+        <div style="position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: rgba(255,255,255,0.03); border-radius: 50%;"></div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 10px 20px; border-radius: 50px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">
+                <span style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">💰 Premium Pricing</span>
+            </div>
+            <h1 style="font-size: 56px; font-weight: 800; margin-bottom: 16px; line-height: 1.2;">Transparent, Simple Pricing</h1>
+            <p style="font-size: 20px; margin-bottom: 0; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">No hidden charges. No surprises. Just honest pricing designed to scale with your business growth from startup to enterprise.</p>
         </div>
     </div>
 
     <!-- Website Design & Development Packages -->
     <div class="default-padding">
         <div class="container">
-            <div class="pricing-section-heading">
-                <h2>Website Design & Development</h2>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="pricing-section-heading">
+                        <h2>Website Design & Development</h2>
+                        <p>Scale-ready websites built for conversion, speed, and growth from day one</p>
+                    </div>
+                </div>
             </div>
             <div class="pricing-cards">
                 <!-- Basic Card -->
@@ -648,8 +782,13 @@
     <!-- Branding Packages -->
     <div class="default-padding bg-gray">
         <div class="container">
-            <div class="pricing-section-heading">
-                <h2>Logo & Branding</h2>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="pricing-section-heading">
+                        <h2>Logo & Branding</h2>
+                        <p>Distinctive brand identities that make lasting impressions and drive recognition</p>
+                    </div>
+                </div>
             </div>
             <div class="pricing-cards">
                 <!-- Logo Only Card -->
@@ -713,8 +852,13 @@
     <!-- Digital Marketing & SEO Packages -->
     <div class="default-padding">
         <div class="container">
-            <div class="pricing-section-heading">
-                <h2>Digital Marketing & SEO</h2>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="pricing-section-heading">
+                        <h2>Digital Marketing & SEO</h2>
+                        <p>Data-driven marketing services designed to increase visibility, traffic, and qualified leads</p>
+                    </div>
+                </div>
             </div>
             <div class="pricing-cards">
                 <!-- SEO Starter Card -->
@@ -832,97 +976,70 @@
     </div>
 
     <!-- FAQ Section -->
-    <div class="default-padding">
-        <div class="container">
-            <div class="pricing-section-heading">
-                <h2>Pricing Questions Answered</h2>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto;">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Are these prices fixed or negotiable?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        These are starting prices. Final cost depends on scope, complexity, and timeline. Contact us for a custom quote — we always find something that works for your budget.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Do you offer EMI or installment payment?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes. For projects above ₹15,000 we offer a simple 50% advance and 50% on delivery structure. For larger projects, milestone-based payments can be arranged.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>What payment methods do you accept?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        We accept UPI, bank transfer, and all major payment apps. We provide a proper invoice for every project.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Is there a refund policy?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        We do not offer refunds after work has begun, but we offer revision rounds on every project to make sure you are fully satisfied with the output.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Can I start with a small package and upgrade later?</span>
-                        <span class="faq-toggle">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Absolutely. Many clients start with a Basic website or Logo Only package and expand to full branding or marketing retainers as their business grows.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Banner -->
-    <div class="pricing-cta-banner">
-        <div class="container">
-            <h2>Not Sure Which Plan Is Right for You?</h2>
-            <p>Tell us about your business and budget. We will recommend the right starting point — no pressure, no commitment.</p>
-            <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team%2C%20I%27d%20like%20to%20discuss%20pricing%20options%20for%20my%20project" class="btn-style-regular" target="_blank">
-                <span>Chat With Us Free</span> <i class="fas fa-arrow-right"></i>
-            </a>
-            <p class="pricing-response-time">Typical response time: under 2 hours on weekdays</p>
-        </div>
-    </div>
-
-    <!-- WhatsApp Catalog Banner -->
-    <section style="background: linear-gradient(135deg, #25D366 0%, #1eaa4f 100%); padding: 40px 20px; text-align: center;">
+    <div class="faq-section default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h3 style="color: white; font-size: 28px; font-weight: 700; margin-bottom: 16px;">Browse All Services on WhatsApp</h3>
-                    <p style="color: white; font-size: 16px; margin-bottom: 24px;">Get instant details, pricing, and samples for all our design and marketing services directly on WhatsApp.</p>
-                    <a href="whatsapp-catalog.html" style="display: inline-flex; align-items: center; gap: 8px; background-color: white; color: #25D366; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 600; transition: 0.3s ease;">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 20px; height: 20px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.781 1.158l-.338-.534a9.9 9.9 0 015.12-1.624m0-2.08C6.522 4.865 2 8.954 2 13.9c0 1.858.397 3.635 1.144 5.179l-.713 2.262 2.362-.706A9.863 9.863 0 0013.051 22c5.447 0 9.876-4.414 9.876-9.865 0-5.45-4.429-9.884-9.876-9.884"/></svg>
-                        View Service Catalog
-                    </a>
+                    <div class="faq-header text-center mb-60">
+                        <h2>Pricing Questions Answered</h2>
+                    </div>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Are these prices fixed or negotiable?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>These are starting prices. Final cost depends on scope, complexity, and timeline. Contact us for a custom quote — we always find something that works for your budget.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Do you offer EMI or installment payment?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. For projects above ₹15,000 we offer a simple 50% advance and 50% on delivery structure. For larger projects, milestone-based payments can be arranged.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>What payment methods do you accept?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We accept UPI, bank transfer, and all major payment apps. We provide a proper invoice for every project.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Is there a refund policy?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We do not offer refunds after work has begun, but we offer revision rounds on every project to make sure you are fully satisfied with the output.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" type="button" aria-expanded="false">
+                                <span>Can I start with a small package and upgrade later?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely. Many clients start with a Basic website or Logo Only package and expand to full branding or marketing retainers as their business grows.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="default-padding bg-cover" style="background-image: url(assets/img/shape/1.jpg);">
@@ -990,30 +1107,11 @@
     <script src="assets/js/wow.min.js" defer></script>
     <script src="assets/js/validnavs.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/faq-accordion.js" defer></script>
     <script src="assets/js/YTPlayer.min.js" defer></script>
     <script src="assets/js/typed.js" defer></script>
-
-    <!-- Pricing Page Scripts -->
-    <script>
-        function toggleFAQ(element) {
-            const question = element;
-            const answer = element.nextElementSibling;
-            const isActive = question.classList.contains('active');
-
-            // Close all FAQs
-            document.querySelectorAll('.faq-question').forEach(q => {
-                q.classList.remove('active');
-                q.nextElementSibling.classList.remove('show');
-            });
-
-            // Open clicked FAQ if it wasn't active
-            if (!isActive) {
-                question.classList.add('active');
-                answer.classList.add('show');
-            }
-        }
-    </script>
 
 </body>
 
 </html>
+
