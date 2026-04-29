@@ -69,6 +69,25 @@
     <link href="assets/css/style.css" rel="stylesheet">
  <!-- ========== End Stylesheet ========== -->
     
+    <!-- Lottie Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js" defer></script>
+    
+    <!-- Lottie Banner Animation Styles -->
+    <style>
+    #lottie-banner {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: 768px) {
+        #lottie-banner {
+            max-width: 100%;
+        }
+    }
+    </style>
+    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -520,8 +539,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="thumb"> <img src="assets/img/placeholders/project-visual.svg" loading="lazy"
-                                alt="Website and app design mockup" loading="lazy">
+                        <div class="thumb">
+                            <div id="lottie-banner"></div>
                             <img src="assets/img/shape/1.png" alt="Image Not Found" loading="lazy"> <img src="assets/img/shape/17.png" loading="lazy"
                                 alt="Image Not Found" loading="lazy">
                         </div>
@@ -1295,6 +1314,21 @@
     <script src="assets/js/typed.js" defer></script>
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/faq-accordion.js" defer></script>
+
+    <!-- Lottie Banner Animation Initialization -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('lottie-banner')) {
+            lottie.loadAnimation({
+                container: document.getElementById('lottie-banner'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'assets/animation/home dashboard.json'
+            });
+        }
+    });
+    </script>
 
     <!-- Before & After Slider Script -->
     <script>
