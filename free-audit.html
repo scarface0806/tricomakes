@@ -808,11 +808,6 @@
 
                 <!-- Left: Content -->
                 <div class="ahero-left">
-                    <span class="ahero-badge">
-                        <span class="ahero-dot"></span>
-                        Free — No Credit Card Required
-                    </span>
-
                     <h1>Get a <span class="ag">Free Growth Audit</span><br>for Your Business</h1>
 
                     <p class="ahero-sub">We personally review your website and hand you a clear, prioritised action plan — identifying exactly what's blocking your growth. No automated tools. Real human analysis.</p>
@@ -1120,9 +1115,12 @@
 
                     <!-- Form -->
                     <form id="auditFrm" novalidate>
+                        <input type="hidden" name="access_key" value="5b4d31e0-0f8e-4bc7-8a95-26b2fb356542">
+                        <input type="hidden" name="subject" value="New Free Growth Audit Request — Trico Makes">
+                        <input type="hidden" name="from_name" value="Trico Makes Website">
 
                         <div class="afl">
-                            <input type="text" id="af-name" name="name" placeholder=" " required autocomplete="name" autofocus>
+                            <input type="text" id="af-name" name="name" placeholder=" " required autocomplete="name">
                             <label for="af-name">Your Full Name *</label>
                             <span class="afl-err" id="aerr-name">Please enter your name.</span>
                         </div>
@@ -1261,39 +1259,37 @@
     <!-- ══════════════════════════════════
          8. MINIMAL FOOTER
     ══════════════════════════════════ -->
-    <footer class="afooter">
-        <div class="aw">
-            <div class="afooter-top">
-                <div class="afooter-brand">
-                    <a href="index.html"><img src="assets/img/logo-light.png" alt="Tricomakes"></a>
-                </div>
-                <div class="afooter-contact">
-                    <a href="mailto:tricomakes@gmail.com">
-                        <i class="fas fa-envelope"></i> tricomakes@gmail.com
-                    </a>
-                    <a href="tel:+917871361025">
-                        <i class="fas fa-phone"></i> +91 7871361025
-                    </a>
-                </div>
-                <div class="afooter-socials">
-                    <a href="https://www.instagram.com/tricomakes/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/tricomakes/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://wa.me/917871361025" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="afooter-bottom">
-                <p>&copy; 2025 Tricomakes. All rights reserved.</p>
-                <div class="afooter-links">
-                    <a href="service.html">Services</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
+    <footer class="default-padding bg-cover" style="background-image: url(assets/img/shape/1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="footer-items text-center"> <a href="#" class="footer-logot"><img
+                                src="assets/img/logo.png" alt="Trico Makes"></a>
+                        <h4>Trico Makes</h4>
+                        <ul class="foter-menu">
+                            <li><a href="service-website-design-development.html">Website Design</a></li>
+                            <li><a href="service-branding-rebranding.html">Branding</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="service-seo.html">SEO</a></li>
+                            <li><a href="service-social-media-marketing.html">Social Media</a></li>
+                            <li><a href="free-audit.html">Free Audit</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <p>Trico Makes is a full-service digital agency offering design, development, and marketing
+                            solutions for growing businesses.</p>
+                        <div class="footer-contact">
+                            <p> <a href="mailto:tricomakes@gmail.com"><i class="fas fa-envelope"></i>
+                                    tricomakes@gmail.com</a> | <a href="tel:+917871361025"><i class="fas fa-phone"></i>
+                                    +91 7871361025</a> </p>
+                            <div class="footer-social"> <a href="https://www.instagram.com/tricomakes/" target="_blank"
+                                    title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/tricomakes/" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i></a> <a
+                                    href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" target="_blank"
+                                    title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1385,55 +1381,72 @@
                 var allOk = fields.every(function (id) { return validate(id); });
                 if (!allOk) return;
 
-                var name      = document.getElementById('af-name').value.trim();
-                var biz       = document.getElementById('af-biz').value.trim();
-                var email     = document.getElementById('af-email').value.trim();
-                var phone     = document.getElementById('af-phone').value.trim();
-                var website   = document.getElementById('af-url').value.trim();
+                var submitBtn = document.getElementById('auditSubmit');
+                submitBtn.disabled = true;
+                submitBtn.querySelector('span') && (submitBtn.querySelector('span').textContent = 'Sending…');
+
                 var chalEl    = document.getElementById('af-challenge');
                 var challenge = chalEl.options[chalEl.selectedIndex].text;
+                var name      = document.getElementById('af-name').value.trim();
+                var phone     = document.getElementById('af-phone').value.trim();
+                var website   = document.getElementById('af-url').value.trim();
 
-                // Show success
-                form.style.display = 'none';
-                successEl.classList.add('show');
+                var formData  = new FormData(form);
 
-                // GA4
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'audit_form_submit', {
-                        event_category: 'Lead',
-                        event_label: 'Free Audit Request',
-                        value: 1
-                    });
-                }
-                // Meta Pixel
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', 'Lead', {
-                        content_name: 'Free Growth Audit',
-                        content_category: 'Lead Magnet',
-                        value: 10,
-                        currency: 'INR'
-                    });
-                }
-
-                // Build WhatsApp message
-                var msg = [
-                    'Hi Trico Makes Team,',
-                    '',
-                    'I would like to request a Free Growth Audit.',
-                    '',
-                    'Name: '     + name,
-                    'Business: ' + biz,
-                    'Email: '    + email,
-                    'Phone: '    + (phone || 'Not provided'),
-                    'Website: '  + website,
-                    'Challenge: '+ challenge,
-                    '',
-                    'Please review my website and send the audit report.'
-                ].join('\n');
-
-                setTimeout(function () {
-                    window.open('https://wa.me/917871361025?text=' + encodeURIComponent(msg), '_blank');
-                }, 1500);
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    if (data.success) {
+                        // GA4
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'audit_form_submit', {
+                                event_category: 'Lead',
+                                event_label: 'Free Audit Request',
+                                value: 1
+                            });
+                        }
+                        // Meta Pixel
+                        if (typeof fbq !== 'undefined') {
+                            fbq('track', 'Lead', {
+                                content_name: 'Free Growth Audit',
+                                content_category: 'Lead Magnet',
+                                value: 10,
+                                currency: 'INR'
+                            });
+                        }
+                        // Show success screen
+                        form.style.display = 'none';
+                        successEl.classList.add('show');
+                        // Also open WhatsApp
+                        var msg = [
+                            'Hi Trico Makes Team,',
+                            '',
+                            'I would like to request a Free Growth Audit.',
+                            '',
+                            'Name: '      + name,
+                            'Website: '   + website,
+                            'Phone: '     + (phone || 'Not provided'),
+                            'Challenge: ' + challenge,
+                            '',
+                            'Please review my website and send the audit report.'
+                        ].join('\n');
+                        setTimeout(function () {
+                            window.open('https://wa.me/917871361025?text=' + encodeURIComponent(msg), '_blank');
+                        }, 1500);
+                    } else {
+                        alert('Something went wrong. Please try again or WhatsApp us directly.');
+                        submitBtn.disabled = false;
+                        submitBtn.querySelector('span') && (submitBtn.querySelector('span').textContent = 'Get My Free Audit');
+                    }
+                })
+                .catch(function () {
+                    alert('Network error. Please check your connection and try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.querySelector('span') && (submitBtn.querySelector('span').textContent = 'Get My Free Audit');
+                });
             });
         }
     })();
