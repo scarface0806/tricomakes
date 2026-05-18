@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -89,7 +89,7 @@
     </script>
     <noscript>
       <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" />
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" fetchpriority="high" decoding="async" />
     </noscript>
     <!-- End Meta Pixel -->
 
@@ -149,12 +149,12 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Trico Makes">
+                        <img src="assets/img/logo.png" class="logo" alt="Trico Makes" fetchpriority="high" decoding="async">
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <img src="assets/img/logo.png" alt="Trico Makes" loading="lazy">
+                    <img src="assets/img/logo.png" alt="Trico Makes" fetchpriority="high" decoding="async">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
                     </button>
@@ -206,7 +206,7 @@
         <div class="container">
             <div class="image-move-bg">
                 <div class="animation-zoom-banner" id="js-hero">
-                    <img src="assets/img/kaliyammal.png" alt="Kaliammal College Website Redesign" loading="lazy">
+                    <img src="assets/img/kaliyammal.png" alt="Kaliammal College Website Redesign" fetchpriority="high" decoding="async">
                 </div>
             </div>
         </div>
@@ -262,12 +262,18 @@
     <div class="project-details-items default-padding-bottom">
         <div class="container">
             <div class="project-thumb mt-md--25 mt-xs--25">
-                <div class="row">
-                    <div class="col-md-7">
-                        <img src="assets/img/kaliyammal.png" alt="Kaliammal College Website Redesign" loading="lazy">
+                <div class="row g-4">
+                    <div class="col-md-6 d-flex flex-column">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 4px 28px rgba(0,0,0,0.09); padding:18px 18px 24px; flex:1;">
+                            <img src="assets/img/bed.png" alt="Kaliammal College Website Before Redesign" style="width:100%; border-radius:6px;" fetchpriority="high" decoding="async">
+                        </div>
+                        <!-- <h3 style="font-size:28px; font-weight:800; color:#1a1a2e; margin-top:20px; margin-bottom:0;">Before Redesign</h3> -->
                     </div>
-                    <div class="col-md-5">
-                        <img src="assets/img/kaliyammal.png" alt="Kaliammal College Website Redesign" loading="lazy">
+                    <div class="col-md-6 d-flex flex-column">
+                        <!-- <h3 style="font-size:28px; font-weight:800; color:#1a1a2e; margin-bottom:20px;">After Redesign</h3> -->
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 4px 28px rgba(0,0,0,0.09); padding:18px; flex:1;">
+                            <img src="assets/img/med.png" alt="Kaliammal College Website After Redesign" style="width:100%; border-radius:6px;" fetchpriority="high" decoding="async">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -315,7 +321,8 @@
                                 <li>Updated visual identity aligned with the college brand</li>
                                 <li>Student-friendly interface and content structure</li>
                             </ul>
-                            <img src="assets/img/kaliyammal.png" alt="Kaliammal College Redesign Highlights" loading="lazy">
+                           
+                            <img src="assets\img\gallery.png" alt="Kaliammal College Redesign Highlights" fetchpriority="high" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -391,7 +398,7 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="footer-items text-center">
-                        <a href="index.html" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes" loading="lazy"></a>
+                        <a href="index.html" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes" fetchpriority="high" decoding="async"></a>
                         <h4>Trico Makes</h4>
                         <ul class="foter-menu">
                             <li><a href="service.html">Website Design</a></li>
