@@ -1158,6 +1158,38 @@
             #portfolio .gallery-style-one .info { padding: 15px 16px 18px; }
             #portfolio .gallery-style-one .info h4 { font-size: 17px; }
         }
+
+        /* ── Stretched link: entire card is clickable ──────────────────────────
+           The h4 <a> generates an ::after pseudo-element that is absolutely
+           positioned relative to .gallery-style-one (position:relative).
+           This covers the full card surface without nesting <a> inside <a>.
+        ─────────────────────────────────────────────────────────────────────── */
+        #portfolio .gallery-style-one .info h4 a::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            border-radius: 16px;
+        }
+
+        /* Icon button and tag links float above the stretched overlay */
+        #portfolio .gallery-style-one .overlay .icon {
+            position: relative;
+            z-index: 2;
+        }
+        #portfolio ul.pf-tags li a {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Keyboard focus ring — visible on tab navigation */
+        #portfolio .gallery-style-one .info h4 a:focus {
+            outline: none;
+        }
+        #portfolio .gallery-style-one .info h4 a:focus-visible::after {
+            outline: 3px solid #f15c2b;
+            outline-offset: 3px;
+        }
     </style>
 
 </head>
@@ -1450,10 +1482,10 @@
                                                     <li> <a href="#">Ongoing</a> </li>
                                                 </ul>
                                             </div>
-                                            <div class="icon"> <a href="project-kaliammal-college.html"><i
+                                            <div class="icon"> <a href="project-kaliammal-college.html" aria-hidden="true" tabindex="-1"><i
                                                         class="fas fa-long-arrow-right"></i></a> </div>
                                         </div>
-                                        <h4><a href="project-kaliammal-college.html">Kaliammal College Redesign</a></h4>
+                                        <h4><a href="project-kaliammal-college.html" aria-label="View Kaliammal College Redesign project details">Kaliammal College Redesign</a></h4>
                                     </div>
                                 </div>
                             </div> <!-- End Single Item --> <!-- Single Item -->
@@ -1468,10 +1500,10 @@
                                                     <li> <a href="#">UI/UX</a> </li>
                                                 </ul>
                                             </div>
-                                            <div class="icon"> <a href="project-details.html"><i
+                                            <div class="icon"> <a href="project-details.html" aria-hidden="true" tabindex="-1"><i
                                                         class="fas fa-long-arrow-right"></i></a> </div>
                                         </div>
-                                        <h4><a href="project-details.html">Real Textiles Website</a></h4>
+                                        <h4><a href="project-details.html" aria-label="View Real Textiles Website project details">Real Textiles Website</a></h4>
                                     </div>
                                 </div>
                             </div> <!-- End Single Item --> <!-- Single Item -->
@@ -1486,10 +1518,10 @@
                                                     <li> <a href="#">Web App</a> </li>
                                                 </ul>
                                             </div>
-                                            <div class="icon"> <a href="project-details-tapvyo.html"><i
+                                            <div class="icon"> <a href="project-details-tapvyo.html" aria-hidden="true" tabindex="-1"><i
                                                         class="fas fa-long-arrow-right"></i></a> </div>
                                         </div>
-                                        <h4><a href="project-details-tapvyo.html">TapVyo NFC Platform</a></h4>
+                                        <h4><a href="project-details-tapvyo.html" aria-label="View TapVyo NFC Platform project details">TapVyo NFC Platform</a></h4>
                                     </div>
                                 </div>
                             </div> <!-- End Single Item --> <!-- Single Item -->
@@ -1504,10 +1536,10 @@
                                                     <li> <a href="#">Logo</a> </li>
                                                 </ul>
                                             </div>
-                                            <div class="icon"> <a href="project-details-branding.html"><i
+                                            <div class="icon"> <a href="project-details-branding.html" aria-hidden="true" tabindex="-1"><i
                                                         class="fas fa-long-arrow-right"></i></a> </div>
                                         </div>
-                                        <h4><a href="project-details-branding.html">AppnStruct Branding</a></h4>
+                                        <h4><a href="project-details-branding.html" aria-label="View AppnStruct Branding project details">AppnStruct Branding</a></h4>
                                     </div>
                                 </div>
                             </div> <!-- End Single Item --> 
@@ -1523,10 +1555,10 @@
                                                     <li> <a href="#">Print</a> </li>
                                                 </ul>
                                             </div>
-                                            <div class="icon"> <a href="project-details-ajwa.html"><i
+                                            <div class="icon"> <a href="project-details-ajwa.html" aria-hidden="true" tabindex="-1"><i
                                                         class="fas fa-long-arrow-right"></i></a> </div>
                                         </div>
-                                        <h4><a href="project-details-ajwa.html">AJWA Ice Cream Marketing &amp; Print Design</a></h4>
+                                        <h4><a href="project-details-ajwa.html" aria-label="View AJWA Ice Cream Marketing and Print Design project details">AJWA Ice Cream Marketing &amp; Print Design</a></h4>
                                     </div>
                                 </div>
                             </div> <!-- End Single Item -->

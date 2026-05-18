@@ -232,8 +232,7 @@
             <div class="pf-grid">
 
                 <!-- Card 01: Kaliammal College -->
-                <!-- LINK DISABLED: href="project-kaliammal-college.html" -->
-                <a href="#" data-href="project-kaliammal-college.html" class="pf-card" onclick="return false;">
+                <a href="project-kaliammal-college.html" class="pf-card" aria-label="View Kaliammal College Redesign project details">
                     <div class="pf-card-media">
                         <img src="assets/img/kaliyammal.png" alt="Kaliammal College Website Redesign" loading="lazy">
                         <div class="pf-card-media-overlay">
@@ -260,8 +259,7 @@
                 </a>
 
                 <!-- Card 02: Real Textiles -->
-                <!-- LINK DISABLED: href="project-details.html" -->
-                <a href="#" data-href="project-details.html" class="pf-card" onclick="return false;">
+                <a href="project-details.html" class="pf-card" aria-label="View Real Textiles Website project details">
                     <div class="pf-card-media">
                         <img src="assets/img/textile%20website.png" alt="Real Textiles Website Development" loading="lazy">
                         <div class="pf-card-media-overlay">
@@ -288,8 +286,7 @@
                 </a>
 
                 <!-- Card 03: TapVyo -->
-                <!-- LINK DISABLED: href="project-details-tapvyo.html" -->
-                <a href="#" data-href="project-details-tapvyo.html" class="pf-card" onclick="return false;">
+                <a href="project-details-tapvyo.html" class="pf-card" aria-label="View TapVyo NFC Platform project details">
                     <div class="pf-card-media">
                         <img src="assets/img/tapvyo-img.png" alt="TapVyo NFC Smart Business Card Platform" loading="lazy">
                         <div class="pf-card-media-overlay">
@@ -316,8 +313,7 @@
                 </a>
 
                 <!-- Card 04: AppnStruct & Oranzone -->
-                <!-- LINK DISABLED: href="project-details-branding.html" -->
-                <a href="#" data-href="project-details-branding.html" class="pf-card" onclick="return false;">
+                <a href="project-details-branding.html" class="pf-card" aria-label="View AppnStruct Branding project details">
                     <div class="pf-card-media">
                         <img src="assets/img/shape/logo-tapvyo.png" alt="AppnStruct and Oranzone Branding System" loading="lazy">
                         <div class="pf-card-media-overlay">
@@ -335,8 +331,7 @@
                         <h3 class="pf-card-title">AppnStruct Branding</h3>
                         <p class="pf-card-desc">Logo and brand identity for AppnStruct and Oranzone — built for digital and print.</p>
                         <div class="pf-card-footer">
-                            <!-- LINK DISABLED: href="project-details-branding.html" -->
-                            <a href="#" data-href="project-details-branding.html" class="pf-card-cta" onclick="event.stopPropagation(); return false;">
+                            <a href="project-details-branding.html" class="pf-card-cta" onclick="event.stopPropagation();">
                                 View Project
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
@@ -345,8 +340,7 @@
                 </a>
 
                 <!-- Card 05: AJWA Ice Cream -->
-                <!-- LINK DISABLED: href="project-details-ajwa.html" -->
-                <a href="#" data-href="project-details-ajwa.html" class="pf-card" onclick="return false;">
+                <a href="project-details-ajwa.html" class="pf-card" aria-label="View AJWA Ice Cream Branding project details">
                     <div class="pf-card-media">
                         <img src="assets/img/Ajwa.png" alt="AJWA Ice Cream Marketing and Print Design System" loading="lazy">
                         <div class="pf-card-media-overlay">
@@ -364,8 +358,7 @@
                         <h3 class="pf-card-title">AJWA Ice Cream Branding</h3>
                         <p class="pf-card-desc">Menu cards, banners, posters, and print-ready creatives for AJWA Ice Cream.</p>
                         <div class="pf-card-footer">
-                            <!-- LINK DISABLED: href="project-details-ajwa.html" -->
-                            <a href="#" data-href="project-details-ajwa.html" class="pf-card-cta" onclick="event.stopPropagation(); return false;">
+                            <a href="project-details-ajwa.html" class="pf-card-cta" onclick="event.stopPropagation();">
                                 View Project
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </a>
@@ -458,9 +451,17 @@
             display: flex;
             flex-direction: column;
             height: 100%;
+            cursor: pointer;
             transition: transform .35s cubic-bezier(.22,1,.36,1),
                         box-shadow .35s cubic-bezier(.22,1,.36,1),
                         border-color .35s;
+        }
+        /* Keyboard focus ring */
+        .pf-card:focus { outline: none; }
+        .pf-card:focus-visible {
+            outline: 3px solid #f15c2b;
+            outline-offset: 3px;
+            border-radius: 14px;
         }
         .pf-card:hover {
             transform: translateY(-5px);
