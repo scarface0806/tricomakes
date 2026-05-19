@@ -5892,8 +5892,9 @@ footer::after {
 	.banner-style-one-items {
 		grid-template-columns: 1fr;
 		grid-column-gap: 0;
-		grid-row-gap: 50px;
-		padding-top: 150px;
+		grid-row-gap: 0;
+		padding-top: 130px;
+		padding-bottom: 60px;
 		text-align: center;
 	}
 
@@ -5911,8 +5912,9 @@ footer::after {
 		margin-top: 30px;
 	}
 
+	/* Hide Lottie animation on tablet — prevents large empty space */
 	.banner-style-one-items .thumb {
-		margin-top: 30px;
+		display: none !important;
 	}
 
 	.banner-style-one-area::after {
@@ -6153,8 +6155,9 @@ footer::after {
 	.banner-style-one-items {
 		grid-template-columns: 1fr;
 		grid-column-gap: 0;
-		grid-row-gap: 50px;
-		padding-top: 150px;
+		grid-row-gap: 0;
+		padding-top: 110px;
+		padding-bottom: 50px;
 		text-align: center;
 	}
 
@@ -6178,8 +6181,9 @@ footer::after {
 		margin-top: 30px;
 	}
 
+	/* Hide Lottie animation on mobile — prevents large empty space */
 	.banner-style-one-items .thumb {
-		margin-top: 30px;
+		display: none !important;
 	}
 
 	.banner-style-one-area::after {

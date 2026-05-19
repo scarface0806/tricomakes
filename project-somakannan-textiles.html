@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AppnStruct & Oranzone Branding System by Trico Makes — complete corporate and product logo identity design with modern, scalable visual systems for both brands.">
+    <meta name="description" content="Somakannan Textiles website designed and developed by Trico Makes — a modern, responsive textile business website with product showcasing, clean UI/UX, and professional digital branding.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="AppnStruct &amp; Oranzone Branding System - Project Details | Trico Makes">
-    <meta property="og:description" content="AppnStruct & Oranzone Branding System by Trico Makes — complete corporate and product logo identity design with modern, scalable visual systems for both...">
-    <meta property="og:url" content="https://trico-makes.vercel.app/project-details-branding.html">
+    <meta property="og:title" content="Somakannan Textiles Website - Project Details | Trico Makes">
+    <meta property="og:description" content="Somakannan Textiles website designed and developed by Trico Makes — a modern, responsive textile business website with product showcasing, clean UI/UX, and professional digital branding.">
+    <meta property="og:url" content="https://trico-makes.vercel.app/project-somakannan-textiles.html">
     <meta property="og:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
     <meta property="og:site_name" content="Trico Makes">
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AppnStruct &amp; Oranzone Branding System - Project Details | Trico Makes">
-    <meta name="twitter:description" content="AppnStruct & Oranzone Branding System by Trico Makes — complete corporate and product logo identity design with modern, scalable visual systems for both...">
+    <meta name="twitter:title" content="Somakannan Textiles Website - Project Details | Trico Makes">
+    <meta name="twitter:description" content="Somakannan Textiles website designed and developed by Trico Makes — a modern, responsive textile business website with product showcasing, clean UI/UX, and professional digital branding.">
     <meta name="twitter:image" content="https://trico-makes.vercel.app/assets/img/logo.png">
-    <meta name="twitter:image:alt" content="AppnStruct &amp; Oranzone Branding System - Project Details | Trico Makes">
+    <meta name="twitter:image:alt" content="Somakannan Textiles Website - Project Details | Trico Makes">
 
     <!-- ========== Page Title ========== -->
-    <title>AppnStruct & Oranzone Branding System - Project Details | Trico Makes</title>
+    <title>Somakannan Textiles Website - Project Details | Trico Makes</title>
     <!-- Sitemap Link -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <!-- Resource Hints -->
@@ -54,7 +54,7 @@
       "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://trico-makes.vercel.app/index.html"},
         {"@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://trico-makes.vercel.app/projects.html"},
-        {"@type": "ListItem", "position": 3, "name": "AppnStruct & Oranzone Branding System", "item": "https://trico-makes.vercel.app/project-details-branding.html"}
+        {"@type": "ListItem", "position": 3, "name": "Somakannan Textiles Website", "item": "https://trico-makes.vercel.app/project-somakannan-textiles.html"}
       ]
     }
     </script>
@@ -94,79 +94,48 @@
     <!-- End Meta Pixel -->
 
     <style>
-        /* Brand split cards inside the details page */
-        .brand-split {
+        /* ── Features Grid ── */
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 20px;
         }
-        .brand-card {
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
             background: #fff;
-            border: 1.5px solid #e8ecf0;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: box-shadow .25s, border-color .25s;
+            border: 1px solid rgba(15, 23, 42, 0.07);
+            border-radius: 10px;
+            padding: 16px 18px;
+            transition: box-shadow 0.25s ease, border-color 0.25s ease;
         }
-        .brand-card:hover {
-            box-shadow: 0 16px 40px rgba(0,0,0,.08);
-            border-color: rgba(241,92,43,.25);
+        .feature-item:hover {
+            box-shadow: 0 6px 22px rgba(15, 23, 42, 0.08);
+            border-color: rgba(241, 92, 43, 0.20);
         }
-        .brand-card-thumb {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-        }
-        .brand-card-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 20px;
-        }
-        .brand-card-body {
-            padding: 24px;
-        }
-        .brand-card-label {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--color-primary, #f15c2b);
-            background: rgba(241,92,43,.08);
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 100px;
-            margin-bottom: 12px;
-        }
-        .brand-card-body h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-        .brand-card-body p {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.7;
-            margin-bottom: 18px;
-        }
-        .brand-visit-btn {
-            display: inline-flex;
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 8px;
+            background: rgba(241, 92, 43, 0.09);
+            display: flex;
             align-items: center;
-            gap: 7px;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--color-primary, #f15c2b);
-            text-decoration: none;
-            transition: gap .2s;
+            justify-content: center;
+            color: #f15c2b;
+            font-size: 15px;
         }
-        .brand-visit-btn:hover {
-            gap: 10px;
-            color: var(--color-primary, #f15c2b);
-            text-decoration: none;
+        .feature-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1a1a2e;
+            line-height: 1.5;
+            margin: 0;
         }
-        @media (max-width: 640px) {
-            .brand-split { grid-template-columns: 1fr; }
+        @media (max-width: 576px) {
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -181,13 +150,7 @@
         </svg>
         <div class="preloader-heading">
             <div class="load-text">
-                <span>L</span>
-                <span>o</span>
-                <span>a</span>
-                <span>d</span>
-                <span>i</span>
-                <span>n</span>
-                <span>g</span>
+                <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span>
             </div>
         </div>
     </div>
@@ -218,7 +181,7 @@
                         <li><a class="smooth-menu" href="service.html">Services</a></li>
                         <li><a class="smooth-menu" href="contact.html">Contact</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div>
 
                 <div class="nav-right">
                     <div class="attr-right">
@@ -243,7 +206,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                    <h1>AppnStruct &amp; Oranzone Branding System</h1>
+                    <h1>Somakannan Textiles Website</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
@@ -263,7 +226,9 @@
         <div class="container">
             <div class="image-move-bg">
                 <div class="animation-zoom-banner" id="js-hero">
-                    <img src="assets\img\oz.png" alt="AppnStruct and Oranzone Branding System" fetchpriority="high" decoding="async">
+                    <!-- Replace with actual screenshot: assets/img/somakannan-textiles.png -->
+                    <img src="assets\img\s-1.png" alt="Somakannan Textiles Website — Homepage Preview" fetchpriority="high" decoding="async"
+                         onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';">
                 </div>
             </div>
         </div>
@@ -281,21 +246,27 @@
                         <div class="project-single-info">
                             <ul>
                                 <li>
-                                    Category <span>Logo Design &amp; Brand Identity</span>
+                                    Client <span>Somakannan Textiles</span>
                                 </li>
                                 <li>
-                                    Brands <span>AppnStruct &amp; Oranzone</span>
+                                    Industry <span>Textile &amp; Fabric Industry</span>
                                 </li>
                                 <li>
-                                    Service <span>Brand Identity Design</span>
+                                    Category <span>Website Design &bull; UI/UX</span>
+                                </li>
+                                <li>
+                                    Project Type <span>Business Website</span>
                                 </li>
                                 <li>
                                     Status <span>Completed</span>
                                 </li>
+                                <li>
+                                    Website <span><a href="https://somakannantextiles.com/" target="_blank" rel="noopener noreferrer">somakannantextiles.com</a></span>
+                                </li>
                             </ul>
-                            <div class="mt-30" style="display:flex; flex-direction:column; gap:12px;">
-                                <a class="btn-style-regular" href="https://www.appnstruct.com/" target="_blank" rel="noopener noreferrer"><span>AppnStruct Website</span> <i class="fas fa-external-link-alt"></i></a>
-                                <a class="btn-style-regular" href="https://www.oranzone.com/" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg,#f69323,#f15c2b);"><span>Oranzone Website</span> <i class="fas fa-external-link-alt"></i></a>
+                            <div class="mt-30 d-flex flex-wrap gap-2" style="gap:12px;">
+                                <a class="btn-style-regular" href="https://somakannantextiles.com/" target="_blank" rel="noopener noreferrer"><span>Visit Website</span> <i class="fas fa-external-link-alt"></i></a>
+                                <a class="btn-style-regular" href="contact.html" style="margin-top:12px;"><span>Contact Us</span> <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -303,10 +274,10 @@
                     <div class="right-info col-xl-8 col-lg-7 pl-50 pl-md-15 pl-xs-15 mt-md-10">
                         <h2>Project Overview</h2>
                         <p>
-                            This branding project includes the creation of a modern technology-focused corporate logo for AppnStruct and a vibrant product branding identity for Oranzone. Both brands are part of the same company ecosystem.
+                            A modern textile industry website designed to showcase products, improve brand presence, and provide a seamless user experience across devices. Trico Makes designed and developed the complete Somakannan Textiles website, focusing on clean product presentation, easy navigation, and a responsive layout that works beautifully on both desktop and mobile.
                         </p>
                         <p>
-                            The designs were created with a strong focus on scalability, recognition, modern visual language, and cross-platform usability to establish a professional and memorable brand presence for both identities.
+                            The project centred on building a credible digital identity for Somakannan Textiles — helping the business effectively showcase its textile collections to buyers and customers while creating a strong, professional brand presence online.
                         </p>
                     </div>
 
@@ -315,12 +286,17 @@
         </div>
     </div>
 
+    <!-- Gallery / Project Thumb
+    ============================================= -->
    
 
+    <!-- Project Content Sections
+    ============================================= -->
     <div class="project-details-items default-padding bg-gray">
         <div class="container">
             <div class="item-grid-container">
 
+                <!-- Background -->
                 <div class="single-grid">
                     <div class="item-grid-colum">
                         <div class="left-info">
@@ -328,42 +304,93 @@
                         </div>
                         <div class="right-info">
                             <p>
-                                AppnStruct required a strong, professional corporate identity that could communicate their expertise as an IT company clearly and instantly — both digitally and in print. Meanwhile, their product brand Oranzone needed a distinct, energetic identity that could stand independently in the market.
+                                Somakannan Textiles is an established textile business with a rich product range covering fabrics, collections, and textile categories. Despite their strong offline presence, the business lacked a modern digital platform to effectively showcase their products and reach customers online.
                             </p>
                             <p>
-                                Trico Makes approached both identities as a unified branding system, ensuring visual coherence between the parent company and its product line while keeping each brand's character unique and recognisable.
+                                Trico Makes was engaged to build a complete, brand-focused website that would bring the business's textile offerings to the digital space — helping them attract new customers, present their collection professionally, and establish a credible online identity in the textile industry.
                             </p>
                         </div>
                     </div>
                 </div>
 
+                <!-- The Challenges -->
                 <div class="single-grid">
                     <div class="item-grid-colum">
                         <div class="left-info">
-                            <h2>Branding Scope</h2>
+                            <h2>The Challenges</h2>
                         </div>
                         <div class="right-info">
                             <p>
-                                The project demanded two distinct visual directions — a minimal, black-and-white tech identity for AppnStruct, and a vibrant, symbol-driven identity for Oranzone — while ensuring both logos could scale across digital platforms, print materials, and merchandise.
+                                The primary challenge was designing a website that could present a diverse textile product range in an organised and visually appealing way, while keeping the user experience clean and intuitive for buyers browsing on both desktop and mobile devices.
                             </p>
-                            <h3>Deliverables across both brands</h3>
+                            <p>
+                                Ensuring the site loaded fast, communicated product quality through design, and encouraged customer enquiries required a careful balance of visual design, content structure, and performance optimisation.
+                            </p>
+                            <h3>Key priorities for the project</h3>
                             <ul class="list-style-one">
-                                <li>Corporate Brand Identity Design</li>
-                                <li>Product Logo Design</li>
-                                <li>Visual Identity System</li>
-                                <li>Scalable Logo Architecture</li>
-                                <li>Modern Typography &amp; Symbolism</li>
-                                <li>Digital Brand Consistency</li>
+                                <li>Responsive design across all screen sizes and devices</li>
+                                <li>Organised product category sections for easy browsing</li>
+                                <li>Fast-loading performance for improved user experience</li>
+                                <li>Modern UI/UX that reflects the brand's quality and identity</li>
+                                <li>Brand-focused visual presentation of textile collections</li>
+                                <li>Easy navigation structure for first-time visitors</li>
                             </ul>
-
-                            <!-- Brand Split Cards -->
-                           
-                            <!-- End Brand Split Cards -->
-
+                            <!-- Replace with: mobile responsive / product category screenshot -->
+                            <img src="assets\img\s-2.png" alt="Somakannan Textiles — Mobile Responsive Design" fetchpriority="high" decoding="async"
+                                 onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';">
                         </div>
                     </div>
                 </div>
 
+                <!-- Features -->
+                <div class="single-grid">
+                    <div class="item-grid-colum">
+                        <div class="left-info">
+                            <h2>Features</h2>
+                        </div>
+                        <div class="right-info">
+                            <p>
+                                The Somakannan Textiles website was built with a comprehensive feature set designed to deliver a premium browsing experience and drive customer engagement across all touchpoints.
+                            </p>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <p class="feature-text">Responsive Website Design</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-th-large"></i></div>
+                                    <p class="feature-text">Textile Product Showcase</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-paint-brush"></i></div>
+                                    <p class="feature-text">Modern UI/UX Experience</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-tablet-alt"></i></div>
+                                    <p class="feature-text">Mobile-Friendly Layout</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                                    <p class="feature-text">Fast Performance Optimization</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                                    <p class="feature-text">Business Branding Presentation</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-sitemap"></i></div>
+                                    <p class="feature-text">Easy Navigation Structure</p>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                                    <p class="feature-text">Product Collection Display</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Solution -->
                 <div class="single-grid">
                     <div class="item-grid-colum">
                         <div class="left-info">
@@ -371,10 +398,10 @@
                         </div>
                         <div class="right-info">
                             <p>
-                                For AppnStruct, Trico Makes crafted a bold black-and-white wordmark with a geometric symbol that conveys structure, precision, and technological authority — designed to scale perfectly from business cards to digital banners.
+                                Trico Makes designed and developed the complete Somakannan Textiles website with a focus on clean product presentation and a modern, brand-aligned visual identity. The website was built using HTML5, CSS3, JavaScript, and Bootstrap — structured around intuitive product category browsing, with dedicated sections for collections and a seamless enquiry experience.
                             </p>
                             <p>
-                                For Oranzone, the team developed a vibrant logo combining warm, energetic tones with a clean symbolic mark that communicates product personality and brand confidence. Both identities now form a cohesive branding ecosystem that works across all platforms and touchpoints.
+                                The final website delivers a clean, professional digital presence for Somakannan Textiles — with fast load times, full mobile responsiveness, and a modern UI that builds trust with prospective buyers and business clients, while effectively showcasing the breadth of their textile offerings.
                             </p>
                         </div>
                     </div>
@@ -384,15 +411,17 @@
         </div>
     </div>
 
+    <!-- Project Pagination
+    ============================================= -->
     <div class="project-pagination default-padding-bottom bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project-paginvation-items mt-xs--25 mt-md--25">
                         <div class="project-previous">
-                            <a href="project-details-tapvyo.html">
+                            <a href="project-details-ajwa.html">
                                 <div class="icon"><i class="fas fa-angle-double-left"></i></div>
-                                <div class="nav-title">Previous Post <h5>TapVyo NFC Platform</h5></div>
+                                <div class="nav-title">Previous Post <h5>AJWA Ice Cream Branding</h5></div>
                             </a>
                         </div>
                         <div class="project-all">
@@ -447,7 +476,7 @@
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                         <p>Trico Makes combines strategy, design, and marketing execution to help businesses grow with more clarity and momentum.</p>
-                        <p>hello@tricomakes.studio | +91 7871361025 | Instagram, LinkedIn, WhatsApp</p>
+                        <p>hello@tricomakes.studio | +1 (310) 555-0189 | Instagram, LinkedIn, WhatsApp</p>
                     </div>
                 </div>
             </div>
@@ -487,6 +516,5 @@
         </svg>
     </a>
     <div class="whatsapp-tooltip">Chat with us</div>
-
 </body>
 </html>
