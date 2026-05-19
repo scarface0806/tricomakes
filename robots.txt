@@ -4,7 +4,6 @@ Allow: /
 Sitemap: https://trico-makes.vercel.app/sitemap.xml
 
 # Block unnecessary files from indexing
-Disallow: /assets/
 Disallow: /*.md$
 Allow: /
 Crawl-delay: 1

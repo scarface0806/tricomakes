@@ -1,8 +1,0 @@
-<!-- GA4 Pricing Page Tracking for pricing.html -->
-    <script>
-    gtag('event', 'pricing_page_view', {
-      event_category: 'High Intent',
-      event_label: 'Pricing Page Visited',
-      value: 1
-    });
-    </script>
