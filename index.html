@@ -1023,6 +1023,9 @@
                 box-shadow .38s cubic-bezier(.22,1,.36,1);
             cursor: pointer;
             margin-bottom: 6px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         /* Card hover — lift + shadow intensify */
@@ -1054,12 +1057,27 @@
         #portfolio .gallery-style-one .info {
             padding: 18px 20px 20px;
             background: #fff;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
         }
 
         /* Overlay row: tags left, arrow right */
         #portfolio .gallery-style-one .overlay {
             margin-bottom: 13px;
             align-items: center;
+            gap: 10px;
+            flex-wrap: nowrap;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        #portfolio .gallery-style-one .overlay .content {
+            flex: 1;
+            min-width: 0;
         }
 
         /* ── Tags: brand-tinted premium pills ── */
@@ -1071,6 +1089,8 @@
             align-items: center;
             margin: 0;
             padding: 0;
+            max-width: 100%;
+            overflow: hidden;
         }
         #portfolio ul.pf-tags li {
             display: inline-flex;
@@ -1153,11 +1173,123 @@
             font-weight: 400;
         }
 
+        @media (max-width: 1200px) {
+            #portfolio .magnific-mix-gallery {
+                margin: 0;
+            }
+
+            #portfolio #gallery-masonary {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+                width: 100%;
+            }
+
+            #portfolio #gallery-masonary .gallery-item {
+                float: none;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 991px) {
+            #portfolio #gallery-masonary {
+                gap: 18px;
+            }
+
+            #portfolio .gallery-style-one {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            #portfolio .gallery-style-one img {
+                height: 220px;
+                width: 100%;
+                max-width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            #portfolio .gallery-style-one .info h4 {
+                font-size: 18px;
+                line-height: 1.35;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #portfolio #gallery-masonary {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            #portfolio .gallery-style-one .overlay {
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+
+            #portfolio ul.pf-tags {
+                flex-wrap: wrap;
+                gap: 6px;
+                min-height: 0;
+            }
+
+            #portfolio .gallery-style-one .overlay .icon {
+                margin-left: auto;
+            }
+
+            #portfolio .gallery-style-one .overlay .icon a {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
         /* ── Responsive: mobile ── */
         @media (max-width: 575px) {
-            #portfolio .gallery-style-one img { height: 200px; }
-            #portfolio .gallery-style-one .info { padding: 15px 16px 18px; }
-            #portfolio .gallery-style-one .info h4 { font-size: 17px; }
+            #portfolio {
+                overflow-x: hidden;
+            }
+
+            #portfolio #gallery-masonary,
+            #portfolio #gallery-masonary .gallery-item,
+            #portfolio .gallery-style-one {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            #portfolio .gallery-style-one img {
+                height: auto;
+                min-height: 190px;
+                max-height: 220px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            #portfolio .gallery-style-one .info {
+                padding: 15px 16px 18px;
+                gap: 9px;
+            }
+
+            #portfolio .gallery-style-one .info h4 {
+                font-size: 17px;
+                line-height: 1.35;
+                word-break: break-word;
+            }
+
+            #portfolio ul.pf-tags li span {
+                font-size: 9px;
+                padding: 3px 9px;
+                max-width: 100%;
+                white-space: normal;
+                line-height: 1.4;
+            }
+
+            #portfolio .gallery-style-one .overlay .icon a {
+                width: 38px;
+                height: 38px;
+            }
         }
 
         /* ── Stretched link: entire card is clickable ──────────────────────────
@@ -1476,7 +1608,7 @@
                                 <div class="gallery-style-one wow fadeInUp">   <img
                                         src="assets/img/Kaliammal-College-Redesign.png" alt="Kaliammal College Website Redesign" fetchpriority="high" decoding="async">
                                     <div class="info">
-                                        <d746*lass="overlay">
+                                        <div class="overlay">
                                             <div class="content"> 
                                                 <ul class="pf-tags">
                                                     <li> <span>Website</span> </li>
