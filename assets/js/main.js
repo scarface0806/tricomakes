@@ -465,6 +465,39 @@
 			});
 		});
 
+		/* ==================================================
+		    # Navigation UX Improvements
+		================================================== */
+		(function() {
+			var pageName = window.location.pathname.split('/').pop() || 'index.html';
+			if (pageName === '') {
+				pageName = 'index.html';
+			}
+
+			$('.navbar-nav a[href]').each(function() {
+				var link = $(this);
+				var href = (link.attr('href') || '').split('#')[0];
+				if (!href || href.indexOf('http') === 0 || href.indexOf('mailto:') === 0 || href.indexOf('tel:') === 0) {
+					return;
+				}
+
+				if (href === pageName) {
+					link.addClass('active').attr('aria-current', 'page');
+					link.closest('li').addClass('active');
+				}
+			});
+
+			if (pageName === 'free-audit.html') {
+				$('.attr-nav a[href="free-audit.html"]').addClass('active').attr('aria-current', 'page');
+			}
+
+			$('#navbar-menu .navbar-nav a').on('click', function() {
+				if (typeof $('#navbar-menu').collapse === 'function') {
+					$('#navbar-menu').collapse('hide');
+				}
+			});
+		})();
+
 
 	}); // end document ready function
 
