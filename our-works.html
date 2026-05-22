@@ -18,34 +18,42 @@
     <meta name="description" content="Browse Trico Makes portfolio of web design, branding, SEO and digital marketing projects delivered for businesses across Tamil Nadu and beyond.">
     <link rel="canonical" href="https://www.tricomakes.in/our-works.html">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="Trico Makes">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portfolio &amp; Case Studies | Trico Makes Tamil Nadu">
     <meta property="og:description" content="Browse Trico Makes portfolio of web design, branding, SEO and digital marketing projects delivered for businesses across Tamil Nadu and beyond.">
     <meta property="og:url" content="https://www.tricomakes.in/our-works.html">
+    <meta property="og:site_name" content="Trico Makes">
     <meta property="og:image" content="https://www.tricomakes.in/assets/img/logo.png">
+    <meta property="og:image:alt" content="Portfolio &amp; Case Studies | Trico Makes Tamil Nadu">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Portfolio &amp; Case Studies | Trico Makes Tamil Nadu">
     <meta name="twitter:description" content="Browse Trico Makes portfolio of web design, branding, SEO and digital marketing projects delivered for businesses across Tamil Nadu and beyond.">
     <meta name="twitter:image" content="https://www.tricomakes.in/assets/img/logo.png">
+    <meta name="twitter:image:alt" content="Portfolio &amp; Case Studies | Trico Makes Tamil Nadu">
 
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml"> href="assets/img/favicon.png" type="image/x-icon">
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
+    <link rel="preload" as="style" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/magnific-popup.css" rel="stylesheet"></noscript>
     <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/animate.min.css" rel="stylesheet"></noscript>
     <link href="assets/css/validnavs.css" rel="stylesheet">
     <link href="assets/css/helper.css" rel="stylesheet">
-    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
 
     <style>
@@ -690,12 +698,26 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Trico Makes" decoding="async">
+                        
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <img src="assets/img/logo.png" alt="Trico Makes" decoding="async">
+                    
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
                     </button>
@@ -975,7 +997,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="footer-items text-center"> <a href="index.html" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes" decoding="async"></a>
+                    <div class="footer-items text-center"> <a href="index.html" class="footer-logot">
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    </a>
                         <h4>Trico Makes</h4>
                         <ul class="foter-menu">
                             <li><a href="service-website-design-development.html">Website Design</a></li>
@@ -1029,7 +1058,7 @@
             <div class="pi-inner">
                 <div class="pi-project-img"><img id="piImg" src="" alt="" loading="lazy"></div>
                 <div class="pi-brand-strip">
-                    <img src="assets/img/logo.png" alt="Trico Makes logo">
+                    <img src="assets/img/logo.png" alt="Trico Makes logo" width="160" height="50" loading="lazy" decoding="async">
                     <span class="pi-brand-name">Trico Makes</span>
                     <span class="pi-brand-note" id="piStatus"></span>
                 </div>

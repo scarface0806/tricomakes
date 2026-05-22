@@ -24,6 +24,8 @@
     <meta property="og:url" content="https://www.tricomakes.in/service-reels-video-editing.html">
     <meta property="og:image" content="https://www.tricomakes.in/assets/img/logo.png">
     <meta property="og:image:alt" content="Reels &amp; Video Editing Services | Trico Makes">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Trico Makes">
 
     <!-- Twitter -->
@@ -40,15 +42,18 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
+    <link rel="preload" as="style" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/magnific-popup.css" rel="stylesheet"></noscript>
     <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/animate.min.css" rel="stylesheet"></noscript>
     <link href="assets/css/validnavs.css" rel="stylesheet">
     <link href="assets/css/helper.css" rel="stylesheet">
-    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
 
     
@@ -77,51 +82,12 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tricomakes.in/index.html"},
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tricomakes.in/"},
         {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.tricomakes.in/service.html"},
         {"@type": "ListItem", "position": 3, "name": "Reels & Video Editing", "item": "https://www.tricomakes.in/service-reels-video-editing.html"}
       ]
     }
     </script>
-
-    <!-- GA4: Replace GA_MEASUREMENT_ID with your 
-         actual Measurement ID from Google Analytics -->
-
-    <!-- Google Analytics 4 -->
-    <script async 
-      src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID', {
-        page_title: document.title,
-        page_location: window.location.href,
-        send_page_view: true
-      });
-    </script>
-
-    <!-- Meta Pixel -->
-    <!-- Get Pixel ID from business.facebook.com
-         Events Manager ? Connect Data Sources ? Web -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="" fetchpriority="high" decoding="async" alt="" />
-    </noscript>
-    <!-- End Meta Pixel -->
 
 </head>
 <body>
@@ -133,11 +99,25 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Logo"  fetchpriority="high" decoding="async">
+                        
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <img src="assets/img/logo.png" alt="Logo"  fetchpriority="high" decoding="async">
+                    
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
                     </button>
@@ -266,7 +246,14 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <div class="footer-items text-center">
-                        <a href="index.html" class="footer-logot"><img src="assets/img/logo.png" alt="Trico Makes" fetchpriority="high" decoding="async"></a>
+                        <a href="index.html" class="footer-logot">
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    </a>
                         <h4>Trico Makes</h4>
                                                 <ul class="foter-menu">
                             <li><a href="service-website-design-development.html">Website Design</a></li>

@@ -4,18 +4,11 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://www.tricomakes.in/</loc>
   <lastmod>2026-05-22T07:05:58+00:00</lastmod>
   <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.tricomakes.in/index.html</loc>
-  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.tricomakes.in/service.html</loc>
@@ -131,6 +124,66 @@
   <loc>https://www.tricomakes.in/service-social-media-marketing.html</loc>
   <lastmod>2026-05-22T07:18:13+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-lead-generation.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-reels-video-editing.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-vector-art-design.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/services-details.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/pricing.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-astera-campaign.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-bloom-studio.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-fynlo-finance.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-luma-cafe.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-northline-clinics.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-pulsefit-app.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/resume.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
 
 

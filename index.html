@@ -45,10 +45,8 @@
     <meta name="twitter:image:alt" content="Trico Makes | Web Design &amp; SEO Agency in Tamil Nadu">
 
     <!-- Google Search Console Verification -->
-    <!-- Get this code from search.google.com/search-console
-         Property type: URL prefix
-         URL: https://www.tricomakes.in -->
-    <meta name="google-site-verification" content="SEARCH_CONSOLE_VERIFICATION_CODE">
+    <!-- Add your verification meta tag from search.google.com/search-console here -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE"> -->
 
     <!-- Sitemap Link -->
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -59,21 +57,24 @@
     <!-- ========== Resource Hints ========== -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/img/icon/hand.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png">
     <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
 
     <!-- ========== Start Stylesheet ========== -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/magnific-popup.css" rel="stylesheet"></noscript>
     <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/animate.min.css" rel="stylesheet"></noscript>
     <link href="assets/css/validnavs.css" rel="stylesheet">
     <link href="assets/css/helper.css" rel="stylesheet">
-    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
@@ -592,23 +593,6 @@
     }
     </script>
 
-    <!-- GA4: Replace GA_MEASUREMENT_ID with your 
-         actual Measurement ID from Google Analytics -->
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID', {
-            page_title: document.title,
-            page_location: window.location.href,
-            send_page_view: true
-        });
-    </script>
-
     <!-- GA4 Event Tracking for index.html -->
     <script>
         // Track WhatsApp CTA clicks
@@ -738,30 +722,6 @@
 
         });
     </script>
-
-    <!-- Meta Pixel -->
-    <!-- Get Pixel ID from business.facebook.com
-         Events Manager ? Connect Data Sources ? Web -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" fetchpriority="high" decoding="async" alt="" />
-    </noscript>
-    <!-- End Meta Pixel -->
 
     <!-- Meta Pixel Custom Events for index.html -->
     <script>
@@ -1440,9 +1400,23 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse"
                         data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button> <a class="navbar-brand"
-                        href="index.html"> <img src="assets/img/logo.png" class="logo" alt="Logo" fetchpriority="high" decoding="async"> </a> </div>
+                        href="index.html"> 
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+     </a> </div>
                 <!-- End Header Navigation --> <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu"> <img src="assets/img/logo.png" alt="Logo" fetchpriority="high" decoding="async">
+                <div class="collapse navbar-collapse" id="navbar-menu"> 
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i
                             class="fa fa-times"></i> </button>
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
@@ -2324,8 +2298,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="footer-items text-center"> <a href="index.html" class="footer-logot"><img
-                                src="assets/img/logo.png" alt="Trico Makes" fetchpriority="high" decoding="async"></a>
+                    <div class="footer-items text-center"> <a href="index.html" class="footer-logot">
+        param($m)
+        if ($m.Groups[1].Value -notmatch '\bwidth=') {
+            $m.Groups[1].Value + ' width="160" height="50"' + $m.Groups[2].Value
+        } else {
+            $m.Value
+        }
+    </a>
                         <h4>Trico Makes</h4>
                         <ul class="foter-menu">
                             <li><a href="service-website-design-development.html">Website Design</a></li>
@@ -2406,10 +2386,10 @@
     });
     </script>
     <!-- Lottie Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <!-- Lottie animation data � loaded as a JS variable (works without a local server) -->
-    <script src="assets/animation/home-dashboard-data.js"></script>
-    <script src="assets/animation/website-ranking-data.js"></script>
+    <script defer src="assets/animation/home-dashboard-data.js"></script>
+    <script defer src="assets/animation/website-ranking-data.js"></script>
     <script>
     /* Lottie Banner Init */
     window.addEventListener('load', function () {
