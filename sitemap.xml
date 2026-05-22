@@ -1,154 +1,137 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-  <!-- Core Pages -->
-  <url>
-    <loc>https://trico-makes.vercel.app/index.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/free-audit.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/contact.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/pricing.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
-  <!-- Service Pages -->
-  <url>
-    <loc>https://trico-makes.vercel.app/service-website-design-development.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-ui-ux-design.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-mobile-app-design.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-logo-design.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-branding-rebranding.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-poster-social-media-design.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-vector-art-design.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-digital-marketing.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-seo.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-social-media-marketing.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-lead-generation.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-digital-business-card.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/service-reels-video-editing.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+  <loc>https://www.tricomakes.in/</loc>
+  <lastmod>2026-05-22T07:05:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/index.html</loc>
+  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service.html</loc>
+  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/our-works.html</loc>
+  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/contact.html</loc>
+  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/free-audit.html</loc>
+  <lastmod>2026-05-22T07:18:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-website-design-development.html</loc>
+  <lastmod>2026-05-22T07:18:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-ui-ux-design.html</loc>
+  <lastmod>2026-05-22T07:18:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-mobile-app-design.html</loc>
+  <lastmod>2026-05-22T07:18:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-logo-design.html</loc>
+  <lastmod>2026-05-22T07:18:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-branding-rebranding.html</loc>
+  <lastmod>2026-05-22T07:18:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-poster-social-media-design.html</loc>
+  <lastmod>2026-05-22T07:18:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-digital-business-card.html</loc>
+  <lastmod>2026-05-22T07:18:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-digital-marketing.html</loc>
+  <lastmod>2026-05-22T07:18:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-seo.html</loc>
+  <lastmod>2026-05-22T07:18:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-kaliammal-college.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-details.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-details-tapvyo.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-details-branding.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-details-ajwa.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-somakannan-textiles.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-sarvarish-saii-academy.html</loc>
+  <lastmod>2026-05-22T07:18:12+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-jole-beauty-salon.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/project-creative-marketing-campaigns.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.tricomakes.in/service-social-media-marketing.html</loc>
+  <lastmod>2026-05-22T07:18:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
-  <!-- Project Case Study Pages -->
-  <url>
-    <loc>https://trico-makes.vercel.app/project-details.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/project-details-ajwa.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/project-details-branding.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/project-details-tapvyo.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/project-kaliammal-college.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://trico-makes.vercel.app/project-somakannan-textiles.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
 </urlset>
