@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -15,6 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f15c2b">
     <meta name="description" content="Trico Makes redesigned Kaliammal College website with a modern, responsive layout, improved navigation and optimised performance. View case study.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -45,7 +48,8 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="assets/img/Kaliammal-College-Redesign.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
     <link rel="preload" as="style" href="assets/css/style.css">
@@ -63,6 +67,8 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="preload" as="style" href="assets/css/performance.css">
+    <link href="assets/css/performance.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
     <!-- BreadcrumbList Schema -->
@@ -134,13 +140,13 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-menu">
-<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
@@ -203,7 +209,7 @@
         <div class="container">
             <div class="image-move-bg">
                 <div class="animation-zoom-banner" id="js-hero">
-                    <img src="assets/img/Kaliammal-College-Redesign.png" alt="Kaliammal College Website Redesign" fetchpriority="high" decoding="async">
+                    <img src="assets/img/Kaliammal-College-Redesign.png" alt="Kaliammal College Website Redesign" decoding="async" loading="eager" width="1296" height="729">
                 </div>
             </div>
         </div>
@@ -247,7 +253,7 @@
                             Currently redesigning the official Kaliammal College website with a modern, responsive, and user-friendly interface. The project focuses on improving user experience, navigation structure, mobile responsiveness, performance optimization, and overall visual design to create a more engaging digital presence for students and visitors.
                         </p>
                         <p>
-                            Trico Makes is leading the full redesign effort � from UX planning and wireframing to front-end development � with the goal of transforming the college's online presence into a student-friendly, fast, and visually compelling platform.
+                            Trico Makes is leading the full redesign effort ? from UX planning and wireframing to front-end development ? with the goal of transforming the college's online presence into a student-friendly, fast, and visually compelling platform.
                         </p>
                     </div>
 
@@ -262,14 +268,14 @@
                 <div class="row g-4">
                     <div class="col-md-6 d-flex flex-column">
                         <div style="background:#fff; border-radius:12px; box-shadow:0 4px 28px rgba(0,0,0,0.09); padding:18px 18px 24px; flex:1;">
-                            <img src="assets/img/bed.png" alt="Kaliammal College Website Before Redesign" style="width:100%; border-radius:6px;" fetchpriority="high" decoding="async">
+                            <img src="assets/img/bed.png" alt="Kaliammal College Website Before Redesign" style="width:100%; border-radius:6px;" decoding="async" loading="eager" width="744" height="418">
                         </div>
                         <!-- <h3 style="font-size:28px; font-weight:800; color:#1a1a2e; margin-top:20px; margin-bottom:0;">Before Redesign</h3> -->
                     </div>
                     <div class="col-md-6 d-flex flex-column">
                         <!-- <h3 style="font-size:28px; font-weight:800; color:#1a1a2e; margin-bottom:20px;">After Redesign</h3> -->
                         <div style="background:#fff; border-radius:12px; box-shadow:0 4px 28px rgba(0,0,0,0.09); padding:18px; flex:1;">
-                            <img src="assets/img/med.png" alt="Kaliammal College Website After Redesign" style="width:100%; border-radius:6px;" fetchpriority="high" decoding="async">
+                            <img src="assets/img/med.png" alt="Kaliammal College Website After Redesign" style="width:100%; border-radius:6px;" decoding="async" loading="eager" width="744" height="418">
                         </div>
                     </div>
                 </div>
@@ -291,7 +297,7 @@
                                 Kaliammal College's existing website did not reflect the institution's quality and reputation. The outdated layout, poor mobile experience, and slow performance were creating friction for prospective students, parents, and faculty looking for information.
                             </p>
                             <p>
-                                Trico Makes was engaged to reimagine the website from the ground up � building a cleaner, faster, and more intuitive digital experience that better serves the college community and supports student recruitment.
+                                Trico Makes was engaged to reimagine the website from the ground up ? building a cleaner, faster, and more intuitive digital experience that better serves the college community and supports student recruitment.
                             </p>
                         </div>
                     </div>
@@ -304,7 +310,7 @@
                         </div>
                         <div class="right-info">
                             <p>
-                                The key challenge was redesigning a complex institutional website that serves multiple audiences � students, parents, faculty, and administrators � while keeping the navigation simple and the content well-organised.
+                                The key challenge was redesigning a complex institutional website that serves multiple audiences ? students, parents, faculty, and administrators ? while keeping the navigation simple and the content well-organised.
                             </p>
                             <p>
                                 The redesign also needed to prioritise mobile responsiveness and page speed, as a large portion of visitors access the site on mobile devices. Modernising the visual identity without losing institutional familiarity was an additional consideration.
@@ -319,7 +325,7 @@
                                 <li>Student-friendly interface and content structure</li>
                             </ul>
                            
-                            <img src="assets/img/gallery.png" alt="Kaliammal College Redesign Highlights" fetchpriority="high" decoding="async">
+                            <img src="assets/img/gallery.png" alt="Kaliammal College Redesign Highlights" decoding="async" loading="eager" width="744" height="418">
                         </div>
                     </div>
                 </div>
@@ -331,7 +337,7 @@
                         </div>
                         <div class="right-info">
                             <p>
-                                Trico Makes is redesigning the full Kaliammal College website using HTML5, CSS3, JavaScript, and Bootstrap. The new layout is built around a student-first experience � with clear course listings, intuitive navigation, and a clean visual hierarchy that makes finding information effortless.
+                                Trico Makes is redesigning the full Kaliammal College website using HTML5, CSS3, JavaScript, and Bootstrap. The new layout is built around a student-first experience ? with clear course listings, intuitive navigation, and a clean visual hierarchy that makes finding information effortless.
                             </p>
                             <p>
                                 The redesigned website will deliver a professional, modern, and fully responsive experience that strengthens the college's digital credibility, improves engagement with prospective students, and supports the institution's long-term growth goals.
@@ -417,25 +423,10 @@
     <!-- jQuery Frameworks -->
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-    <script src="assets/js/jquery.appear.js" defer></script>
-    <script src="assets/js/jquery.easing.min.js" defer></script>
-    <script src="assets/js/swiper-bundle.min.js" defer></script>
-    <script src="assets/js/progress-bar.min.js" defer></script>
-    <script src="assets/js/wow.min.js" defer></script>
-    <script src="assets/js/isotope.pkgd.min.js" defer></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
-    <script src="assets/js/magnific-popup.min.js" defer></script>
-    <script src="assets/js/jquery.waypoints.js" defer></script>
-    <script src="assets/js/count-to.js" defer></script>
-    <script src="assets/js/YTPlayer.min.js" defer></script>
-    <script src="assets/js/validnavs.js" defer></script>
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/jquery.lettering.min.js" defer></script>
-    <script src="assets/js/jquery.circleType.js" defer></script>
-    <script src="assets/js/typed.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-
+                                                <script src="assets/js/validnavs.js" defer></script>
+                        <script src="assets/js/performance.js" defer></script>
+    <script src="assets/js/app-entry.js" defer></script>
+    
     <!-- WhatsApp Floating Button -->
     <div class="whatsapp-pulse-ring"></div>
     <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" aria-label="Chat with Trico Makes on WhatsApp">

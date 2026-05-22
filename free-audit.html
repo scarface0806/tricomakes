@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -15,6 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f15c2b">
     <meta name="description" content="Get a free website and SEO audit from Trico Makes. Identify growth opportunities, fix issues and improve your Google rankings - no strings attached.">
 
     <!-- Open Graph -->
@@ -44,7 +47,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="style" href="assets/css/style.css">
     <link rel="preload" as="image" href="assets/img/logo.png">
     <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
@@ -54,6 +58,8 @@
     <link href="assets/css/validnavs.css" rel="stylesheet">
     <link href="assets/css/helper.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="preload" as="style" href="assets/css/performance.css">
+    <link href="assets/css/performance.css" rel="stylesheet">
 
     <!-- ===== Free Audit Page Styles ===== -->
     <style>
@@ -128,7 +134,7 @@
         .abtn svg { transition: transform .2s; flex-shrink: 0; }
         .abtn:hover svg { transform: translateX(4px); }
 
-        /* ── 1. HERO ── */
+        /* -- 1. HERO -- */
         .ahero {
             padding: 130px 0 90px;
             background: var(--abg);
@@ -271,7 +277,7 @@
             filter: drop-shadow(0 24px 56px rgba(0,0,0,.13));
         }
 
-        /* ── 2. STATS BAR ── */
+        /* -- 2. STATS BAR -- */
         .astats-bar { background: var(--anavy); padding: 36px 0; }
         .astats-grid {
             display: grid;
@@ -298,7 +304,7 @@
             letter-spacing: 1px;
         }
 
-        /* ── 3. WHAT YOU GET ── */
+        /* -- 3. WHAT YOU GET -- */
         .acards-grid {
             display: grid;
             grid-template-columns: repeat(2,1fr);
@@ -338,7 +344,7 @@
         .acard h3 { font-size: 18px; font-weight: 700; color: var(--ahead); margin-bottom: 10px; }
         .acard p  { font-size: 15px; color: var(--abody); line-height: 1.75; margin: 0; }
 
-        /* ── 4. PROCESS ── */
+        /* -- 4. PROCESS -- */
         .asteps-row {
             display: grid;
             grid-template-columns: 1fr 48px 1fr 48px 1fr;
@@ -369,7 +375,7 @@
             color: rgba(241,92,43,.4);
         }
 
-        /* ── 5. FORM SECTION ── */
+        /* -- 5. FORM SECTION -- */
         .aform-grid {
             display: grid;
             grid-template-columns: 1fr 1.05fr;
@@ -559,7 +565,7 @@
         .asuccess h3 { font-size: 21px; font-weight: 700; color: var(--ahead); margin-bottom: 10px; }
         .asuccess p  { font-size: 15px; color: var(--abody); line-height: 1.75; }
 
-        /* ── 6. TESTIMONIALS ── */
+        /* -- 6. TESTIMONIALS -- */
         .atesti-grid {
             display: grid;
             grid-template-columns: repeat(3,1fr);
@@ -591,7 +597,7 @@
         .aauthor-name { font-size: 14px; font-weight: 700; color: var(--ahead); }
         .aauthor-role { font-size: 12.5px; color: var(--amuted); margin-top: 2px; }
 
-        /* ── 7. GUARANTEE BAR ── */
+        /* -- 7. GUARANTEE BAR -- */
         .aguarantee {
             background: var(--abg-alt);
             border-top: 1px solid var(--aborder);
@@ -623,7 +629,7 @@
             flex-shrink: 0;
         }
 
-        /* ── 8. FOOTER ── */
+        /* -- 8. FOOTER -- */
         .afooter { background: var(--anavy); padding: 52px 0 32px; }
         .afooter-top {
             display: flex;
@@ -743,7 +749,7 @@
 
 <body>
 
-    <!-- ── Navigation ── -->
+    <!-- -- Navigation -- -->
     <header>
         <nav class="navbar mobile-sidenav navbar-box navbar-default validnavs navbar-sticky">
             <div class="container nav-box d-flex justify-content-between align-items-center">
@@ -752,11 +758,11 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Tricomakes Logo" width="160" height="50" fetchpriority="high" decoding="async">
+                        <img src="assets/img/logo.png" class="logo" alt="Tricomakes Logo" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <img src="assets/img/logo.png" alt="Tricomakes Logo" width="160" height="50" fetchpriority="high" decoding="async">
+                    <img src="assets/img/logo.png" alt="Tricomakes Logo" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
                     </button>
@@ -792,9 +798,9 @@
         </nav>
     </header>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          1. HERO SECTION
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="ahero">
         <div class="aw">
             <div class="ahero-grid">
@@ -803,7 +809,7 @@
                 <div class="ahero-left">
                     <h1>Get a <span class="ag">Free Growth Audit</span><br>for Your Business</h1>
 
-                    <p class="ahero-sub">We personally review your website and hand you a clear, prioritised action plan � identifying exactly what's blocking your growth. No automated tools. Real human analysis.</p>
+                    <p class="ahero-sub">We personally review your website and hand you a clear, prioritised action plan ? identifying exactly what's blocking your growth. No automated tools. Real human analysis.</p>
 
                     <ul class="achecks">
                         <li>
@@ -942,9 +948,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          2. STATS BAR
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="astats-bar">
         <div class="aw">
             <div class="astats-grid">
@@ -968,9 +974,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          3. WHAT YOU GET
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="asec">
         <div class="aw">
             <div class="ahead-blk">
@@ -983,7 +989,7 @@
                 <div class="acard">
                     <div class="acard-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
                     <h3>Full Audit Report</h3>
-                    <p>A detailed report covering your website's strengths, weaknesses, and a prioritised fix list � delivered within 48 hours.</p>
+                    <p>A detailed report covering your website's strengths, weaknesses, and a prioritised fix list ? delivered within 48 hours.</p>
                 </div>
 
                 <div class="acard">
@@ -995,7 +1001,7 @@
                 <div class="acard">
                     <div class="acard-ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
                     <h3>SEO &amp; Performance</h3>
-                    <p>Page speed, mobile performance, meta tags, structured data, and keyword signals � all checked and graded honestly.</p>
+                    <p>Page speed, mobile performance, meta tags, structured data, and keyword signals ? all checked and graded honestly.</p>
                 </div>
 
                 <div class="acard">
@@ -1008,9 +1014,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          4. HOW IT WORKS
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="asec asec-alt">
         <div class="aw">
             <div class="ahead-blk">
@@ -1044,9 +1050,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          5. FORM SECTION
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="asec" id="audit-form">
         <div class="aw">
             <div class="aform-grid">
@@ -1055,21 +1061,21 @@
                 <div class="aform-info">
                     <span class="atag" style="margin-bottom:20px;">Free Audit Request</span>
                     <h2>Ready to Find Out What's Holding Your Business Back?</h2>
-                    <p>Fill out this quick form and we'll get started on your personal audit. No fluff, no upsell � just clear, honest insights.</p>
+                    <p>Fill out this quick form and we'll get started on your personal audit. No fluff, no upsell ? just clear, honest insights.</p>
 
                     <ul class="aperk-list">
                         <li class="aperk">
                             <span class="aperk-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
                             <div class="aperk-txt">
                                 <strong>Detailed Audit Report</strong>
-                                <span>PDF with prioritised issues and actionable fixes � personalised to your site</span>
+                                <span>PDF with prioritised issues and actionable fixes ? personalised to your site</span>
                             </div>
                         </li>
                         <li class="aperk">
                             <span class="aperk-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
                             <div class="aperk-txt">
                                 <strong>Built Around Your Business</strong>
-                                <span>Not a generic checklist � every recommendation is specific to your goals</span>
+                                <span>Not a generic checklist ? every recommendation is specific to your goals</span>
                             </div>
                         </li>
                         <li class="aperk">
@@ -1083,7 +1089,7 @@
                             <span class="aperk-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
                             <div class="aperk-txt">
                                 <strong>100% Free, No Obligations</strong>
-                                <span>No pitches, no spam, no credit card � just honest, useful feedback</span>
+                                <span>No pitches, no spam, no credit card ? just honest, useful feedback</span>
                             </div>
                         </li>
                     </ul>
@@ -1101,7 +1107,7 @@
 
                     <!-- Success Message -->
                     <div class="asuccess" id="auditSuccess">
-                        <div class="asuccess-ico">✅</div>
+                        <div class="asuccess-ico">?</div>
                         <h3>Audit Request Sent!</h3>
                         <p>Our team has received your details. We'll review your website and send your personalised audit report within 48 hours.</p>
                     </div>
@@ -1109,7 +1115,7 @@
                     <!-- Form -->
                     <form id="auditFrm" novalidate>
                         <input type="hidden" name="access_key" value="5b4d31e0-0f8e-4bc7-8a95-26b2fb356542">
-                        <input type="hidden" name="subject" value="New Free Growth Audit Request � Trico Makes">
+                        <input type="hidden" name="subject" value="New Free Growth Audit Request ? Trico Makes">
                         <input type="hidden" name="from_name" value="Trico Makes Website">
 
                         <div class="afl">
@@ -1171,9 +1177,9 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          6. TESTIMONIALS
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <section class="asec asec-alt">
         <div class="aw">
             <div class="ahead-blk">
@@ -1209,7 +1215,7 @@
 
                 <div class="atesti">
                     <div class="astars">?????</div>
-                    <p class="aquote">"Within one week of fixing what Tricomakes flagged, our enquiries doubled. The audit alone was worth more than we paid � and it was free."</p>
+                    <p class="aquote">"Within one week of fixing what Tricomakes flagged, our enquiries doubled. The audit alone was worth more than we paid ? and it was free."</p>
                     <div class="aauthor">
                         <div class="aavatar">SM</div>
                         <div>
@@ -1223,15 +1229,15 @@
         </div>
     </section>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          7. GUARANTEE BAR
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <div class="aguarantee">
         <div class="aw">
             <div class="aguarantee-row">
                 <div class="aguarantee-item">
                     <span class="aguarantee-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
-                    No Spam � Ever
+                    No Spam ? Ever
                 </div>
                 <div class="aguarantee-item">
                     <span class="aguarantee-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f15c2b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>
@@ -1249,9 +1255,9 @@
         </div>
     </div>
 
-    <!-- ══════════════════════════════════
+    <!-- ----------------------------------
          8. MINIMAL FOOTER
-    ══════════════════════════════════ -->
+    ---------------------------------- -->
     <footer class="default-padding bg-cover" style="background-image: url(assets/img/shape/1.jpg);">
         <div class="container">
             <div class="row">
@@ -1299,6 +1305,8 @@
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/js/validnavs.js" defer></script>
+    <script src="assets/js/performance.js" defer></script>
+    <script src="assets/js/app-entry.js" defer></script>
     <!-- Audit Form Logic -->
     <script>
     (function () {
@@ -1375,7 +1383,7 @@
 
                 var submitBtn = document.getElementById('auditSubmit');
                 submitBtn.disabled = true;
-                submitBtn.querySelector('span') && (submitBtn.querySelector('span').textContent = 'Sending…');
+                submitBtn.querySelector('span') && (submitBtn.querySelector('span').textContent = 'Sending�');
 
                 var chalEl    = document.getElementById('af-challenge');
                 var challenge = chalEl.options[chalEl.selectedIndex].text;

@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -15,6 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f15c2b">
 
     <!-- ========== Page Title ========== -->
     <title>Trico Makes | Web Design &amp; SEO Agency in Tamil Nadu</title>
@@ -61,7 +64,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="assets/img/icon/hand.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png">
     <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
@@ -76,6 +80,8 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="preload" as="style" href="assets/css/performance.css">
+    <link href="assets/css/performance.css" rel="stylesheet">
     <!-- ========== End Stylesheet ========== -->
 
     <!-- Lottie Animation Styles -->
@@ -127,7 +133,7 @@
             }
         }
 
-        /* -- FAQ Section � pricing-style accordion -- */
+        /* -- FAQ Section ? pricing-style accordion -- */
         .faq-section-head { text-align: center; margin-bottom: 48px; }
         .faq-section-tag {
             display: inline-flex; align-items: center; gap: 6px;
@@ -731,6 +737,9 @@
             document.querySelectorAll('a[href*="wa.me"]')
                 .forEach(function (btn) {
                     btn.addEventListener('click', function () {
+                        if (typeof fbq !== 'function') {
+                            return;
+                        }
                         fbq('track', 'Lead', {
                             content_name: 'WhatsApp CTA',
                             content_category: 'Contact',
@@ -744,6 +753,9 @@
             document.querySelectorAll('a[href*="service-"]')
                 .forEach(function (link) {
                     link.addEventListener('click', function () {
+                        if (typeof fbq !== 'function') {
+                            return;
+                        }
                         fbq('track', 'ViewContent', {
                             content_name: this.href,
                             content_category: 'Service'
@@ -753,6 +765,9 @@
 
             // Track pricing page as high intent
             if (window.location.href.includes('pricing')) {
+                if (typeof fbq !== 'function') {
+                    return;
+                }
                 fbq('track', 'ViewContent', {
                     content_name: 'Pricing Page',
                     content_category: 'High Intent',
@@ -1006,7 +1021,7 @@
             height: 100%;
         }
 
-        /* Card hover � lift + shadow intensify */
+        /* Card hover ? lift + shadow intensify */
         #portfolio .gallery-style-one:hover {
             transform: translateY(-7px);
             box-shadow:
@@ -1107,6 +1122,7 @@
             color: #0f172a;
             margin: 0;
             display: -webkit-box;
+            line-clamp: 2;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
@@ -1372,7 +1388,7 @@
             z-index: 2;
         }
 
-        /* Keyboard focus ring � visible on tab navigation */
+        /* Keyboard focus ring ? visible on tab navigation */
         #portfolio .gallery-style-one .info h4 a:focus {
             outline: none;
         }
@@ -1401,11 +1417,11 @@
                 <div class="navbar-header"> <button type="button" class="navbar-toggle" data-toggle="collapse"
                         data-target="#navbar-menu"> <i class="fa fa-bars"></i> </button> <a class="navbar-brand"
                         href="index.html"> 
-<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
      </a> </div>
                 <!-- End Header Navigation --> <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu"> 
-<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu"> <i
                             class="fa fa-times"></i> </button>
@@ -1447,7 +1463,7 @@
                 <div class="col-lg-12">
                     <div class="banner-style-one-items">
                         <div class="info">
-                            <h1>Trico Makes <img src="assets/img/icon/hand.png" alt="Icon" fetchpriority="high" decoding="async"></h1>
+                            <h1>Trico Makes <img src="assets/img/icon/hand.png" alt="Icon" decoding="async" loading="eager" width="200" height="193"></h1>
                             <h2> <span class="header-caption" id="page-top"> <!-- type headline start--> <span
                                         class="cd-headline clip is-full-width"> <!-- ROTATING TEXT --> <span
                                             class="cd-words-wrapper"> <b class="is-visible">Digital Marketing</b> <b
@@ -1482,8 +1498,8 @@
     </div> <!-- End Banner -->
      <!-- Start About     ============================================= -->
     <div id="about" class="about-style-one-area bg-gray default-padding">
-        <div class="shape-style-one" aria-hidden="true"> <img src="assets/img/shape/3.png" alt="" fetchpriority="high" decoding="async"> <img
-                class="upDownScrol" src="assets/img/shape/8.png" alt="" fetchpriority="high" decoding="async"> </div>
+        <div class="shape-style-one" aria-hidden="true"> <img src="assets/img/shape/3.png" alt="" decoding="async" loading="eager" width="240" height="240"> <img
+                class="upDownScrol" src="assets/img/shape/8.png" alt="" decoding="async" loading="eager" width="168" height="200"> </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
@@ -1507,7 +1523,7 @@
                         <h2>About Trico Makes</h2>
                         <p class="split-text">We partner with startups and growing companies to solve real business
                             problems through strategic design and marketing.</p>
-                        <p>Our approach combines discovery, creative execution, and measurable results � so every
+                        <p>Our approach combines discovery, creative execution, and measurable results ? so every
                             project builds toward sustainable growth.</p>
                         <a class="btn-style-regular" href="#services"><span>Explore</span> <i
                                 class="fas fa-arrow-right"></i></a>
@@ -1518,7 +1534,7 @@
                 <div class="row">
                     <div class="col-lg-8 pr-60 pr-md-15 pr-xs-15">
                         <div class="img-container"> <img src="assets/img/banner/trico-facebook.png"
-                                alt="Brand identity presentation" fetchpriority="high" decoding="async"> </div>
+                                alt="Brand identity presentation" decoding="async" loading="eager" width="820" height="360"> </div>
                     </div>
                     <div class="col-lg-4">
                         <div id="lottie-ranking" class="wow fadeInUp" style="width:100%;height:450px;"></div>
@@ -1648,7 +1664,7 @@
         </div>
     </div> <!-- End Services --> <!-- Start Portfolio     ============================================= -->
     <div id="portfolio" class="portfolio-style-one-area default-padding bg-gray">
-        <!-- <div class="shape-top-left" aria-hidden="true"> <img src="assets/img/shape/9.png" alt="" fetchpriority="high" decoding="async"> </div> -->
+        <!-- <div class="shape-top-left" aria-hidden="true"> <img src="assets/img/shape/9.png" alt="" decoding="async" loading="eager" width="300" height="300"> </div> -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
@@ -1666,7 +1682,7 @@
                         <div id="gallery-masonary" class="gallery-items colums-3"> <!-- Single Item -->
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp">   <img
-                                        src="assets/img/Kaliammal-College-Redesign.png" alt="Kaliammal College Website Redesign" fetchpriority="high" decoding="async">
+                                        src="assets/img/Kaliammal-College-Redesign.png" alt="Kaliammal College Website Redesign" decoding="async" loading="eager" width="1296" height="729">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content"> 
@@ -1684,7 +1700,7 @@
                             </div> <!-- End Single Item --> <!-- Single Item -->
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp"> <img
-                                        src="assets/img/textail-card.png" alt="Real Textiles Website Development" fetchpriority="high" decoding="async">
+                                        src="assets/img/textail-card.png" alt="Real Textiles Website Development" decoding="async" loading="eager" width="1296" height="729">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1702,7 +1718,7 @@
                             </div> <!-- End Single Item --> <!-- Single Item -->
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp"> <img
-                                        src="assets/img/tapvyo-img.png" alt="TapVyo NFC Smart Business Card Platform" fetchpriority="high" decoding="async">
+                                        src="assets/img/tapvyo-img.png" alt="TapVyo NFC Smart Business Card Platform" decoding="async" loading="eager" width="1296" height="729">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1721,7 +1737,7 @@
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp" onclick="window.location='project-sarvarish-saii-academy.html'" style="cursor:pointer;">
                                      <img src="assets/img/sarvarish-saii-academy-home.jpg" alt="Sarvarish Saii Academy website homepage preview" loading="lazy" decoding="async"
-                                         onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';">
+                                         onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';" width="1200" height="1200">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1740,7 +1756,7 @@
                             <!-- Single Item -->
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp"> <img
-                                        src="assets/img/Ajwa.png" alt="AJWA Ice Cream Marketing and Print Design System" fetchpriority="high" decoding="async">
+                                        src="assets/img/Ajwa.png" alt="AJWA Ice Cream Marketing and Print Design System" decoding="async" loading="eager" width="1296" height="729">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1759,8 +1775,8 @@
                             <!-- Single Item -->
                             <!-- <div class="gallery-item" onclick="window.location='project-somakannan-textiles.html'" style="cursor:pointer;">
                                 <div class="gallery-style-one wow fadeInUp">
-                                    <img src="assets/img/s-1.png" alt="Somakannan Textiles Website � Modern Textile Business Website Design" fetchpriority="high" decoding="async"
-                                         onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';">
+                                    <img src="assets/img/s-1.png" alt="Somakannan Textiles Website ? Modern Textile Business Website Design" decoding="async"
+                                         onerror="this.onerror=null;this.src='assets/img/placeholders/project-visual.svg';" loading="eager" width="1546" height="1160">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1780,7 +1796,7 @@
                             <!-- Single Item -->
                             <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp"> <img
-                                        src="assets/img/oz.png" alt="AppnStruct and Oranzone Branding System" fetchpriority="high" decoding="async">
+                                        src="assets/img/oz.png" alt="AppnStruct and Oranzone Branding System" decoding="async" loading="eager" width="1546" height="1160">
                                     <div class="info">
                                         <div class="overlay">
                                             <div class="content">
@@ -1801,8 +1817,8 @@
                             <!-- <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp" onclick="window.location='project-jole-beauty-salon.html'" style="cursor:pointer;">
                                     <div class="project-preview-grid" role="img" aria-label="Jole Beauty Salon campaign poster previews">
-                                        <img src="assets/img/Ajwa-1.png" alt="Jole Beauty Salon black and gold promotional poster design" loading="lazy" decoding="async">
-                                        <img src="assets/img/Ajwa-2.png" alt="Jole Beauty Salon cream themed promotional poster design" loading="lazy" decoding="async">
+                                        <img src="assets/img/Ajwa-1.png" alt="Jole Beauty Salon black and gold promotional poster design" loading="lazy" decoding="async" width="1546" height="1160">
+                                        <img src="assets/img/Ajwa-2.png" alt="Jole Beauty Salon cream themed promotional poster design" loading="lazy" decoding="async" width="1546" height="1160">
                                     </div>
                                     <div class="info">
                                         <div class="overlay">
@@ -1824,8 +1840,8 @@
                             <!-- <div class="gallery-item">
                                 <div class="gallery-style-one wow fadeInUp" onclick="window.location='project-creative-marketing-campaigns.html'" style="cursor:pointer;">
                                     <div class="project-preview-grid" role="img" aria-label="Creative marketing campaign collage preview">
-                                        <img src="assets/img/oz.png" alt="Creative branding and logo campaign showcase" loading="lazy" decoding="async">
-                                        <img src="assets/img/tapvyo-img-1.png" alt="Creative digital marketing campaign visual" loading="lazy" decoding="async">
+                                        <img src="assets/img/oz.png" alt="Creative branding and logo campaign showcase" loading="lazy" decoding="async" width="1546" height="1160">
+                                        <img src="assets/img/tapvyo-img-1.png" alt="Creative digital marketing campaign visual" loading="lazy" decoding="async" width="1546" height="1160">
                                     </div>
                                     <div class="info">
                                         <div class="overlay">
@@ -1919,7 +1935,7 @@
                     Our Process
                 </div>
                 <h2>How Trico Makes Works</h2>
-                <p>A clear, proven process from first conversation to measurable growth � so you always know what comes next.</p>
+                <p>A clear, proven process from first conversation to measurable growth ? so you always know what comes next.</p>
             </div>
 
             <div class="hpw-steps">
@@ -1931,7 +1947,7 @@
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     </div>
                     <h3>Discovery &amp; Research</h3>
-                    <p>We study your market, audience, and goals so every decision is grounded in real insight � not guesswork.</p>
+                    <p>We study your market, audience, and goals so every decision is grounded in real insight ? not guesswork.</p>
                 </div>
 
                 <!-- Arrow -->
@@ -1976,7 +1992,7 @@
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
                     </div>
                     <h3>Growth &amp; Optimisation</h3>
-                    <p>We track, test, and iterate � running campaigns and improvements that keep your results compounding over time.</p>
+                    <p>We track, test, and iterate ? running campaigns and improvements that keep your results compounding over time.</p>
                 </div>
 
             </div>
@@ -1995,7 +2011,7 @@
                     Real Outcomes
                 </div>
                 <h2>What Clients Gain</h2>
-                <p>Not just deliverables � tangible business results that make a real difference to your bottom line.</p>
+                <p>Not just deliverables ? tangible business results that make a real difference to your bottom line.</p>
             </div>
 
             <div class="wcg-grid">
@@ -2003,25 +2019,25 @@
                 <div class="wcg-card">
                     <div class="wcg-card-ico">??</div>
                     <h3>Stronger Brand Positioning</h3>
-                    <p>A unified visual identity and consistent voice that <strong>builds instant trust</strong> across every touchpoint � digital and physical.</p>
+                    <p>A unified visual identity and consistent voice that <strong>builds instant trust</strong> across every touchpoint ? digital and physical.</p>
                 </div>
 
                 <div class="wcg-card">
                     <div class="wcg-card-ico">?</div>
                     <h3>Higher Conversion Rates</h3>
-                    <p>Websites and landing pages engineered to turn visitors into leads � with <strong>clear CTAs, fast load times</strong>, and frictionless UX.</p>
+                    <p>Websites and landing pages engineered to turn visitors into leads ? with <strong>clear CTAs, fast load times</strong>, and frictionless UX.</p>
                 </div>
 
                 <div class="wcg-card">
                     <div class="wcg-card-ico">??</div>
                     <h3>More Qualified Traffic</h3>
-                    <p>SEO strategies and paid campaigns that drive <strong>the right audience</strong> to your brand � not just clicks, but real buyers.</p>
+                    <p>SEO strategies and paid campaigns that drive <strong>the right audience</strong> to your brand ? not just clicks, but real buyers.</p>
                 </div>
 
                 <div class="wcg-card">
                     <div class="wcg-card-ico">??</div>
                     <h3>One Reliable Creative Partner</h3>
-                    <p>Design, development, and marketing under one roof � <strong>faster delivery, no coordination overhead</strong>, consistent quality.</p>
+                    <p>Design, development, and marketing under one roof ? <strong>faster delivery, no coordination overhead</strong>, consistent quality.</p>
                 </div>
 
             </div>
@@ -2030,7 +2046,7 @@
             <div class="wcg-cta">
                 <div class="wcg-cta-text">
                     <h3>Ready to start growing?</h3>
-                    <p>Get a free audit and see exactly where your business can improve � no commitment, no fluff.</p>
+                    <p>Get a free audit and see exactly where your business can improve ? no commitment, no fluff.</p>
                 </div>
                 <a href="free-audit.html" class="wcg-cta-btn">
                     Get Your Free Audit
@@ -2054,7 +2070,7 @@
                     Frequently Asked Questions
                 </div>
                 <h2>Questions? We Have Answers.</h2>
-                <p>Everything you need to know before working with us � answered clearly and honestly.</p>
+                <p>Everything you need to know before working with us ? answered clearly and honestly.</p>
             </div>
 
             <!-- Accordion List -->
@@ -2080,7 +2096,7 @@
                         </div>
                     </div>
                     <div class="ph-faq-a">
-                        <div class="ph-faq-a-inner">Most projects combine strategy, design, revision rounds, launch support, and clear next-step recommendations. You get a dedicated point of contact throughout � no tickets, no bots.</div>
+                        <div class="ph-faq-a-inner">Most projects combine strategy, design, revision rounds, launch support, and clear next-step recommendations. You get a dedicated point of contact throughout ? no tickets, no bots.</div>
                     </div>
                 </div>
 
@@ -2092,7 +2108,7 @@
                         </div>
                     </div>
                     <div class="ph-faq-a">
-                        <div class="ph-faq-a-inner">Yes. Trico Makes can continue with SEO, social media marketing, content design, reels editing, and lead generation after your site or campaign launches � all under one roof.</div>
+                        <div class="ph-faq-a-inner">Yes. Trico Makes can continue with SEO, social media marketing, content design, reels editing, and lead generation after your site or campaign launches ? all under one roof.</div>
                     </div>
                 </div>
 
@@ -2104,7 +2120,7 @@
                         </div>
                     </div>
                     <div class="ph-faq-a">
-                        <div class="ph-faq-a-inner">Most website and branding projects are completed within 2�4 weeks depending on scope. Marketing campaigns can begin within the first week. We'll give you a clear timeline before we start.</div>
+                        <div class="ph-faq-a-inner">Most website and branding projects are completed within 2?4 weeks depending on scope. Marketing campaigns can begin within the first week. We'll give you a clear timeline before we start.</div>
                     </div>
                 </div>
 
@@ -2128,7 +2144,7 @@
                         </div>
                     </div>
                     <div class="ph-faq-a">
-                        <div class="ph-faq-a-inner">Pricing depends on service and scope. Most projects start at ?15,000+ for websites and ?5,000+ for design work. Get a free custom quote � chat with us on WhatsApp or <a href="free-audit.html" style="color:#f15c2b;">request a free audit</a>. No obligation.</div>
+                        <div class="ph-faq-a-inner">Pricing depends on service and scope. Most projects start at ?15,000+ for websites and ?5,000+ for design work. Get a free custom quote ? chat with us on WhatsApp or <a href="free-audit.html" style="color:#f15c2b;">request a free audit</a>. No obligation.</div>
                     </div>
                 </div>
 
@@ -2137,7 +2153,7 @@
             <!-- Still have questions? CTA -->
             <div class="faq-still-cta">
                 <h3>Still have questions?</h3>
-                <p>Can't find what you're looking for? Our team is happy to answer any question directly � no automated responses.</p>
+                <p>Can't find what you're looking for? Our team is happy to answer any question directly ? no automated responses.</p>
                 <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%2C%20I%20have%20a%20question" target="_blank" rel="noopener noreferrer" class="faq-still-btn" aria-label="Chat with Trico Makes on WhatsApp">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.533 5.857L.057 23.943l6.235-1.635A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.007-1.371l-.36-.214-3.7.97.988-3.61-.235-.371A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/></svg>
                     Chat with Us on WhatsApp
@@ -2161,7 +2177,7 @@
                             Let's Talk
                         </div>
                         <h2>Start a project or ask anything</h2>
-                        <p>Whether you're ready to launch or just exploring options � we'll give you an honest answer and a clear path forward.</p>
+                        <p>Whether you're ready to launch or just exploring options ? we'll give you an honest answer and a clear path forward.</p>
 
                         <div class="ct-channels">
                             <a href="mailto:tricomakes@gmail.com" class="ct-channel">
@@ -2195,7 +2211,7 @@
 
                         <div class="ct-promise">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            We reply within <strong>24 hours</strong> � usually same day.
+                            We reply within <strong>24 hours</strong> ? usually same day.
                         </div>
                     </div>
                 </div>
@@ -2239,7 +2255,7 @@
                                     <option value="SEO (Search Engine Optimization)">SEO (Search Engine Optimization)</option>
                                     <option value="Social Media Marketing">Social Media Marketing</option>
                                     <option value="Lead Generation">Lead Generation</option>
-                                    <option value="Not sure yet">Not sure yet � just exploring</option>
+                                    <option value="Not sure yet">Not sure yet ? just exploring</option>
                                 </select>
                             </div>
                         </div>
@@ -2320,26 +2336,10 @@
     </footer> <!-- End Footer --> <!-- jQuery Frameworks    ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-    <script src="assets/js/jquery.appear.js" defer></script>
-    <script src="assets/js/jquery.easing.min.js" defer></script>
-    <script src="assets/js/swiper-bundle.min.js" defer></script>
-    <script src="assets/js/progress-bar.min.js" defer></script>
-    <script src="assets/js/wow.min.js" defer></script>
-    <script src="assets/js/isotope.pkgd.min.js" defer></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
-    <script src="assets/js/magnific-popup.min.js" defer></script>
-    <script src="assets/js/jquery.waypoints.js" defer></script>
-    <script src="assets/js/count-to.js" defer></script>
-    <script src="assets/js/YTPlayer.min.js" defer></script>
-    <script src="assets/js/validnavs.js" defer></script>
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/SplitText.min.js" defer></script>
-    <script src="assets/js/jquery.lettering.min.js" defer></script>
-    <script src="assets/js/jquery.circleType.js" defer></script>
-    <script src="assets/js/typed.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-    <script src="assets/js/faq-accordion.js" defer></script>
+                                                <script src="assets/js/validnavs.js" defer></script>
+                            <script src="assets/js/performance.js" defer></script>
+    <script src="assets/js/app-entry.js" defer></script>
+        <script src="assets/js/faq-accordion.js" defer></script>
     <!-- Homepage Contact Form Handler -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -2350,7 +2350,7 @@
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             var btnText = btn.querySelector('.ct-submit-text');
-            btnText.textContent = 'Sending�';
+            btnText.textContent = 'Sending?';
             btn.disabled = true;
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
@@ -2372,7 +2372,7 @@
     </script>
     <!-- Lottie Animation Library -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <!-- Lottie animation data � loaded as a JS variable (works without a local server) -->
+    <!-- Lottie animation data ? loaded as a JS variable (works without a local server) -->
     <script defer src="assets/animation/home-dashboard-data.js"></script>
     <script defer src="assets/animation/website-ranking-data.js"></script>
     <script>
@@ -2472,7 +2472,7 @@
     </a>
     <div class="whatsapp-tooltip">Chat with us</div>
 
-    <!-- Exit Intent Popup � Redesigned -->
+    <!-- Exit Intent Popup ? Redesigned -->
     <div id="exitIntentPopup" class="popup-overlay">
         <div class="popup-card">
             <!-- Close Button -->
@@ -2513,8 +2513,8 @@
                 <!-- Content -->
                 <div class="popup-content">
                     <span class="popup-badge">FREE WEBSITE AUDIT</span>
-                    <h2 class="popup-heading">Hold on � you're leaving <br />without your free report!</h2>
-                    <p class="popup-subtext">We'll analyze your website's speed, SEO, design & conversions � and send
+                    <h2 class="popup-heading">Hold on ? you're leaving <br />without your free report!</h2>
+                    <p class="popup-subtext">We'll analyze your website's speed, SEO, design & conversions ? and send
                         you a detailed report within 48 hours. No strings attached.</p>
                 </div>
 
@@ -2563,7 +2563,7 @@
 
     <style>
         /* =============================
-       EXIT INTENT POPUP � REDESIGN
+       EXIT INTENT POPUP ? REDESIGN
        ============================= */
 
         .popup-overlay {

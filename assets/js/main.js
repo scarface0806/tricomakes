@@ -62,31 +62,38 @@
 		/* ==================================================
 		    # Tooltip Init
 		===============================================*/
-		$('[data-toggle="tooltip"]').tooltip();
+		if ($.fn.tooltip) {
+			$('[data-toggle="tooltip"]').tooltip();
+		}
 
 
 		/* ==================================================
 		    # Youtube Video Init
 		 ===============================================*/
-		$('.player').mb_YTPlayer();
+		if ($.fn.mb_YTPlayer) {
+			$('.player').mb_YTPlayer();
+		}
 
 
 		/* ==================================================
 		    # Wow Init
 		 ===============================================*/
-		var wow = new WOW({
-			boxClass: 'wow', // animated element css class (default is wow)
-			animateClass: 'animated', // animation css class (default is animated)
-			offset: 0, // distance to the element when triggering the animation (default is 0)
-			mobile: false, // trigger animations on mobile devices (default is true)
-			live: true // act on asynchronously loaded content (default is true)
-		});
-		wow.init();
+		if (typeof WOW !== 'undefined') {
+			var wow = new WOW({
+				boxClass: 'wow',
+				animateClass: 'animated',
+				offset: 0,
+				mobile: false,
+				live: true
+			});
+			wow.init();
+		}
 
 
 		/* ==================================================
 		    # imagesLoaded active
 		===============================================*/
+		if ($.fn.imagesLoaded && $.fn.isotope) {
 		$('#gallery-masonary,.blog-masonry').imagesLoaded(function() {
 
 			/* Filter menu */
@@ -123,14 +130,15 @@
 			});
 
 		});
+		}
 
 
 		/* ==================================================
 		    # Magnific popup init
 		 ===============================================*/
+		if ($.fn.magnificPopup) {
 		$(".popup-link").magnificPopup({
 			type: 'image',
-			// other options
 		});
 
 		$(".popup-gallery").magnificPopup({
@@ -138,7 +146,6 @@
 			gallery: {
 				enabled: true
 			},
-			// other options
 		});
 
 		$('.magnific-mix-gallery').each(function() {
@@ -179,17 +186,22 @@
 				}
 			});
 		});
+		}
 
 
 		/* ==================================================
 		    # Fun Factor Init
 		===============================================*/
-		$('.timer').countTo();
-		$('.fun-fact').appear(function() {
+		if ($.fn.countTo) {
 			$('.timer').countTo();
-		}, {
-			accY: -100
-		});
+			if ($.fn.appear) {
+				$('.fun-fact').appear(function() {
+					$('.timer').countTo();
+				}, {
+					accY: -100
+				});
+			}
+		}
 
 
 		$(".service-style-one-item").hover(function() {
@@ -199,6 +211,7 @@
 		/* ==================================================
             # Expertise Carousel
          ===============================================*/
+		if (typeof Swiper !== 'undefined' && document.querySelector(".expertise-carousel")) {
 		const expertiseCarousel = new Swiper(".expertise-carousel", {
 			// Optional parameters
 			loop: true,
@@ -211,11 +224,13 @@
 				disableOnInteraction: false,
 			},
 		});
+		}
 
 
 		/* ==================================================
             # Testimonials Carousel
          ===============================================*/
+		if (typeof Swiper !== 'undefined' && document.querySelector(".testimonial-style-one-carousel")) {
 		const testimonialOneCarousel = new Swiper(".testimonial-style-one-carousel", {
 			// Optional parameters
 			direction: "horizontal",
@@ -239,13 +254,14 @@
             el: '.swiper-scrollbar',
           },*/
 		});
+		}
 
 
 		/* ==================================================
 		    Circle Text
 		================================================== */
 		let circleTypeElm = $(".circle-text-item");
-		if (circleTypeElm.length) {
+		if (circleTypeElm.length && $.fn.circleType) {
 			circleTypeElm.each(function() {
 				let elm = $(this);
 				let options = elm.data("circle-text-options");
@@ -261,7 +277,7 @@
 		================================================== */
 
 		let upDown_Scroll = document.querySelector(".upDownScrol");
-		if (upDown_Scroll) {
+		if (upDown_Scroll && typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
 			gsap.set(".upDownScrol", {
 				yPercent: 105
 			});
@@ -281,7 +297,7 @@
 		    Splite Text
 		================================================== */
 		let text_split = document.querySelector(".split-text");
-		if (text_split) {
+		if (text_split && typeof SplitText !== 'undefined' && typeof gsap !== 'undefined') {
 			const animEls = document.querySelectorAll('.split-text');
 			animEls.forEach(el => {
 				var splitEl = new SplitText(el, {
@@ -531,57 +547,73 @@
 	};
 
 
-	$(window).scroll(function() {
-		/* ==================================================
-		    Background Zoom Init
-		================================================== */
-		let background_Zoom = document.querySelector("#js-hero");
-		if (background_Zoom) {
-			var scroll = $(window).scrollTop();
-			$("#js-hero").css({
-				width: (100 + scroll / 18) + "%"
-			})
-		}
-	});
+	/* ==================================================
+	    Background Zoom Init (throttled)
+	================================================== */
+	const heroZoom = document.querySelector("#js-hero");
+	if (heroZoom) {
+		let ticking = false;
+		window.addEventListener("scroll", function() {
+			if (ticking) {
+				return;
+			}
+
+			ticking = true;
+			window.requestAnimationFrame(function() {
+				var scroll = window.scrollY || window.pageYOffset || 0;
+				heroZoom.style.width = (100 + scroll / 18) + "%";
+				ticking = false;
+			});
+		}, {
+			passive: true
+		});
+	}
 
 
 
 	// Preloader Js
+	const preloader = document.querySelector(".preloader");
 	const svg = document.getElementById("preloaderSvg");
 	const svgText = document.querySelector(
 		".hero-section .intro_text svg text"
 	);
-	const tl = gsap.timeline({
-		onComplete: startStrokeAnimation,
-	});
-	const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-	const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
-	tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-		delay: 1.5,
-		y: -100,
-		opacity: 0,
-	});
-	tl.to(svg, {
-		duration: 0.5,
-		attr: { d: curve },
-		ease: "power2.easeIn",
-	}).to(svg, {
-		duration: 0.5,
-		attr: { d: flat },
-		ease: "power2.easeOut",
-	});
-	tl.to(".preloader", {
-		y: -1500,
-	});
-	tl.to(".preloader", {
-		zIndex: -1,
-		display: "none",
-	});
+	if (preloader && svg && window.gsap) {
+		const tl = gsap.timeline({
+			onComplete: startStrokeAnimation,
+		});
+		const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+		const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+		tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
+			delay: 1.5,
+			y: -100,
+			opacity: 0,
+		});
+		tl.to(svg, {
+			duration: 0.5,
+			attr: {
+				d: curve
+			},
+			ease: "power2.easeIn",
+		}).to(svg, {
+			duration: 0.5,
+			attr: {
+				d: flat
+			},
+			ease: "power2.easeOut",
+		});
+		tl.to(".preloader", {
+			y: -1500,
+		});
+		tl.to(".preloader", {
+			zIndex: -1,
+			display: "none",
+		});
+	}
 
 	function startStrokeAnimation() {
 		if (svgText) {
-			// Add a class or directly apply styles to trigger the stroke animation
 			svgText.classList.add("animate-stroke");
 		}
 	}

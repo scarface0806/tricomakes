@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -15,6 +17,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f15c2b">
     <meta name="description" content="Trico Makes delivered the complete brand identity for Bloom Studio - logo, colour palette, typography and visual guidelines. View the case study.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -46,7 +49,8 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
     <link rel="preload" as="style" href="assets/css/style.css">
 
@@ -63,6 +67,8 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="preload" as="style" href="assets/css/performance.css">
+    <link href="assets/css/performance.css" rel="stylesheet">
 
     <!-- ========== End Stylesheet ========== -->
     
@@ -118,7 +124,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     </a>
                 </div>
@@ -126,7 +132,7 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
@@ -193,7 +199,7 @@
         <div class="container">
             <div class="image-move-bg">
                 <div class="animation-zoom-banner" id="js-hero">
-                    <img src="assets/img/placeholders/banner-visual.svg" alt="" fetchpriority="high" decoding="async">
+                    <img src="assets/img/placeholders/banner-visual.svg" alt="" decoding="async" loading="eager" width="1600" height="900">
                 </div>
             </div>
         </div>
@@ -246,10 +252,10 @@
             <div class="project-thumb mt-md--25 mt-xs--25">
                 <div class="row">
                     <div class="col-md-7">
-                        <img src="assets/img/placeholders/project-visual.svg" alt="" fetchpriority="high" decoding="async">
+                        <img src="assets/img/placeholders/project-visual.svg" alt="" decoding="async" loading="eager" width="1200" height="900">
                     </div>
                     <div class="col-md-5">
-                        <img src="assets/img/placeholders/project-visual.svg" alt="" fetchpriority="high" decoding="async">
+                        <img src="assets/img/placeholders/project-visual.svg" alt="" decoding="async" loading="eager" width="1200" height="900">
                     </div>
                 </div>
             </div>
@@ -293,7 +299,7 @@
                                 <li>Improve local SEO visibility for high-intent searches</li>
                                 <li>Create a cleaner, faster enquiry experience</li>
                             </ul>
-                            <img src="assets/img/placeholders/banner-visual.svg" alt="" fetchpriority="high" decoding="async">
+                            <img src="assets/img/placeholders/banner-visual.svg" alt="" decoding="async" loading="eager" width="1600" height="900">
                         </div>
                     </div>
                 </div>
@@ -382,25 +388,10 @@
     ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-    <script src="assets/js/jquery.appear.js" defer></script>
-    <script src="assets/js/jquery.easing.min.js" defer></script>
-    <script src="assets/js/swiper-bundle.min.js" defer></script>
-    <script src="assets/js/progress-bar.min.js" defer></script>
-    <script src="assets/js/wow.min.js" defer></script>
-    <script src="assets/js/isotope.pkgd.min.js" defer></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
-    <script src="assets/js/magnific-popup.min.js" defer></script>
-    <script src="assets/js/jquery.waypoints.js" defer></script>
-    <script src="assets/js/count-to.js" defer></script>
-    <script src="assets/js/YTPlayer.min.js" defer></script>
-    <script src="assets/js/validnavs.js" defer></script>
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/jquery.lettering.min.js" defer></script>
-    <script src="assets/js/jquery.circleType.js" defer></script>
-    <script src="assets/js/typed.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-
+                                                <script src="assets/js/validnavs.js" defer></script>
+                        <script src="assets/js/performance.js" defer></script>
+    <script src="assets/js/app-entry.js" defer></script>
+    
 <!-- WhatsApp Floating Button -->
 <div class="whatsapp-pulse-ring"></div>
 <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" aria-label="Chat with Trico Makes on WhatsApp">

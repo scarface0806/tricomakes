@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -13,6 +15,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f15c2b">
     <title>Website Design &amp; Development in Tamil Nadu | Trico Makes</title>
     <meta name="description" content="Trico Makes builds fast, responsive, SEO-friendly websites for businesses in Tamil Nadu. Custom designs crafted to convert visitors into customers.">
     <link rel="canonical" href="https://www.tricomakes.in/service-website-design-development.html">
@@ -42,7 +45,8 @@
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="assets/img/banner/website-design.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png" fetchpriority="high">
     <link rel="preload" as="style" href="assets/css/style.css">
@@ -56,6 +60,8 @@
     <link href="assets/css/helper.css" rel="stylesheet">
     <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
     <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="preload" as="style" href="assets/css/performance.css">
+    <link href="assets/css/performance.css" rel="stylesheet">
 
     
     <!-- Service Schema -->
@@ -100,12 +106,12 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index.html">
-<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" class="logo" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menu">
-<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async">
+<img src="assets/img/logo.png" alt="Trico Makes" width="160" height="50" fetchpriority="high" decoding="async" loading="eager">
     
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
@@ -165,15 +171,15 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="service-single-thumb">
-                            <img src="assets/img/banner/website-design.png" alt="Website Design & Development � Trico Makes" style="width:100%; border-radius:12px;" fetchpriority="high" decoding="async">
+                            <img src="assets/img/banner/website-design.png" alt="Website Design & Development ? Trico Makes" style="width:100%; border-radius:12px;" decoding="async" loading="eager" width="808" height="632">
                         </div>
                     </div>
                 </div>
                 <div class="row mt-50">
                     <div class="col-lg-7">
                         <h2>Websites that look stunning, load fast, and convert visitors into customers.</h2>
-                        <p>At Trico Makes, we design and develop high-performance websites that combine bold visual design with smart user experience � from landing pages and business websites to full-scale web applications.</p>
-                        <p>Every project is built with clean code, responsive layouts, and conversion-focused design � so your website works as hard as you do.</p>
+                        <p>At Trico Makes, we design and develop high-performance websites that combine bold visual design with smart user experience ? from landing pages and business websites to full-scale web applications.</p>
+                        <p>Every project is built with clean code, responsive layouts, and conversion-focused design ? so your website works as hard as you do.</p>
                     </div>
                     <div class="col-lg-5 pl-60 pl-md-15 pl-xs-15">
                         <ul class="list-style-one">
@@ -197,7 +203,7 @@
                         <div class="process-style-one-item">
                             <span>02</span>
                             <h4>Wireframe &amp; Structure</h4>
-                            <p>We map out every page layout and user flow with wireframes � ensuring intuitive navigation and clear calls to action before design begins.</p>
+                            <p>We map out every page layout and user flow with wireframes ? ensuring intuitive navigation and clear calls to action before design begins.</p>
                         </div>
                         <div class="process-style-one-item">
                             <span>03</span>
@@ -207,7 +213,7 @@
                         <div class="process-style-one-item">
                             <span>04</span>
                             <h4>Development &amp; Launch</h4>
-                            <p>We build your site with clean, fast, responsive code � then thoroughly test across devices and browsers before a smooth, on-time launch.</p>
+                            <p>We build your site with clean, fast, responsive code ? then thoroughly test across devices and browsers before a smooth, on-time launch.</p>
                         </div>
                     </div>
                 </div>
@@ -264,25 +270,10 @@
 
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-    <script src="assets/js/jquery.appear.js" defer></script>
-    <script src="assets/js/jquery.easing.min.js" defer></script>
-    <script src="assets/js/swiper-bundle.min.js" defer></script>
-    <script src="assets/js/progress-bar.min.js" defer></script>
-    <script src="assets/js/wow.min.js" defer></script>
-    <script src="assets/js/isotope.pkgd.min.js" defer></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
-    <script src="assets/js/magnific-popup.min.js" defer></script>
-    <script src="assets/js/jquery.waypoints.js" defer></script>
-    <script src="assets/js/count-to.js" defer></script>
-    <script src="assets/js/YTPlayer.min.js" defer></script>
-    <script src="assets/js/validnavs.js" defer></script>
-    <script src="assets/js/gsap.js" defer></script>
-    <script src="assets/js/ScrollTrigger.min.js" defer></script>
-    <script src="assets/js/jquery.lettering.min.js" defer></script>
-    <script src="assets/js/jquery.circleType.js" defer></script>
-    <script src="assets/js/typed.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-<!-- WhatsApp Floating Button -->
+                                                <script src="assets/js/validnavs.js" defer></script>
+                        <script src="assets/js/performance.js" defer></script>
+    <script src="assets/js/app-entry.js" defer></script>
+    <!-- WhatsApp Floating Button -->
 <div class="whatsapp-pulse-ring"></div>
 <a href="https://wa.me/917871361025?text=Hi%20Trico%20Makes%20Team" class="whatsapp-floating-btn" target="_blank" rel="noopener noreferrer" title="Chat with us on WhatsApp" aria-label="Chat with Trico Makes on WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
