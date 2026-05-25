@@ -56,8 +56,7 @@ a[class*="button"] {
 }
 
 .navbar-brand img,
-.logo,
-.logo img {
+.navbar-brand .logo {
     width: var(--logo-w);
     height: var(--logo-h);
 }
