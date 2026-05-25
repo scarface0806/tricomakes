@@ -1,0 +1,14 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Meta Infinity Loop Logo -->
+  <!-- Left loop -->
+  <path d="M 35 60 C 35 45 45 35 55 35 C 65 35 72 42 72 52" 
+        stroke="#1877F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Right loop -->
+  <path d="M 85 60 C 85 75 75 85 65 85 C 55 85 48 78 48 68" 
+        stroke="#1877F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Center connecting curve -->
+  <path d="M 72 52 Q 78 56 78 60 Q 78 64 72 68" 
+        stroke="#1877F2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,0 +1,116 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.tricomakes.in/#organization",
+      "name": "Trico Makes",
+      "url": "https://www.tricomakes.in",
+      "email": "tricomakes@gmail.com",
+      "telephone": "+91 7871361025",
+      "description": "Trico Makes is a digital design and marketing studio helping businesses build stronger brands, better websites, and more leads.",
+      "image": "https://www.tricomakes.in/assets/img/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.tricomakes.in/assets/img/logo.png",
+        "width": 200,
+        "height": 60
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61572063225276",
+        "https://www.instagram.com/tricomakes/",
+        "https://www.linkedin.com/company/tricomakes/",
+        "https://wa.me/917871361025"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "foundingDate": "2018",
+      "knowsAbout": [
+        "Website Design",
+        "Digital Marketing",
+        "UI/UX Design",
+        "Mobile App Design",
+        "Logo Design",
+        "Branding",
+        "SEO",
+        "Social Media Marketing"
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.tricomakes.in/#localbusiness",
+      "name": "Trico Makes",
+      "image": "https://www.tricomakes.in/assets/img/logo.png",
+      "description": "Digital design and marketing studio",
+      "url": "https://www.tricomakes.in",
+      "telephone": "+91 7871361025",
+      "email": "tricomakes@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      },
+      "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "320",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.tricomakes.in/service-website-design-development.html",
+      "name": "Website Design & Development",
+      "description": "Conversion-focused websites built for speed, trust, and lead capture.",
+      "url": "https://www.tricomakes.in/service-website-design-development.html",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.tricomakes.in/#organization"
+      },
+      "areaServed": "IN",
+      "serviceType": "Web Design & Development"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.tricomakes.in/service-ui-ux-design.html",
+      "name": "UI/UX Design",
+      "description": "Clear digital journeys that make every click feel simple and intentional.",
+      "url": "https://www.tricomakes.in/service-ui-ux-design.html",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.tricomakes.in/#organization"
+      },
+      "areaServed": "IN",
+      "serviceType": "UI/UX Design"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.tricomakes.in/service-mobile-app-design.html",
+      "name": "Mobile App Design",
+      "description": "Mobile and SaaS interface design shaped around usability and visual clarity.",
+      "url": "https://www.tricomakes.in/service-mobile-app-design.html",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.tricomakes.in/#organization"
+      },
+      "areaServed": "IN",
+      "serviceType": "Mobile App Design"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.tricomakes.in/service-digital-marketing.html",
+      "name": "Digital Marketing",
+      "description": "Multi-channel campaigns built to increase traffic, enquiries, and sales.",
+      "url": "https://www.tricomakes.in/service-digital-marketing.html",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.tricomakes.in/#organization"
+      },
+      "areaServed": "IN",
+      "serviceType": "Digital Marketing"
+    }
+  ]
+}

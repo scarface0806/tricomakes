@@ -1,0 +1,130 @@
+/* Global performance helpers: keep visual design intact while reducing rendering cost */
+
+:root {
+    --logo-w: 160px;
+    --logo-h: 50px;
+}
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Reserve layout space for known placeholder assets used across multiple pages. */
+img[src*="/placeholders/banner-visual.svg"],
+img[src$="placeholders/banner-visual.svg"] {
+    aspect-ratio: 16 / 9;
+}
+
+img[src*="/placeholders/project-visual.svg"],
+img[src$="placeholders/project-visual.svg"] {
+    aspect-ratio: 4 / 3;
+}
+
+/* CLS fallback for legacy images missing intrinsic dimensions. */
+img:not([width]):not([height]) {
+    aspect-ratio: 16 / 9;
+}
+
+/* Keep keyboard focus obvious for Lighthouse accessibility checks. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid #f15c2b;
+    outline-offset: 2px;
+}
+
+/* Prevent hover/focus interactions from introducing layout movement. */
+button,
+.btn,
+a[class*="btn"],
+a[class*="button"] {
+    min-height: 44px;
+}
+
+.navbar-brand img,
+.logo,
+.logo img {
+    width: var(--logo-w);
+    height: var(--logo-h);
+}
+
+/* Prevent hero typed headline from overflowing on narrow screens. */
+.banner-style-one-items,
+.banner-style-one-items .info {
+    min-width: 0;
+}
+
+.banner-style-one-items h2 {
+    max-width: 100%;
+}
+
+.banner-style-one-items h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.banner-style-one-items h1 img {
+    display: inline-block;
+    width: auto;
+    height: 52px;
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+.banner-style-one-items .cd-headline.clip .cd-words-wrapper {
+    max-width: 100%;
+    padding-right: 8px;
+}
+
+@media (max-width: 767px) {
+    .banner-style-one-items h1 {
+        white-space: normal;
+        justify-content: center;
+    }
+
+    .banner-style-one-items h1 img {
+        height: 42px;
+    }
+
+    .banner-style-one-items h2 {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+        line-height: 1.2;
+    }
+
+    .banner-style-one-items p {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Keep lazy images from triggering expensive paint before needed */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Accessibility + perf guard for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
