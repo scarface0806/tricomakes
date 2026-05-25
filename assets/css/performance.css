@@ -17,6 +17,7 @@ body {
 img {
     height: auto;
     max-width: 100%;
+    max-height: 100%;
 }
 
 /* Reserve layout space for known placeholder assets used across multiple pages. */

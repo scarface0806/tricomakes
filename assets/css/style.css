@@ -8368,9 +8368,7 @@ body.popup-open {
 }
 
 /* ── Image lazy loading visual ── */
-img[loading="lazy"] {
-    background: #f1f5f9;
-}
+
 
 /* ── Responsive: Process grid collapses on tablet/mobile ── */
 @media (max-width: 1024px) {
