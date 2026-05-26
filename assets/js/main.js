@@ -577,7 +577,7 @@
 	const svgText = document.querySelector(
 		".hero-section .intro_text svg text"
 	);
-	const PRELOADER_MAX_WAIT = 1200;
+	const PRELOADER_MAX_WAIT = 900;
 	let preloaderForceHideTimer = null;
 
 	function hidePreloaderFast() {

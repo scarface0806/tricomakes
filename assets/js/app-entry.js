@@ -65,9 +65,9 @@
 
         if (hasAnySelector(".timer, .fun-fact")) {
             loaders.push(
-                "assets/js/jquery.appear.js",
-                "assets/js/jquery.waypoints.js",
-                "assets/js/count-to.js"
+                "assets/js/jquery.appear.min.js",
+                "assets/js/jquery.waypoints.min.js",
+                "assets/js/count-to.min.js"
             );
         }
 
@@ -76,7 +76,7 @@
         }
 
         if (hasAnySelector(".split-text, .upDownScrol, .preloader, .hero-section")) {
-            loaders.push("assets/js/gsap.js", "assets/js/ScrollTrigger.min.js", "assets/js/SplitText.min.js");
+            loaders.push("assets/js/gsap.min.js", "assets/js/ScrollTrigger.min.js", "assets/js/SplitText.min.js");
         }
 
         if (hasAnySelector(".circle-text-item")) {
@@ -106,7 +106,7 @@
         });
 
         var gsapOrdered = [
-            "assets/js/gsap.js",
+            "assets/js/gsap.min.js",
             "assets/js/ScrollTrigger.min.js",
             "assets/js/SplitText.min.js"
         ];
@@ -136,7 +136,7 @@
         }
 
         try {
-            await loadScript("assets/js/main.js");
+            await loadScript("assets/js/main.min.js");
         } catch (_error) {
             // Main boot failed; no-op to avoid blocking page interactivity.
         }

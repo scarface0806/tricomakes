@@ -3,15 +3,33 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC"></script>
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+            (function () {
+                var analyticsBooted = false;
+                window.dataLayer = window.dataLayer || [];
+                window.gtag = function () { dataLayer.push(arguments); };
 
-      gtag('config', 'G-ZJQ5Y1SSFC');
+                function bootAnalytics() {
+                    if (analyticsBooted) return;
+                    analyticsBooted = true;
+
+                    var s = document.createElement('script');
+                    s.async = true;
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZJQ5Y1SSFC';
+                    document.head.appendChild(s);
+
+                    gtag('js', new Date());
+                    gtag('config', 'G-ZJQ5Y1SSFC');
+                }
+
+                window.addEventListener('pointerdown', bootAnalytics, { once: true, passive: true });
+                window.addEventListener('touchstart', bootAnalytics, { once: true, passive: true });
+                window.addEventListener('scroll', bootAnalytics, { once: true, passive: true });
+                window.addEventListener('keydown', bootAnalytics, { once: true });
+                window.setTimeout(bootAnalytics, 4000);
+            })();
     </script>
     <!-- ========== Meta Tags ========== -->
     <meta charset="utf-8">
@@ -63,25 +81,22 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="assets/css/style.css">
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preload" as="image" href="assets/img/icon/hand.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png">
-    <link rel="preload" as="style" href="assets/css/bootstrap.min.css">
+    <link rel="preload" as="font" href="assets/fonts/fa-solid-900.woff2" type="font/woff2" crossorigin>
+    <link rel="preload" as="font" href="assets/fonts/fa-brands-400.woff2" type="font/woff2" crossorigin>
 
     <!-- ========== Start Stylesheet ========== -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/bootstrap.min.css" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="assets/css/style.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/style.min.css" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="assets/css/validnavs.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/validnavs.min.css" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/font-awesome.min.css" rel="stylesheet"></noscript>
     <link rel="preload" href="assets/css/magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/magnific-popup.css" rel="stylesheet"></noscript>
-    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link rel="preload" href="assets/css/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/animate.min.css" rel="stylesheet"></noscript>
-    <link href="assets/css/validnavs.css" rel="stylesheet">
-    <link href="assets/css/helper.css" rel="stylesheet">
-    <link rel="preload" href="assets/css/unit-test.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="assets/css/unit-test.css" rel="stylesheet"></noscript>
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="preload" as="style" href="assets/css/performance.css">
-    <link href="assets/css/performance.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/swiper-bundle.min.css" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="assets/css/helper.min.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/helper.min.css" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="assets/css/performance.css" media="print" onload="this.media='all'"><noscript><link href="assets/css/performance.css" rel="stylesheet"></noscript>
     <!-- ========== End Stylesheet ========== -->
 
     <!-- Lottie Animation Styles -->
@@ -2336,10 +2351,9 @@
     </footer> <!-- End Footer --> <!-- jQuery Frameworks    ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-                                                <script src="assets/js/validnavs.js" defer></script>
-                            <script src="assets/js/performance.js" defer></script>
+                                                <script src="assets/js/validnavs.min.js" defer></script>
+                            <script src="assets/js/performance.min.js" defer></script>
     <script src="assets/js/app-entry.js" defer></script>
-        <script src="assets/js/faq-accordion.js" defer></script>
     <!-- Homepage Contact Form Handler -->
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -2370,35 +2384,97 @@
         });
     });
     </script>
-    <!-- Lottie Animation Library -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
-    <!-- Lottie animation data ? loaded as a JS variable (works without a local server) -->
-    <script defer src="assets/animation/home-dashboard-data.js"></script>
-    <script defer src="assets/animation/website-ranking-data.js"></script>
     <script>
-    /* Lottie Banner Init */
-    window.addEventListener('load', function () {
-        var container = document.getElementById('lottie-banner');
-        if (container && typeof lottie !== 'undefined' && window.LottieHomeData) {
+    /* Lottie Banner Init (lazy loaded to reduce initial JS parse/execute) */
+    (function () {
+        var lottieAssetsPromise = null;
+
+        function loadScript(src) {
+            return new Promise(function (resolve, reject) {
+                if (document.querySelector('script[src="' + src + '"]')) {
+                    resolve();
+                    return;
+                }
+                var s = document.createElement('script');
+                s.src = src;
+                s.defer = true;
+                s.onload = resolve;
+                s.onerror = reject;
+                document.body.appendChild(s);
+            });
+        }
+
+        function ensureLottieAssets() {
+            if (lottieAssetsPromise) {
+                return lottieAssetsPromise;
+            }
+
+            lottieAssetsPromise = loadScript('https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js')
+                .then(function () {
+                    return Promise.all([
+                        loadScript('assets/animation/home-dashboard-data.js'),
+                        loadScript('assets/animation/website-ranking-data.js')
+                    ]);
+                });
+
+            return lottieAssetsPromise;
+        }
+
+        function whenVisible(el, callback) {
+            if (!el) return;
+            if (!('IntersectionObserver' in window)) {
+                callback();
+                return;
+            }
+
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        io.disconnect();
+                        callback();
+                    }
+                });
+            }, { rootMargin: '200px 0px' });
+
+            io.observe(el);
+        }
+
+        function initLottie(container, dataKey) {
+            if (!container || container.dataset.lottieReady === '1') return;
+            if (typeof lottie === 'undefined' || !window[dataKey]) return;
+
+            container.dataset.lottieReady = '1';
             lottie.loadAnimation({
                 container: container,
                 renderer: 'svg',
                 loop: true,
                 autoplay: true,
-                animationData: window.LottieHomeData
+                animationData: window[dataKey]
             });
         }
-        var rankingContainer = document.getElementById('lottie-ranking');
-        if (rankingContainer && typeof lottie !== 'undefined' && window.LottieWebsiteRankingData) {
-            lottie.loadAnimation({
-                container: rankingContainer,
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                animationData: window.LottieWebsiteRankingData
-            });
-        }
-    });
+
+        window.addEventListener('load', function () {
+            var bannerContainer = document.getElementById('lottie-banner');
+            var rankingContainer = document.getElementById('lottie-ranking');
+            var desktopBanner = window.matchMedia('(min-width: 992px)').matches;
+
+            if (bannerContainer && desktopBanner) {
+                whenVisible(bannerContainer, function () {
+                    ensureLottieAssets().then(function () {
+                        initLottie(bannerContainer, 'LottieHomeData');
+                    });
+                });
+            }
+
+            if (rankingContainer) {
+                whenVisible(rankingContainer, function () {
+                    ensureLottieAssets().then(function () {
+                        initLottie(rankingContainer, 'LottieWebsiteRankingData');
+                    });
+                });
+            }
+        });
+    })();
     </script>
     <script>
     /* -- FAQ Accordion (pricing-style, single-open) -- */
