@@ -105,11 +105,33 @@
             }
         });
 
-        for (var i = 0; i < unique.length; i += 1) {
+        var gsapOrdered = [
+            "assets/js/gsap.js",
+            "assets/js/ScrollTrigger.min.js",
+            "assets/js/SplitText.min.js"
+        ];
+
+        var gsapChain = unique.filter(function (src) {
+            return gsapOrdered.indexOf(src) !== -1;
+        }).sort(function (a, b) {
+            return gsapOrdered.indexOf(a) - gsapOrdered.indexOf(b);
+        });
+
+        var parallelVendors = unique.filter(function (src) {
+            return gsapOrdered.indexOf(src) === -1;
+        });
+
+        // Load independent vendors concurrently to avoid long sequential waits.
+        await Promise.allSettled(parallelVendors.map(function (src) {
+            return loadScript(src);
+        }));
+
+        // Load GSAP-related files in order to preserve plugin dependencies.
+        for (var i = 0; i < gsapChain.length; i += 1) {
             try {
-                await loadScript(unique[i]);
+                await loadScript(gsapChain[i]);
             } catch (_error) {
-                // Continue boot even if an optional vendor script fails.
+                // Continue boot; main.js has guards and fallback behavior.
             }
         }
 

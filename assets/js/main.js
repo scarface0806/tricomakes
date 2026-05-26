@@ -577,39 +577,68 @@
 	const svgText = document.querySelector(
 		".hero-section .intro_text svg text"
 	);
+	const PRELOADER_MAX_WAIT = 1200;
+	let preloaderForceHideTimer = null;
+
+	function hidePreloaderFast() {
+		if (!preloader) {
+			return;
+		}
+
+		preloader.style.transform = "translateY(-1500px)";
+		preloader.style.zIndex = "-1";
+		preloader.style.display = "none";
+		startStrokeAnimation();
+	}
+
+	if (preloader) {
+		preloaderForceHideTimer = window.setTimeout(hidePreloaderFast, PRELOADER_MAX_WAIT);
+	}
 
 	if (preloader && svg && window.gsap) {
 		const tl = gsap.timeline({
-			onComplete: startStrokeAnimation,
+			onComplete: function() {
+				if (preloaderForceHideTimer) {
+					window.clearTimeout(preloaderForceHideTimer);
+					preloaderForceHideTimer = null;
+				}
+				startStrokeAnimation();
+			},
 		});
 		const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
 		const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
 		tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-			delay: 1.5,
+			delay: 0.2,
+			duration: 0.3,
 			y: -100,
 			opacity: 0,
 		});
 		tl.to(svg, {
-			duration: 0.5,
+			duration: 0.3,
 			attr: {
 				d: curve
 			},
 			ease: "power2.easeIn",
 		}).to(svg, {
-			duration: 0.5,
+			duration: 0.3,
 			attr: {
 				d: flat
 			},
 			ease: "power2.easeOut",
 		});
 		tl.to(".preloader", {
+			duration: 0.25,
 			y: -1500,
 		});
 		tl.to(".preloader", {
+			duration: 0.01,
 			zIndex: -1,
 			display: "none",
 		});
+	} else if (preloader) {
+		// If GSAP is unavailable, fail open quickly instead of blocking page content.
+		hidePreloaderFast();
 	}
 
 	function startStrokeAnimation() {

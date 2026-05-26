@@ -67,7 +67,7 @@ Sidebar heading:  22px 'Barlow', sans-serif
 :root {
 	--font-default: 'Barlow', sans-serif;
 	--font-heading: 'Barlow', sans-serif;
-	--fontawesome: "Font Awesome 5 Pro";
+	--fontawesome: "Font Awesome 5 Free";
 	--black: #000000;
 	--dark: #120f12;
 	--dark-secondary: #1a1a1a;
@@ -2933,8 +2933,8 @@ a.btn-round-animation:hover::after {
 	z-index: 1;
 	display: block;
 	content: "\f00d";
-	font-family: "Font Awesome 5 Pro";
-	font-weight: 100;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	color: var(--white);
 }
 
@@ -5026,8 +5026,8 @@ ul.list-style-one li::after {
 
 .accordion-item.accordion-style-one button.accordion-button::after {
 	content: "\f067";
-	font-family: "Font Awesome 5 Pro";
-	font-weight: 100;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
 	font-size: 16px;
 	position: absolute;
 	top: 16px;
