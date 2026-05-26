@@ -83,7 +83,7 @@
             loaders.push("assets/js/jquery.lettering.min.js", "assets/js/jquery.circleType.js");
         }
 
-        if (hasAnySelector(".typed")) {
+        if (hasAnySelector(".typed, .cd-headline, .cd-words-wrapper")) {
             loaders.push("assets/js/typed.js");
         }
 
