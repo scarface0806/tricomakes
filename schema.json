@@ -8,7 +8,7 @@
       "url": "https://www.tricomakes.in",
       "email": "tricomakes@gmail.com",
       "telephone": "+91 7871361025",
-      "description": "Trico Makes is a digital design and marketing studio helping businesses build stronger brands, better websites, and more leads.",
+      "description": "Trico Makes is a web design and digital marketing agency in Madurai, Tamil Nadu helping businesses build stronger brands, better websites, and more leads.",
       "image": "https://www.tricomakes.in/assets/img/logo.png",
       "logo": {
         "@type": "ImageObject",
@@ -24,6 +24,8 @@
       ],
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Madurai",
+        "addressRegion": "Tamil Nadu",
         "addressCountry": "IN"
       },
       "foundingDate": "2018",
@@ -43,15 +45,36 @@
       "@id": "https://www.tricomakes.in/#localbusiness",
       "name": "Trico Makes",
       "image": "https://www.tricomakes.in/assets/img/logo.png",
-      "description": "Digital design and marketing studio",
+      "description": "Trico Makes — web design and digital marketing agency in Madurai, Tamil Nadu. Services include website design, SEO, branding, UI/UX and social media marketing.",
       "url": "https://www.tricomakes.in",
       "telephone": "+91 7871361025",
       "email": "tricomakes@gmail.com",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Madurai",
+        "addressLocality": "Madurai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "625001",
         "addressCountry": "IN"
       },
-      "priceRange": "$$",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "9.9252",
+        "longitude": "78.1198"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "hasMap": "https://maps.google.com/?q=Madurai,Tamil+Nadu,India",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61572063225276",
+        "https://www.instagram.com/tricomakes/",
+        "https://www.linkedin.com/company/tricomakes/"
+      ],
+      "priceRange": "₹₹",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
@@ -64,13 +87,17 @@
       "@type": "Service",
       "@id": "https://www.tricomakes.in/service-website-design-development.html",
       "name": "Website Design & Development",
-      "description": "Conversion-focused websites built for speed, trust, and lead capture.",
+      "description": "Conversion-focused website design and development for businesses in Madurai, Tamil Nadu.",
       "url": "https://www.tricomakes.in/service-website-design-development.html",
       "provider": {
         "@type": "Organization",
         "@id": "https://www.tricomakes.in/#organization"
       },
-      "areaServed": "IN",
+      "areaServed": {
+        "@type": "City",
+        "name": "Madurai",
+        "@id": "https://www.wikidata.org/wiki/Q216115"
+      },
       "serviceType": "Web Design & Development"
     },
     {
@@ -103,13 +130,16 @@
       "@type": "Service",
       "@id": "https://www.tricomakes.in/service-digital-marketing.html",
       "name": "Digital Marketing",
-      "description": "Multi-channel campaigns built to increase traffic, enquiries, and sales.",
+      "description": "Multi-channel digital marketing campaigns for businesses in Madurai and Tamil Nadu to increase traffic, enquiries, and sales.",
       "url": "https://www.tricomakes.in/service-digital-marketing.html",
       "provider": {
         "@type": "Organization",
         "@id": "https://www.tricomakes.in/#organization"
       },
-      "areaServed": "IN",
+      "areaServed": {
+        "@type": "State",
+        "name": "Tamil Nadu"
+      },
       "serviceType": "Digital Marketing"
     }
   ]
