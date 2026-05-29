@@ -89,7 +89,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet"></noscript>
-    <link rel="preload" as="image" href="assets/img/icon/hand.png" fetchpriority="high">
     <link rel="preload" as="image" href="assets/img/logo.png">
     <link rel="preload" as="font" href="assets/fonts/fa-solid-900.woff2" type="font/woff2" crossorigin>
     <link rel="preload" as="font" href="assets/fonts/fa-brands-400.woff2" type="font/woff2" crossorigin>
@@ -2484,6 +2483,7 @@
             const slider = document.getElementById(sliderId);
             const before = document.getElementById(beforeId);
             const handle = document.getElementById(handleId);
+            if (!slider || !before || !handle) return;
             let isDragging = false;
 
             function setPosition(x) {
