@@ -29,6 +29,14 @@
         });
     }
 
+    document.addEventListener("click", function (event) {
+        var link = event.target.closest('a[href="/"]');
+        if (link && window.location.protocol === "file:") {
+            event.preventDefault();
+            window.location.href = "index.html";
+        }
+    });
+
     async function boot() {
         var loaders = [];
 
