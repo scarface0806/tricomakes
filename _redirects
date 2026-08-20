@@ -1,0 +1,2 @@
+# Ensure explicit index path resolves cleanly
+/index.html / 301

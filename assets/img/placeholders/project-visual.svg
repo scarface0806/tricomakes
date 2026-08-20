@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Project Placeholder</title>
+  <desc id="desc">Fallback visual for missing project screenshots.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f7f8fc"/>
+      <stop offset="100%" stop-color="#e9eef9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g fill="none" stroke="#8e9fbe" stroke-width="7">
+    <rect x="180" y="140" width="840" height="620" rx="24"/>
+    <path d="M260 670l170-170 140 120 140-170 230 220"/>
+    <circle cx="450" cy="330" r="40"/>
+  </g>
+</svg>
