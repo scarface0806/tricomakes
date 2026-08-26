@@ -12,51 +12,75 @@
     function optimizeImages() {
         var images = document.querySelectorAll("img");
         var seenPrimary = 0;
+        var plan = [];
 
+        // Read phase: gather everything up front so no measurement happens after a write.
         images.forEach(function (img) {
-            if (!img.hasAttribute("decoding")) {
-                img.setAttribute("decoding", "async");
+            var hasWidth = img.hasAttribute("width");
+            var hasHeight = img.hasAttribute("height");
+            var entry = {
+                img: img,
+                decoding: img.hasAttribute("decoding") ? null : "async",
+                hasWidth: hasWidth,
+                hasHeight: hasHeight,
+                nw: 0,
+                nh: 0,
+                loading: null,
+                fetchpriority: null,
+                aspectRatio: null
+            };
+
+            if (!hasWidth || !hasHeight) {
+                entry.nw = img.naturalWidth;
+                entry.nh = img.naturalHeight;
+                if (!img.style.aspectRatio) {
+                    entry.aspectRatio = String(
+                        entry.nw > 0 && entry.nh > 0 ? entry.nw / entry.nh : 16 / 9
+                    );
+                }
             }
 
-            var isPriority = img.getAttribute("fetchpriority") === "high";
-            var isLogo = /logo/i.test(img.getAttribute("src") || "") || img.closest(".navbar-brand");
-
             if (!img.hasAttribute("loading")) {
+                var isPriority = img.getAttribute("fetchpriority") === "high";
+                var isLogo = /logo/i.test(img.getAttribute("src") || "") || img.closest(".navbar-brand");
+
                 if (isPriority || isLogo || seenPrimary < 2) {
-                    img.setAttribute("loading", "eager");
+                    entry.loading = "eager";
                     if (!img.hasAttribute("fetchpriority")) {
-                        img.setAttribute("fetchpriority", "high");
+                        entry.fetchpriority = "high";
                     }
                     seenPrimary += 1;
                 } else {
-                    img.setAttribute("loading", "lazy");
+                    entry.loading = "lazy";
                 }
             }
 
-            if (!img.hasAttribute("width") || !img.hasAttribute("height")) {
-                var nw = img.naturalWidth;
-                var nh = img.naturalHeight;
-                if (nw > 0 && nh > 0) {
-                    if (!img.hasAttribute("width")) {
-                        img.setAttribute("width", String(nw));
-                    }
-                    if (!img.hasAttribute("height")) {
-                        img.setAttribute("height", String(nh));
-                    }
-                }
-            }
+            plan.push(entry);
         });
-    }
 
-    function stabilizeMediaBoxes() {
-        document.querySelectorAll("img").forEach(function (img) {
-            if (!img.hasAttribute("width") || !img.hasAttribute("height")) {
-                var ratio = img.naturalWidth > 0 && img.naturalHeight > 0
-                    ? img.naturalWidth / img.naturalHeight
-                    : 16 / 9;
-                if (!img.style.aspectRatio) {
-                    img.style.aspectRatio = String(ratio);
+        // Write phase: layout is invalidated once, not once per image.
+        plan.forEach(function (entry) {
+            var img = entry.img;
+
+            if (entry.decoding) {
+                img.setAttribute("decoding", entry.decoding);
+            }
+            if (entry.loading) {
+                img.setAttribute("loading", entry.loading);
+            }
+            if (entry.fetchpriority) {
+                img.setAttribute("fetchpriority", entry.fetchpriority);
+            }
+            if (entry.nw > 0 && entry.nh > 0) {
+                if (!entry.hasWidth) {
+                    img.setAttribute("width", String(entry.nw));
                 }
+                if (!entry.hasHeight) {
+                    img.setAttribute("height", String(entry.nh));
+                }
+            }
+            if (entry.aspectRatio !== null) {
+                img.style.aspectRatio = entry.aspectRatio;
             }
         });
     }
@@ -144,6 +168,7 @@
         var main = document.createElement("main");
         main.id = "main-content";
 
+        var fragment = document.createDocumentFragment();
         var collecting = !header;
         children.forEach(function (node) {
             if (node === header) {
@@ -160,10 +185,11 @@
                 return;
             }
 
-            main.appendChild(node);
+            fragment.appendChild(node);
         });
 
-        if (main.childNodes.length) {
+        if (fragment.childNodes.length) {
+            main.appendChild(fragment);
             if (footer && footer.parentNode === body) {
                 body.insertBefore(main, footer);
             } else {
@@ -207,7 +233,6 @@
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", function () {
             optimizeImages();
-            stabilizeMediaBoxes();
             optimizeIframes();
             ensureMainLandmark();
             fixInteractiveLabels();
@@ -218,7 +243,6 @@
         });
     } else {
         optimizeImages();
-        stabilizeMediaBoxes();
         optimizeIframes();
         ensureMainLandmark();
         fixInteractiveLabels();
