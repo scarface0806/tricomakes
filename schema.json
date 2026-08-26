@@ -28,7 +28,7 @@
         "addressRegion": "Tamil Nadu",
         "addressCountry": "IN"
       },
-      "foundingDate": "2018",
+      "foundingDate": "2024",
       "knowsAbout": [
         "Website Design",
         "Digital Marketing",
@@ -74,14 +74,7 @@
         "https://www.instagram.com/tricomakes/",
         "https://www.linkedin.com/company/tricomakes/"
       ],
-      "priceRange": "₹₹",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "320",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "priceRange": "₹₹"
     },
     {
       "@type": "Service",
